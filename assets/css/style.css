@@ -1,0 +1,111 @@
+:root {
+    --w: 920px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.6;
+    color: #111;
+    background: #fff;
+}
+
+.container {
+    max-width: var(--w);
+    margin: 0 auto;
+    padding: 18px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.logo {
+    text-decoration: none;
+    color: #111;
+    font-weight: 700;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #111;
+    opacity: .8;
+}
+
+.nav a:hover {
+    opacity: 1;
+}
+
+.hero {
+    padding: 28px 0 10px;
+}
+
+.subtitle {
+    margin-top: 6px;
+    font-size: 18px;
+    opacity: .85;
+}
+
+.cta-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 18px 0 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    background: #111;
+    color: #fff;
+}
+
+.btn-secondary {
+    background: #f2f2f2;
+    color: #111;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+@media (min-width: 820px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.card {
+    border: 1px solid #e7e7e7;
+    border-radius: 14px;
+    padding: 14px;
+}
+
+.note {
+    margin-top: 16px;
+    font-size: 14px;
+    opacity: .75;
+}
+
+.footer {
+    padding: 22px 18px;
+    opacity: .75;
+}
