@@ -51,6 +51,7 @@ body {
 
 .hero {
     padding: 28px 0 10px;
+    margin-bottom: 28px;
 }
 
 .subtitle {
@@ -97,12 +98,43 @@ body {
     border: 1px solid #e7e7e7;
     border-radius: 14px;
     padding: 14px;
+    margin-bottom: 24px;
+}
+
+.card ul {
+    margin-bottom: 8px;
 }
 
 .note {
     margin-top: 16px;
     font-size: 14px;
     opacity: .75;
+}
+
+.faq-item {
+    border: 1px solid #e7e7e7;
+    border-radius: 14px;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+}
+
+.faq-item summary {
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item[open] {
+    background: #fafafa;
+}
+
+.faq-content {
+    margin-top: 10px;
+    line-height: 1.6;
 }
 
 .footer {
