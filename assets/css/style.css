@@ -28,6 +28,7 @@ body {
     padding: 0 20px;
 }
 
+/* ── Header ── */
 .header {
     background: var(--bg-dark);
     padding: 16px 0;
@@ -44,15 +45,23 @@ body {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
     font-weight: 800;
     text-decoration: none;
     color: var(--text-main);
-    font-size: 22px;
+    font-size: 24px;
     letter-spacing: -1px;
 }
 
 .logo:hover {
     color: var(--primary);
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
 }
 
 .nav a {
@@ -73,6 +82,7 @@ body {
     font-weight: 700 !important;
 }
 
+/* ── Status bar ── */
 .status-bar {
     background: #161b22;
     padding: 8px 0;
@@ -116,8 +126,9 @@ body {
     }
 }
 
+/* ── Hero ── */
 .hero {
-    padding: 80px 20px 60px;
+    padding: 80px 20px 140px;
     text-align: center;
 }
 
@@ -140,8 +151,7 @@ h1 {
     display: flex;
     gap: 20px;
     justify-content: center;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin: 40px 0 20px;
 }
 
 .btn {
@@ -150,8 +160,10 @@ h1 {
     border-radius: 8px;
     text-decoration: none;
     font-weight: 700;
-    transition: all 0.2s ease;
     font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
     border: none;
 }
 
@@ -190,16 +202,7 @@ h1 {
     letter-spacing: 1px;
 }
 
-.copy-btn {
-    background: var(--primary);
-    border: none;
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 12px;
-}
-
+/* ── Cards grid ── */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -212,8 +215,8 @@ h1 {
     border: 1px solid var(--border);
     padding: 32px;
     border-radius: 16px;
-    transition: all 0.3s ease;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .card:hover {
@@ -231,7 +234,6 @@ h1 {
 .card h3 {
     margin: 0 0 12px;
     font-size: 22px;
-    color: var(--text-main);
 }
 
 .card p {
@@ -247,30 +249,49 @@ h1 {
     font-size: 14px;
 }
 
+/* ── Steps ── */
 .steps {
-    padding: 60px 20px;
+    padding: 80px 20px;
     border-top: 1px solid var(--border);
 }
 
 .steps h2 {
     text-align: center;
     font-size: 32px;
-    margin-bottom: 48px;
+    margin-bottom: 60px;
 }
 
 .steps-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.step {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 30px 25px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.step:hover {
+    border-color: var(--primary);
+    background: rgba(255, 177, 26, 0.03);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .step-num {
-    display: block;
-    font-size: 48px;
+    font-size: 42px;
     font-weight: 900;
     color: var(--primary);
-    opacity: 0.2;
-    margin-bottom: 8px;
+    line-height: 1;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(255, 177, 26, 0.3);
 }
 
 .step h4 {
@@ -278,6 +299,7 @@ h1 {
     font-size: 20px;
 }
 
+/* ── Comparison table ── */
 .comparison {
     padding: 60px 20px;
     text-align: center;
@@ -297,7 +319,6 @@ table {
     background: var(--bg-card);
     border-radius: 16px;
     overflow: hidden;
-    text-align: left;
     min-width: 600px;
 }
 
@@ -305,6 +326,7 @@ th,
 td {
     padding: 20px;
     border-bottom: 1px solid var(--border);
+    text-align: left;
 }
 
 th {
@@ -320,6 +342,7 @@ th {
     font-weight: 700;
 }
 
+/* ── Trust / Logos ── */
 .trust {
     padding: 60px 0;
 }
@@ -333,14 +356,54 @@ th {
 .trust-item {
     text-align: center;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.trust-icon {
-    font-size: 40px;
+.trust-icon-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 20px;
-    display: block;
 }
 
+.trust-icon-container img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 10px 5px rgba(255, 177, 26, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.trust-icon-container::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 20px;
+    background: radial-gradient(ellipse at center, rgba(255, 177, 26, 0.4) 0%, transparent 70%);
+    filter: blur(5px);
+    z-index: 1;
+}
+
+.trust-item:hover img {
+    transform: translateY(-8px);
+}
+
+.trust-item:hover .trust-icon-container::after {
+    width: 60px;
+    opacity: 0.6;
+}
+
+/* ── FAQ ── */
 .faq {
     padding: 60px 20px;
 }
@@ -384,13 +447,33 @@ th {
     transform: rotate(90deg);
 }
 
-.faq-grid p {
+.faq-content {
     margin-top: 15px;
-    color: var(--text-muted);
-    border-top: 1px solid var(--border);
     padding-top: 15px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 15px;
 }
 
+.faq-content ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.faq-content li {
+    margin-bottom: 8px;
+}
+
+.faq-note {
+    background: rgba(255, 177, 26, 0.05);
+    border-left: 3px solid var(--primary);
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 4px;
+    color: var(--text-main);
+}
+
+/* ── Final CTA ── */
 .final-cta {
     padding: 60px 20px;
 }
@@ -419,26 +502,70 @@ th {
     font-size: 18px;
 }
 
+/* ── Footer ── */
 .footer {
     background: #090b0e;
-    padding: 60px 0 40px;
-    border-top: 1px solid var(--border);
+    padding: 80px 0 60px;
+    margin-top: 80px;
 }
 
-.note {
-    font-size: 13px;
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-logo {
+    height: 90px;
+    width: auto;
+    margin-bottom: 15px;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.footer-logo:hover {
+    opacity: 1;
+}
+
+.footer-nav {
+    margin-bottom: 60px;
+    display: flex;
+    gap: 30px;
+}
+
+.footer-nav a {
+    text-decoration: none;
     color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.footer-nav a:hover {
+    color: var(--primary);
+}
+
+.footer-bottom .note {
+    font-size: 12px;
     line-height: 1.8;
-    max-width: 800px;
+    color: var(--text-muted);
+    opacity: 0.5;
     margin-bottom: 30px;
 }
 
-.copyright {
-    border-top: 1px solid var(--border);
-    padding-top: 30px;
-    font-size: 14px;
+.footer-bottom .copyright {
+    font-size: 13px;
+    font-weight: 600;
     color: var(--text-muted);
-    text-align: center;
+    opacity: 0.4;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .steps-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -467,14 +594,13 @@ th {
     }
 
     .btn {
+        display: block;
         width: 100%;
-        text-align: center;
         padding: 14px 20px;
     }
 
     .btn-large {
         padding: 16px 20px;
-        width: 100%;
     }
 
     .promo-box {
@@ -494,6 +620,11 @@ th {
         padding: 40px 20px;
     }
 
+    .steps-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
     .cta-card {
         padding: 40px 20px;
     }
@@ -508,5 +639,11 @@ th {
 
     .faq-grid summary {
         font-size: 16px;
+    }
+
+    .footer-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
     }
 }
