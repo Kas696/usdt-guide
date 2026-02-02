@@ -1,40 +1,48 @@
+/* Переменные темы Bybit 2026 */
 :root {
     --primary: #ffb11a;
-    /* Цвет Bybit */
-    --dark: #121212;
-    --grey: #f8f9fa;
-    --border: #e9ecef;
-    --text: #333;
+    /* Фирменный желтый Bybit */
+    --primary-hover: #e69f15;
+    --bg-dark: #0e1116;
+    /* Глубокий темный фон */
+    --bg-card: #1e2329;
+    /* Цвет карточек и плашек */
+    --text-main: #ffffff;
+    /* Основной белый текст */
+    --text-muted: #848e9c;
+    /* Серый текст для описаний */
+    --border: #2b3139;
+    /* Цвет границ */
+    --container-w: 1000px;
 }
 
 * {
     box-sizing: border-box;
 }
 
+/* Общие стили */
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
-    color: var(--text);
-    background: #fff;
+    color: var(--text-main);
+    background-color: var(--bg-dark);
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: var(--container-w);
     margin: 0 auto;
     padding: 0 20px;
 }
 
 /* Header */
 .header {
-    background: #fff;
-    padding: 15px 0;
+    background: var(--bg-dark);
+    padding: 16px 0;
     position: sticky;
     top: 0;
     z-index: 100;
-}
-
-.shadow {
     border-bottom: 1px solid var(--border);
 }
 
@@ -47,17 +55,26 @@ body {
 .logo {
     font-weight: 800;
     text-decoration: none;
-    color: var(--dark);
+    color: var(--text-main);
     font-size: 22px;
     letter-spacing: -1px;
 }
 
+.logo:hover {
+    color: var(--primary);
+}
+
 .nav a {
     text-decoration: none;
-    color: var(--text);
-    margin-left: 20px;
+    color: var(--text-main);
+    margin-left: 24px;
     font-size: 15px;
     font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav a:hover {
+    color: var(--primary);
 }
 
 .nav-highlight {
@@ -65,155 +82,200 @@ body {
     font-weight: 700 !important;
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
-    padding: 80px 20px;
+    padding: 100px 20px;
     text-align: center;
 }
 
 h1 {
-    font-size: 42px;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    letter-spacing: -1px;
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -1.5px;
+    font-weight: 800;
 }
 
 .subtitle {
     font-size: 20px;
-    color: #666;
-    max-width: 700px;
-    margin: 0 auto 30px;
+    color: var(--text-muted);
+    max-width: 720px;
+    margin: 0 auto 40px;
 }
 
 /* Buttons */
 .cta-row {
     display: flex;
-    gap: 15px;
+    gap: 16px;
     justify-content: center;
 }
 
 .btn {
-    padding: 14px 28px;
+    padding: 16px 32px;
     border-radius: 8px;
     text-decoration: none;
-    font-weight: 600;
-    transition: 0.2s;
+    font-weight: 700;
+    transition: all 0.2s ease;
+    font-size: 16px;
 }
 
 .btn-primary {
-    background: var(--dark);
-    color: #fff;
+    background-color: var(--primary);
+    color: #000;
 }
 
 .btn-primary:hover {
-    background: #000;
+    background-color: var(--primary-hover);
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 177, 26, 0.3);
 }
 
 .btn-secondary {
-    background: var(--grey);
-    color: var(--dark);
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    border: 1px solid var(--border);
 }
 
-/* Grid Cards */
+.btn-secondary:hover {
+    background-color: var(--border);
+}
+
+/* Quick Access Cards (Grid) */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    padding-bottom: 60px;
+    gap: 24px;
+    padding-bottom: 80px;
 }
 
 .card {
+    background: var(--bg-card);
     border: 1px solid var(--border);
-    padding: 30px;
-    border-radius: 12px;
-    transition: 0.3s;
+    padding: 32px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .card:hover {
     border-color: var(--primary);
-    background: #fffcf5;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .card-icon {
     font-size: 32px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    display: block;
 }
 
 .card h3 {
-    margin: 0 0 10px;
-    font-size: 20px;
+    margin: 0 0 12px;
+    font-size: 22px;
+    color: var(--text-main);
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 15px;
+    margin-bottom: 20px;
 }
 
 .card-link {
-    color: var(--dark);
+    color: var(--primary);
     font-weight: 700;
     text-decoration: none;
     font-size: 14px;
-    display: block;
-    margin-top: 15px;
 }
 
-/* Steps */
+/* Steps Section */
 .steps {
-    padding: 60px 20px;
+    padding: 80px 20px;
     border-top: 1px solid var(--border);
 }
 
 .steps h2 {
     text-align: center;
-    margin-bottom: 40px;
+    font-size: 32px;
+    margin-bottom: 48px;
 }
 
 .steps-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    gap: 40px;
 }
 
 .step-num {
     display: block;
-    font-size: 40px;
-    font-weight: 800;
+    font-size: 48px;
+    font-weight: 900;
     color: var(--primary);
-    opacity: 0.3;
-    margin-bottom: 10px;
+    opacity: 0.2;
+    margin-bottom: 8px;
 }
 
 .step h4 {
-    margin: 0 0 10px;
-    font-size: 18px;
+    margin: 0 0 12px;
+    font-size: 20px;
+    color: var(--text-main);
+}
+
+.step p {
+    color: var(--text-muted);
+    font-size: 14px;
 }
 
 /* Footer */
 .footer {
-    background: var(--grey);
-    padding: 40px 0;
-    margin-top: 60px;
-    font-size: 14px;
-    color: #888;
+    background: #090b0e;
+    padding: 60px 0 40px;
+    margin-top: 80px;
+    border-top: 1px solid var(--border);
+}
+
+.note {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    max-width: 800px;
+    margin-bottom: 30px;
 }
 
 .copyright {
-    border-top: 1px solid #ddd;
-    margin-top: 20px;
-    padding-top: 20px;
-    font-weight: 600;
-    color: #555;
+    border-top: 1px solid var(--border);
+    padding-top: 30px;
+    font-size: 14px;
+    color: var(--text-muted);
+    text-align: center;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
+/* Mobile Optimizations */
+@media (max-width: 768px) {
     h1 {
-        font-size: 30px;
+        font-size: 34px;
+    }
+
+    .hero {
+        padding: 60px 20px;
     }
 
     .nav {
         display: none;
+        /* Скрыто до внедрения мобильного меню */
     }
 
-    /* Для мобилок потом сделаем бургер */
     .cta-row {
         flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
     }
 }
