@@ -106,7 +106,7 @@ h1 {
 /* Buttons */
 .cta-row {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     justify-content: center;
     margin-top: 40px;
     margin-bottom: 20px;
@@ -289,9 +289,7 @@ h1 {
     border-radius: 12px;
     display: inline-flex;
     align-items: center;
-    gap: 15px;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    gap: 20px;
 }
 
 .promo-box code {
@@ -330,10 +328,38 @@ h1 {
     cursor: pointer;
 }
 
+/* Обновленный summary со стрелкой в конце */
 .faq-grid summary {
     font-weight: 700;
     font-size: 18px;
     outline: none;
+    list-style: none;
+    /* Скрываем стандартную стрелку */
+    display: flex;
+    /* Включаем флекс */
+    justify-content: space-between;
+    /* Текст влево, стрелка вправо */
+    align-items: center;
+    /* Центрируем по вертикали */
+}
+
+/* Скрываем стандартную стрелку в Safari */
+.faq-grid summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Рисуем свою стрелку через псевдоэлемент */
+.faq-grid summary::after {
+    content: '→';
+    color: var(--primary);
+    font-size: 20px;
+    transition: transform 0.3s ease;
+    /* Анимация поворота */
+}
+
+/* Поворот стрелки при открытии */
+.faq-grid details[open] summary::after {
+    transform: rotate(90deg);
 }
 
 .faq-grid p {
