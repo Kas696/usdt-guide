@@ -279,3 +279,64 @@ h1 {
         grid-template-columns: 1fr;
     }
 }
+
+/* Промокод */
+.promo-box {
+    background: rgba(255, 177, 26, 0.1);
+    border: 1px dashed var(--primary);
+    padding: 12px 20px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.promo-box code {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: 1px;
+}
+
+.copy-btn {
+    background: var(--primary);
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+/* FAQ */
+.faq {
+    padding: 80px 20px;
+}
+
+.faq h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.faq-grid details {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.faq-grid summary {
+    font-weight: 700;
+    font-size: 18px;
+    outline: none;
+}
+
+.faq-grid p {
+    margin-top: 15px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding-top: 15px;
+}
