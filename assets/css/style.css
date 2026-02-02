@@ -194,7 +194,6 @@ h1 {
 /* Steps Section */
 .steps {
     padding: 80px 20px;
-    border-top: 1px solid var(--border);
 }
 
 .steps h2 {
@@ -367,4 +366,153 @@ h1 {
     color: var(--text-muted);
     border-top: 1px solid var(--border);
     padding-top: 15px;
+}
+
+/* Стили таблицы сравнения */
+.comparison {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.comparison h2 {
+    margin-bottom: 40px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+/* Для мобилок */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background: #1a1f26;
+    color: var(--text-muted);
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.highlight {
+    background: rgba(255, 177, 26, 0.05);
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Стили блока доверия */
+.trust {
+    padding-bottom: 80px;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.trust-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.trust-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.trust-item h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.trust-item p {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+/* Статус-бар */
+.status-bar {
+    background: #161b22;
+    padding: 8px 0;
+    font-size: 13px;
+    border-bottom: 1px solid var(--border);
+}
+
+.status-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #00ff88;
+    /* Зеленый цвет «всё ок» */
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: #00ff88;
+    border-radius: 50%;
+    box-shadow: 0 0 0 rgba(0, 255, 136, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 255, 136, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 136, 0);
+    }
+}
+
+/* Финальный CTA */
+.final-cta {
+    padding: 40px 20px 80px;
+}
+
+.cta-card {
+    background: linear-gradient(135deg, #1e2329 0%, #0e1116 100%);
+    border: 1px solid var(--primary);
+    padding: 60px 40px;
+    border-radius: 24px;
+    text-align: center;
+}
+
+.cta-card h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.cta-card p {
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+.btn-large {
+    padding: 20px 48px;
+    font-size: 18px;
 }
