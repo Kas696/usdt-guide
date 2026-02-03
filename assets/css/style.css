@@ -643,6 +643,21 @@ th {
         padding-bottom: 40px;
     }
 
+    .card {
+        padding: 24px;
+    }
+
+    .card-icon-container {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+    }
+
+    .card-icon-container::after {
+        width: 35px;
+        height: 10px;
+    }
+
     .steps,
     .comparison,
     .faq,
