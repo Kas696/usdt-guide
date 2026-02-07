@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Криптоарбитраж — виды, риски и когда он реально работает | BIT-MAIN</title>
+    <meta name="description"
+        content="Криптоарбитраж: межбиржевой, P2P→спот, треугольный. Когда арбитраж имеет смысл, кому не подходит и где чаще всего теряют деньги." />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="icon" href="./assets/img/bit-main_fav.ico" type="image/png" />
+
+    <!-- OG для хаба -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Криптоарбитраж — как работает и где ломается" />
+    <meta property="og:description"
+        content="Разбор криптоарбитража без обещаний прибыли: виды, ограничения, фильтр входа и реальные риски." />
+    <meta property="og:url" content="https://bit-main.ru/arbitrage.html" />
+    <meta property="og:image" content="https://bit-main.ru/assets/img/og-cover.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#ffb11a" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-flex">
+            <a class="logo" href="./index.html">
+                <img src="./assets/img/bitmain_logo.png" alt="BIT-MAIN">
+                <span class="logo-text_1">BIT</span><span class="logo-text_2">-MAIN</span>
+            </a>
+
+            <input type="checkbox" id="menu-toggle" hidden />
+            <label class="burger" for="menu-toggle">
+                <span></span><span></span><span></span>
+            </label>
+
+            <nav class="nav">
+                <a href="./exchanges.html">Биржи</a>
+                <a href="./compare.html">Сравнения</a>
+                <a href="./p2p.html">P2P</a>
+                <a href="./arbitrage.html">Арбитраж</a>
+                <a href="./guides.html">Гайды</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-wrap">
+
+        <!-- BREADCRUMBS -->
+        <div class="breadcrumbs">
+            <a href="./index.html">Главная</a> → <span>Арбитраж</span>
+        </div>
+
+        <!-- HERO -->
+        <section class="hero">
+            <h1>Криптоарбитраж: где он работает, а где нет</h1>
+            <p class="subtitle">
+                Арбитраж — это не «бесплатные деньги», а игра на неэффективности рынков.
+                Здесь разбираем, <strong>когда он имеет смысл</strong>, какие бывают виды
+                и почему большинство попыток заканчиваются минусом.
+            </p>
+
+            <div class="hero-tags">
+                <span>Межбиржевой</span>
+                <span>P2P → Спот</span>
+                <span>Треугольный</span>
+                <span>Комиссии и риски</span>
+            </div>
+
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="#types">Виды арбитража</a>
+                <a class="btn btn-secondary" href="#filter">Подходит ли вам</a>
+            </div>
+
+            <div class="info-band">
+                <strong>Важно:</strong> арбитраж не масштабируется бесконечно.
+                Чем больше денег и людей в стратегии — тем быстрее она умирает.
+            </div>
+        </section>
+
+        <!-- FILTER -->
+        <section class="section compact" id="filter">
+            <div class="section-title">
+                <h2>Кому арбитраж НЕ подходит</h2>
+                <p>Если узнали себя — лучше не начинать. Это сэкономит деньги.</p>
+            </div>
+
+            <div class="two-col">
+                <div class="panel">
+                    <h3>Плохая идея, если</h3>
+                    <ul>
+                        <li>Капитал меньше 1–2 тыс. USDT.</li>
+                        <li>Нет времени следить за сделками.</li>
+                        <li>Вы не считаете комиссии заранее.</li>
+                        <li>Ожидаете «стабильный доход».</li>
+                    </ul>
+                </div>
+
+                <div class="panel">
+                    <h3>Имеет смысл, если</h3>
+                    <ul>
+                        <li>Есть доступ к нескольким биржам.</li>
+                        <li>Понимаете механику P2P и спота.</li>
+                        <li>Готовы к убыточным итерациям.</li>
+                        <li>Работаете с цифрами, а не надеждой.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- TYPES -->
+        <section class="section" id="types">
+            <div class="section-title">
+                <h2>Основные виды арбитража</h2>
+                <p>Разница не в названии, а в источнике неэффективности.</p>
+            </div>
+
+            <div class="scenario-list">
+                <article class="scenario-item">
+                    <div class="scenario-icon">↔</div>
+                    <div class="scenario-content">
+                        <h3>Межбиржевой</h3>
+                        <p>Разница цен одного актива на разных биржах.</p>
+                        <p class="muted">Зависит от скорости вывода и комиссий.</p>
+                    </div>
+                </article>
+
+                <article class="scenario-item">
+                    <div class="scenario-icon">₽</div>
+                    <div class="scenario-content">
+                        <h3>P2P → Спот</h3>
+                        <p>Покупка через P2P и продажа на споте.</p>
+                        <p class="muted">Часто «съедается» курсом и фиатными рисками.</p>
+                    </div>
+                </article>
+
+                <article class="scenario-item">
+                    <div class="scenario-icon">△</div>
+                    <div class="scenario-content">
+                        <h3>Треугольный</h3>
+                        <p>Перекос цен внутри одной биржи.</p>
+                        <p class="muted">Редко живёт без ботов и скорости.</p>
+                    </div>
+                </article>
+
+                <article class="scenario-item">
+                    <div class="scenario-icon">⚠</div>
+                    <div class="scenario-content">
+                        <h3>Псевдоарбитраж</h3>
+                        <p>Кажется прибыльным до учёта комиссий.</p>
+                        <p class="muted">Самая частая ловушка новичков.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- MATRIX -->
+        <section class="section compact">
+            <div class="section-title">
+                <h2>Как выбирать стратегию</h2>
+                <p>Не по доходности, а по ограничениям.</p>
+            </div>
+
+            <div class="p2p-compare">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Условие</th>
+                            <th>Подходит</th>
+                            <th>Почему</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Малый капитал</td>
+                            <td class="warn">Редко</td>
+                            <td>Комиссии съедают спред</td>
+                        </tr>
+                        <tr>
+                            <td>Фиат РФ</td>
+                            <td class="good">P2P → Спот</td>
+                            <td>Есть локальная ликвидность</td>
+                        </tr>
+                        <tr>
+                            <td>Чистая крипта</td>
+                            <td class="good">Межбиржевой</td>
+                            <td>Проще считать и быстрее</td>
+                        </tr>
+                        <tr>
+                            <td>Нет времени</td>
+                            <td class="warn">Не подходит</td>
+                            <td>Арбитраж — это контроль</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- NEXT -->
+        <section class="section compact">
+            <div class="section-title">
+                <h2>Что делать дальше</h2>
+                <p>Арбитраж — это инструмент, а не цель.</p>
+            </div>
+
+            <div class="mini-actions">
+                <a class="btn btn-primary" href="./compare.html">Сравнить биржи</a>
+                <a class="btn btn-secondary" href="./p2p.html">Посмотреть P2P</a>
+                <a class="btn btn-secondary" href="./guides.html">Гайды</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <img src="./assets/img/bitmain_logo.png" alt="BIT-MAIN" class="footer-logo">
+
+            <nav class="footer-nav">
+                <a href="./exchanges.html">Биржи</a>
+                <a href="./compare.html">Сравнения</a>
+                <a href="./p2p.html">P2P</a>
+                <a href="./arbitrage.html">Арбитраж</a>
+                <a href="./guides.html">Гайды</a>
+            </nav>
+
+            <div class="footer-bottom">
+                <div class="note">
+                    Информация не является финансовой рекомендацией.
+                    Криптовалюты связаны с повышенным риском.
+                </div>
+                <div class="copyright">
+                    © 2026 BIT-MAIN
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Аккаунт: базовая гигиена — чек-лист безопасности | BIT-MAIN</title>
+    <meta name="description"
+        content="Чек-лист базовой гигиены аккаунта на криптобиржах: 2FA, антифишинг, почта, устройства, доступы. Скучно — значит работает." />
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="icon" href="../assets/img/bit-main_fav.ico" type="image/png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Аккаунт: базовая гигиена" />
+    <meta property="og:description"
+        content="Минимальный набор мер, который реально снижает риск потери аккаунта и средств." />
+    <meta property="og:url" content="https://bit-main.ru/guides/account-security.html" />
+    <meta property="og:image" content="https://bit-main.ru/assets/img/og-cover.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#ffb11a" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-flex">
+            <a class="logo" href="../index.html">
+                <img src="../assets/img/bitmain_logo.png" alt="BIT-MAIN">
+                <span class="logo-text_1">BIT</span><span class="logo-text_2">-MAIN</span>
+            </a>
+
+            <input type="checkbox" id="menu-toggle" hidden />
+            <label class="burger" for="menu-toggle">
+                <span></span><span></span><span></span>
+            </label>
+
+            <nav class="nav">
+                <a href="../exchanges/index.html">Биржи</a>
+                <a href="../compare.html">Сравнения</a>
+                <a href="../p2p.html">P2P</a>
+                <a href="../arbitrage.html">Арбитраж</a>
+                <a href="./index.html">Гайды</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="p2p-page">
+
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="../index.html">Главная</a> → <a href="./index.html">Гайды</a> → <span>Безопасность
+                    аккаунта</span>
+            </div>
+        </div>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container">
+                <h1>Аккаунт: базовая гигиена</h1>
+                <p class="subtitle">
+                    Это не «паранойя» и не «для профи».
+                    Это минимальный набор, без которого в крипте долго не живут.
+                </p>
+
+                <div class="hero-tags">
+                    <span>2FA</span>
+                    <span>Антифишинг</span>
+                    <span>Почта</span>
+                    <span>Устройства</span>
+                </div>
+
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#base">База</a>
+                    <a class="btn btn-secondary" href="#access">Доступы</a>
+                    <a class="btn btn-secondary" href="#mistakes">Ошибки</a>
+                </div>
+
+                <div class="info-band">
+                    <strong>Коротко:</strong> если аккаунт угнали — спорить не с кем.
+                    Биржа почти всегда исходит из того, что доступ был у владельца.
+                </div>
+            </div>
+        </section>
+
+        <!-- BASE -->
+        <section class="section" id="base">
+            <div class="container content-wrap">
+                <div class="section-title">
+                    <h2>Обязательная база</h2>
+                    <p>Если здесь есть «нет» — это не чек-лист, а список проблем.</p>
+                </div>
+
+                <div class="scenario-list">
+                    <article class="scenario-item">
+                        <div class="scenario-icon">1</div>
+                        <div class="scenario-content">
+                            <h3>2FA включён</h3>
+                            <p>Не SMS. Приложение-аутентификатор + сохранённые резервные коды офлайн.</p>
+                        </div>
+                    </article>
+
+                    <article class="scenario-item">
+                        <div class="scenario-icon">2</div>
+                        <div class="scenario-content">
+                            <h3>Почта отдельная</h3>
+                            <p>Почта не используется нигде кроме крипты. Пароль уникальный, 2FA включён.</p>
+                        </div>
+                    </article>
+
+                    <article class="scenario-item">
+                        <div class="scenario-icon">3</div>
+                        <div class="scenario-content">
+                            <h3>Антифишинг-код</h3>
+                            <p>Любое письмо от биржи без кода — в мусор. Без обсуждений.</p>
+                        </div>
+                    </article>
+
+                    <article class="scenario-item">
+                        <div class="scenario-icon">4</div>
+                        <div class="scenario-content">
+                            <h3>Пароли не повторяются</h3>
+                            <p>Биржа ≠ почта ≠ другие сервисы. Менеджер паролей — не роскошь.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACCESS -->
+        <section class="section compact" id="access">
+            <div class="container content-wrap">
+                <div class="section-title">
+                    <h2>Контроль доступов</h2>
+                    <p>Большинство взломов — это не «хак», а утекший доступ.</p>
+                </div>
+
+                <div class="two-col">
+                    <div class="panel">
+                        <h3>Что включить</h3>
+                        <ul>
+                            <li>Белые адреса для вывода</li>
+                            <li>Подтверждение вывода через 2FA</li>
+                            <li>Уведомления о входе</li>
+                            <li>Проверка истории логинов</li>
+                        </ul>
+                    </div>
+
+                    <div class="panel">
+                        <h3>Что ограничить</h3>
+                        <ul>
+                            <li>API без нужды</li>
+                            <li>Доступы с чужих устройств</li>
+                            <li>Браузерные расширения</li>
+                            <li>Общий доступ к ПК</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-band">
+                    <strong>Правило:</strong> если вы не понимаете, зачем вам API —
+                    значит он вам не нужен.
+                </div>
+            </div>
+        </section>
+
+        <!-- MISTAKES -->
+        <section class="section compact" id="mistakes">
+            <div class="container content-wrap">
+                <div class="section-title">
+                    <h2>Типовые ошибки</h2>
+                    <p>Их совершают даже опытные — один раз, а потом надолго.</p>
+                </div>
+
+                <div class="two-col">
+                    <div class="panel">
+                        <h3>Критичные</h3>
+                        <ul>
+                            <li>SMS вместо 2FA</li>
+                            <li>Почта без 2FA</li>
+                            <li>Переходы по ссылкам из писем</li>
+                            <li>Хранение кодов в заметках</li>
+                        </ul>
+                    </div>
+
+                    <div class="panel">
+                        <h3>Медленные, но опасные</h3>
+                        <ul>
+                            <li>Один пароль «на всё»</li>
+                            <li>Расширения «для удобства»</li>
+                            <li>Общий компьютер</li>
+                            <li>Отсутствие проверок логинов</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUICK -->
+        <section class="section compact">
+            <div class="container content-wrap">
+                <div class="section-title">
+                    <h2>Быстрый чек</h2>
+                    <p>Если ответ «да» на всё — вы в зелёной зоне.</p>
+                </div>
+
+                <div class="two-col">
+                    <div class="panel">
+                        <h3>Есть</h3>
+                        <ul>
+                            <li>2FA через приложение</li>
+                            <li>Резервные коды офлайн</li>
+                            <li>Антифишинг-код</li>
+                            <li>Белые адреса</li>
+                        </ul>
+                    </div>
+
+                    <div class="panel">
+                        <h3>Нет</h3>
+                        <ul>
+                            <li>SMS-2FA</li>
+                            <li>Общих паролей</li>
+                            <li>Лишних API</li>
+                            <li>Левых расширений</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mini-actions">
+                    <a class="btn btn-primary" href="./p2p-safety-checklist.html">P2P безопасность →</a>
+                    <a class="btn btn-secondary" href="./fees-checklist.html">Комиссии →</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <img src="../assets/img/bitmain_logo.png" alt="BIT-MAIN" class="footer-logo">
+
+            <div class="footer-nav">
+                <a href="../exchanges/index.html">Биржи</a>
+                <a href="../compare.html">Сравнения</a>
+                <a href="../p2p.html">P2P</a>
+                <a href="../arbitrage.html">Арбитраж</a>
+                <a href="./index.html">Гайды</a>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="note">
+                    Информация носит справочный характер и не является финансовой или юридической консультацией.
+                    Криптовалюты связаны с риском.
+                </div>
+                <div class="copyright">
+                    © 2026 BIT-MAIN
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

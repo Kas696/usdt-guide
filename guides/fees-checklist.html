@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Комиссии: что считать всегда — чек-лист | BIT-MAIN</title>
+    <meta name="description"
+        content="Чек-лист комиссий: что считать всегда в крипто-операциях и арбитраже — P2P курс, спред, торговые комиссии, вывод, сеть, время и скрытая цена маршрута." />
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="icon" href="../assets/img/bit-main_fav.ico" type="image/png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Комиссии: что считать всегда" />
+    <meta property="og:description"
+        content="Торговые комиссии, спред, вывод, сеть, время и «скрытая цена» через курс P2P — короткий чек-лист." />
+    <meta property="og:url" content="https://bit-main.ru/guides/fees-checklist.html" />
+    <meta property="og:image" content="https://bit-main.ru/assets/img/og-cover.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#ffb11a" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-flex">
+            <a class="logo" href="../index.html">
+                <img src="../assets/img/bitmain_logo.png" alt="BIT-MAIN">
+                <span class="logo-text_1">BIT</span><span class="logo-text_2">-MAIN</span>
+            </a>
+
+            <input type="checkbox" id="menu-toggle" hidden />
+            <label class="burger" for="menu-toggle">
+                <span></span><span></span><span></span>
+            </label>
+
+            <nav class="nav">
+                <a href="../exchanges/index.html">Биржи</a>
+                <a href="../compare.html">Сравнения</a>
+                <a href="../p2p.html">P2P</a>
+                <a href="../arbitrage.html">Арбитраж</a>
+                <a href="./index.html">Гайды</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="p2p-page">
+
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="../index.html">Главная</a> → <a href="./index.html">Гайды</a> → <span>Комиссии</span>
+            </div>
+        </div>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container">
+                <h1>Комиссии: что считать всегда</h1>
+                <p class="subtitle">
+                    Главная ошибка — смотреть только “комиссию биржи”.
+                    Реальная цена маршрута живёт в курсе P2P, спреде, выводе, комиссии сети и во времени.
+                    Этот чек-лист — чтобы не считать “на глаз”.
+                </p>
+
+                <div class="hero-tags">
+                    <span>P2P курс</span>
+                    <span>Спред</span>
+                    <span>Торговые комиссии</span>
+                    <span>Сеть/вывод</span>
+                </div>
+
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#always">Что считать</a>
+                    <a class="btn btn-secondary" href="#model">Модель расчёта</a>
+                    <a class="btn btn-secondary" href="#mistakes">Типовые ошибки</a>
+                </div>
+
+                <div class="info-band">
+                    <strong>Если коротко:</strong> комиссия — это не строка в интерфейсе.
+                    Комиссия — это разница между “сколько вложил” и “сколько получил на выходе”.
+                </div>
+            </div>
+        </section>
+
+        <!-- ALWAYS -->
+        <section class="section" id="always">
+            <div class="container content-wrap">
+                <div class="section-title">
+                    <h2>Что считать всегда</h2>
+                    <p>Даже если “сумма небольшая” и “я быстро”. Особенно тогда.</p>
+                </div>
+
+                <div class="scenario-list">
+                    <article class="scenario-item">
+                        <div class="scenario-icon">₽</div>
+                        <div class="scenario-content">
+                            <h3>1) Курс P2P = уже комиссия</h3>
+                            <p>В P2P вы почти всегда платите маржу через курс. Это и есть “цена удобства/скорости”.</p>
+                        </div>
+                    </article>
+
+                    <article class="scenario-item">
+                        <div class="scenario-icon">⇄</div>
+                        <div class="scenario-content">
+                            <h3>2) Спред на конвертации</h3>
+                            <p>Между ценой покупки и продажи есть разница. На “тонких” парах это может съесть больше,
+                                чем комиссия.</p>
+                        </div>
+                    </article>
+
+                    <article class="scenario-item">
+                        <div class="scenario-icon">%</div>
+                        <div class="scenario-content">
+                            <h3>3) Торговые комиссии (spot/convert)</h3>
+                            <p>Комиссия биржи на сделку. Маленькая, но на объёме или цепочке шагов становится заметной.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="scenario-item">
+                        <div class="scenario-icon">⛓</div>
+                        <div class="scenario-content">
+                            <h3>4) Комиссия сети</h3>
+                            <p>USDT в разных сетях — это разная стоимость перевода и разная скорость подтверждений.</p>
+                        </div>
+                    </article>
+
+                    <article class="scenario-item">
+                        <div class="scenario-icon">⇣</div>
+                        <div class="scenario-content">
+                            <h3>5) Комиссия вывода / “плата за вывод”</h3>
+                            <p>Иногда это фикс, иногда зависит от сети, иногда меняется. Это надо проверять каждый раз.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="scenario-item">
+                        <div class="scenario-icon">⏱</div>
+                        <div class="scenario-content">
+                            <h3>6) Время = деньги (реально)</h3>
+                            <p>Пока вы ждёте подтверждений/зачисления, курс может уехать, а “прибыль” исчезнуть.</p>
+                        </div>
+                    </article>
+
+                    <article class="scenario-item">
+                        <div class="scenario-icon">⚠</div>
+                        <div class="scenario-content">
+                            <h3>7) “Скрытая цена” маршрута</h3>
+                            <p>Чем больше шагов — тем больше мест, где вы платите: комиссия, спред, курс, задержка,
+                                риск.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="mini-actions">
+                    <a class="btn btn-primary" href="../arbitrage.html">Арбитраж →</a>
+                    <a class="btn btn-secondary" href="./p2p-to-spot-arbitrage.html">Арбитраж P2P → Спот →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODEL -->
+        <section class="section compact" id="model">
+            <div class="container content-wrap">
+                <div class="section-title">
+                    <h2>Модель расчёта “на пальцах”</h2>
+                    <p>Не формула ради формулы. Просто чтобы перестать гадать.</p>
+                </div>
+
+                <div class="p2p-compare">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Шаг</th>
+                                <th>Что записать</th>
+                                <th>Что сравнить</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Вход (фиат)</td>
+                                <td>Сколько фиата потратили</td>
+                                <td>Это ваша “себестоимость”</td>
+                            </tr>
+                            <tr>
+                                <td>P2P покупка</td>
+                                <td>Сколько USDT получили</td>
+                                <td>USDT на 1 ₽ (или ₽ на 1 USDT)</td>
+                            </tr>
+                            <tr>
+                                <td>Конвертация</td>
+                                <td>Курс сделки + комиссия + спред</td>
+                                <td>Сколько “съело” на обмене</td>
+                            </tr>
+                            <tr>
+                                <td>Вывод/перевод</td>
+                                <td>Комиссия вывода + комиссия сети</td>
+                                <td>Сколько дошло “на выход”</td>
+                            </tr>
+                            <tr>
+                                <td>Выход (фиат/актив)</td>
+                                <td>Итоговая сумма/актив</td>
+                                <td>Сравнить с входом</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="info-band">
+                    <strong>Правильный вопрос:</strong> сколько я получу <em>на выходе</em> за 1 рубль (или 1 USDT)
+                    <em>после всех шагов</em>.
+                    Если ответ “примерно” — это не расчёт, это вера.
+                </div>
+            </div>
+        </section>
+
+        <!-- MISTAKES -->
+        <section class="section compact" id="mistakes">
+            <div class="container content-wrap">
+                <div class="section-title">
+                    <h2>Типовые ошибки</h2>
+                    <p>Из-за них “плюс на бумаге” превращается в минус в реальности.</p>
+                </div>
+
+                <div class="two-col">
+                    <div class="panel">
+                        <h3>Ошибка мышления</h3>
+                        <ul>
+                            <li>Считать только торговую комиссию и игнорировать курс P2P.</li>
+                            <li>Не учитывать спред (“я же купил по цене на графике”).</li>
+                            <li>Не считать вывод/сеть (“да там копейки”).</li>
+                            <li>Делать 5 шагов вместо 2 (“так выгоднее”).</li>
+                        </ul>
+                    </div>
+
+                    <div class="panel">
+                        <h3>Ошибка исполнения</h3>
+                        <ul>
+                            <li>Выбирать неликвидную пару → большой спред.</li>
+                            <li>Не проверять комиссию вывода перед переводом.</li>
+                            <li>Игнорировать время подтверждений и загрузку сети.</li>
+                            <li>Считать прибыль “до”, а не “после” всех шагов.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mini-actions">
+                    <a class="btn btn-primary" href="./transfer-via-crypto.html">Перевод через крипту →</a>
+                    <a class="btn btn-secondary" href="./index.html#checklists">К чек-листам →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq" id="faq">
+            <h2>FAQ</h2>
+
+            <div class="faq-grid">
+                <details>
+                    <summary>Почему курс P2P — это комиссия?</summary>
+                    <div class="faq-content">
+                        Потому что продавец/покупатель закладывает свою маржу и риск. Биржа может брать мало, но курс
+                        уже “встроил” вашу переплату.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Спред правда может быть больше комиссии?</summary>
+                    <div class="faq-content">
+                        Да. На неликвидных парах спред может съесть больше, чем торговая комиссия. Поэтому “ликвидность”
+                        — это тоже про деньги.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Как быстро понять, выгоден маршрут или нет?</summary>
+                    <div class="faq-content">
+                        Сведите всё к одному числу: “сколько получу на выходе за единицу входа после всех шагов”.
+                        Если не можете — маршрут слишком сложный или данных не хватает.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>В арбитраже что важнее: комиссия или время?</summary>
+                    <div class="faq-content">
+                        Часто время. Пока вы переводите и ждёте подтверждения, цена может уйти и “прибыль” исчезнет.
+                        Поэтому время — это не философия, это параметр расчёта.
+                    </div>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <img src="../assets/img/bitmain_logo.png" alt="BIT-MAIN" class="footer-logo">
+
+            <div class="footer-nav">
+                <a href="../exchanges/index.html">Биржи</a>
+                <a href="../compare.html">Сравнения</a>
+                <a href="../p2p.html">P2P</a>
+                <a href="../arbitrage.html">Арбитраж</a>
+                <a href="./index.html">Гайды</a>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="note">
+                    Информация носит справочный характер и не является финансовой или юридической консультацией.
+                    Криптовалюты связаны с риском.
+                </div>
+                <div class="copyright">
+                    © 2026 BIT-MAIN
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
