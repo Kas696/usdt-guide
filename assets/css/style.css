@@ -6,7 +6,7 @@
     --bg-card: #1e2329;
     --bg-card-hover: #2b3139;
     --text-main: #ffffff;
-    --text-muted: #848e9c;
+    --text-muted: #c9d1d9;
     --border: #2b3139;
     --container-w: 1140px;
     --radius: 16px;
@@ -296,9 +296,8 @@ img {
 }
 
 .exch-logo {
-    width: 40px;
+    width: 100px;
     height: 40px;
-    border-radius: 50%;
 }
 
 .badge {
