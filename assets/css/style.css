@@ -300,6 +300,11 @@ img {
     height: 40px;
 }
 
+.exch-card-meta {
+    display: flex;
+    align-items: center;
+}
+
 .badge {
     display: inline-block;
     padding: 6px 10px;
@@ -1677,5 +1682,69 @@ img {
 
     .section-title h2 {
         font-size: 28px;
+    }
+}
+
+/* Top bar: brand + rating */
+.exch-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Wordmark container */
+.exch-wordmark {
+    height: 42px;
+    min-width: 140px;
+    /* чтобы не “усыхал” */
+    max-width: 190px;
+    /* чтобы длинные не раздували карточку */
+
+    display: flex;
+    align-items: center;
+}
+
+
+.exch-wordmark-img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Rating block (right) */
+.exch-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0 0 auto;
+}
+
+.exch-rating .stars {
+    color: var(--primary);
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.exch-rating .score {
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Mobile tweak */
+@media (max-width: 520px) {
+    .exch-wordmark {
+        min-width: 120px;
+        max-width: 160px;
+        height: 38px;
+        padding: 7px 10px;
+        border-radius: 12px;
     }
 }
