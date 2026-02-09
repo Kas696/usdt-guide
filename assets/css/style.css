@@ -1353,9 +1353,8 @@ img {
 }
 
 .compare-table.fixed-header .exch-logo {
-    width: 40px;
+    width: 140px;
     height: 40px;
-    border-radius: 50%;
 }
 
 .compare-table.fixed-header .highlight,
