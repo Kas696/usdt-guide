@@ -5,28 +5,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Гайды по криптобиржам — P2P, USDT, арбитраж, безопасность | BIT-MAIN</title>
+    <title>База знаний BIT-MAIN: Гайды по криптобиржам 2026</title>
     <meta name="description"
-        content="Практические гайды: купить/продать USDT через P2P, сценарии переводов, арбитраж, безопасность и типовые ошибки. Без «лучшей биржи» — только логика и шаги." />
+        content="Практические пошаговые инструкции: P2P обмен, безопасный вывод USDT, переводы за границу и защита аккаунта. Без воды и рекламы." />
 
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/guides.css" />
 
     <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon//favicon.svg" />
-    <link rel="shortcut icon" href="/assets/img/favicon//favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon//apple-touch-icon.png" />
-    <link rel="manifest" href="/assets/img/favicon//site.webmanifest" />
-
-
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Гайды BIT-MAIN — P2P, USDT, арбитраж, безопасность" />
-    <meta property="og:description"
-        content="Пошаговые сценарии и чек-листы: P2P обмен, ввод/вывод, переводы, арбитраж. Нейтрально и по делу." />
-    <meta property="og:url" content="https://bit-main.ru/guides/" />
-    <meta property="og:image" content="https://bit-main.ru/assets/img/og-cover.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#ffb11a" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
 </head>
 
 <body>
@@ -34,17 +24,17 @@
     <!-- HEADER -->
     <header class="header">
         <div class="container header-flex">
-            <a class="logo" href="/">
-                <img src="../assets/img/bitmain_logo.png" alt="BIT-MAIN">
+            <a class="logo" href="/" aria-label="BIT-MAIN">
+                <img src="/assets/img/bitmain_logo.png" alt="BM">
                 <span class="logo-text_1">BIT</span><span class="logo-text_2">-MAIN</span>
             </a>
 
             <input type="checkbox" id="menu-toggle" hidden />
-            <label class="burger" for="menu-toggle">
+            <label class="burger" for="menu-toggle" aria-label="Открыть меню">
                 <span></span><span></span><span></span>
             </label>
 
-            <nav class="nav" aria-label="Основная навигация">
+            <nav class="nav">
                 <a href="/exchanges/">Биржи</a>
                 <a href="/compare.html">Сравнение</a>
                 <a href="/p2p.html">P2P</a>
@@ -58,204 +48,206 @@
 
         <div class="container">
             <div class="breadcrumbs">
-                <a href="../index.html">Главная</a> → <span>Гайды</span>
+                <a href="/">Главная</a> → <span>Гайды</span>
             </div>
         </div>
 
         <!-- HERO -->
         <section class="hero">
             <div class="container">
-                <h1>Гайды: P2P, USDT, арбитраж и безопасность</h1>
+                <h1>Практические гайды: от первого USDT до арбитража</h1>
                 <p class="subtitle">
-                    Здесь — практические сценарии и чек-листы без «лучшая биржа» и без сказок про лёгкие деньги.
-                    Логика шагов, типовые ошибки и как не потерять время (и средства).
+                    Мы собираем инструкции по реальным сценариям 2026 года.
+                    Учим не просто «нажимать кнопки», а понимать логику биржевых инструментов и безопасности.
                 </p>
 
                 <div class="hero-tags">
-                    <span>P2P покупка/продажа</span>
-                    <span>Ввод/вывод и переводы</span>
-                    <span>Арбитражные сценарии</span>
-                    <span>Безопасность</span>
+                    <span>Сценарии обмена</span>
+                    <span>Защита средств</span>
+                    <span>Вывод в фиат</span>
+                    <span>Чек-листы</span>
                 </div>
 
                 <div class="hero-actions">
-                    <a class="btn btn-primary" href="#start">Начать с базового</a>
-                    <a class="btn btn-secondary" href="#checklists">Чек-листы</a>
-                    <a class="btn btn-secondary" href="#guides">Все гайды</a>
-                </div>
-
-                <div class="info-band">
-                    <strong>Важно:</strong> условия P2P, лимиты, комиссии и доступность методов оплаты могут меняться.
-                    Всегда сверяйте актуальные параметры внутри биржи перед сделкой.
+                    <a class="btn btn-primary" href="#guides">Каталог гайдов</a>
+                    <a class="btn btn-secondary" href="#checklists">Безопасность</a>
                 </div>
             </div>
         </section>
 
         <!-- START -->
         <section class="section compact" id="start">
-            <div class="container content-wrap">
+            <div class="container">
                 <div class="section-title">
-                    <h2>С чего начать</h2>
-                    <p>Если вы только входите — не прыгайте сразу в «сложные схемы». Сначала базовые сценарии.</p>
+                    <h2>С чего начать обучение</h2>
+                    <p>Криптовалюта требует системного подхода. Мы рекомендуем двигаться от простых операций к сложным.
+                    </p>
                 </div>
 
                 <div class="two-col">
                     <div class="panel">
-                        <h3>База</h3>
-                        <ul>
-                            <li>Понять механику эскроу и споров</li>
-                            <li>Купить USDT через P2P</li>
-                            <li>Продать USDT и вывести фиат</li>
-                            <li>Хранить доказательства оплаты</li>
+                        <h3>Этап 1: База и безопасность</h3>
+                        <ul class="check-list">
+                            <li>Настройка защиты аккаунта (2FA)</li>
+                            <li>Понимание механики P2P и Эскроу</li>
+                            <li>Первая покупка USDT на небольшую сумму</li>
                         </ul>
                     </div>
 
                     <div class="panel">
-                        <h3>Потом (когда база отработана)</h3>
-                        <ul>
-                            <li>Переводы через крипту</li>
-                            <li>Арбитраж P2P → Спот</li>
-                            <li>Оплата подписок через USDT</li>
-                            <li>Карта/платёжные инструменты</li>
+                        <h3>Этап 2: Сценарии и профит</h3>
+                        <ul class="check-list">
+                            <li>Межбиржевые и P2P переводы</li>
+                            <li>Арбитражные стратегии и спреды</li>
+                            <li>Работа с зарубежными платежными шлюзами</li>
                         </ul>
                     </div>
                 </div>
+
+                <!-- КОНТЕКСТНАЯ ПАРТНЕРКА: ИНСТРУМЕНТЫ -->
+                <div class="tools-banner">
+                    <div class="tools-info">
+                        <h3>Инструменты для работы</h3>
+                        <p>Для выполнения гайдов вам понадобятся аккаунты на проверенных площадках:</p>
+                    </div>
+                    <div class="tools-links">
+                        <a class="btn btn-primary" href="https://partner.bybit.com/b/BITMAIN" target="_blank"
+                            rel="nofollow">Bybit</a>
+                        <a class="btn btn-primary" href="https://okx.ac/join/83836972" target="_blank"
+                            rel="nofollow">OKX</a>
+                        <a class="btn btn-primary" href="https://promote.mexc.com/r/5mShIa9n" target="_blank"
+                            rel="nofollow">MEXC</a>
+                        <a class="btn btn-primary" href="https://www.coinex.com/register?rc=s2vyu&channel=Referral"
+                            target="_blank" rel="nofollow">CoinEx</a>
+                        <a class="btn btn-secondary" href="/compare.html">Сравнить условия</a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- GUIDES GRID -->
-        <section class="guides" id="guides">
+        <!-- GUIDES GRID (6 ШТ) -->
+        <section class="section" id="guides" style="background: rgba(255,255,255, 0.01); padding: 80px 0;">
             <div class="container">
-                <h2>Каталог гайдов</h2>
+                <div class="section-title">
+                    <h2>Каталог инструкций</h2>
+                    <p>Пошаговые разборы актуальных задач на 2026 год.</p>
+                </div>
 
                 <div class="guides-grid">
+                    <!-- 1. buy-usdt-p2p.html -->
                     <article class="guide-item">
+                        <span class="badge simple-badge" style="margin-bottom: 12px;">Для новичков</span>
                         <h4>Как купить USDT через P2P</h4>
-                        <p>Пошаговый сценарий: выбор ордера, проверка реквизитов, подтверждение, что делать при споре.
+                        <p>Полный цикл: от выбора мерчанта до подтверждения оплаты. Разбор нюансов работы с банками РФ.
                         </p>
-                        <a href="./buy-usdt-p2p.html">Открыть гайд →</a>
+                        <a href="/guides/buy-usdt-p2p.html" class="btn-link">Читать гайд →</a>
                     </article>
 
+                    <!-- 2. sell-usdt-p2p.html -->
                     <article class="guide-item">
-                        <h4>Как продать USDT через P2P и получить рубли</h4>
-                        <p>Как не попасть на «я оплатил», как фиксировать доказательства и когда включать апелляцию.</p>
-                        <a href="./sell-usdt-p2p.html">Открыть гайд →</a>
+                        <span class="badge simple-badge" style="margin-bottom: 12px;">Для новичков</span>
+                        <h4>Продажа USDT и вывод на карту</h4>
+                        <p>Как безопасно получить деньги, не попасть на фейковые чеки и что делать, если покупатель не
+                            подтверждает сделку.</p>
+                        <a href="/guides/sell-usdt-p2p.html" class="btn-link">Читать гайд →</a>
                     </article>
 
+                    <!-- 3. transfer-via-crypto.html -->
                     <article class="guide-item">
-                        <h4>Перевод средств через крипту</h4>
-                        <p>Маршруты вида RUB → USDT → вывод/обмен. Где теряются деньги: комиссии, курс, задержки.</p>
-                        <a href="./transfer-via-crypto.html">Открыть гайд →</a>
+                        <span class="badge best-badge"
+                            style="margin-bottom: 12px; background: rgba(0, 192, 135, 0.1);">Средний уровень</span>
+                        <h4>Перевод средств за границу</h4>
+                        <p>Использование связки RUB → USDT → Валюта. Сравнение комиссий сетей и риски банковского
+                            комплаенса.</p>
+                        <a href="/guides/transfer-via-crypto.html" class="btn-link">Читать гайд →</a>
                     </article>
 
+                    <!-- 4. p2p-to-spot-arbitrage.html -->
                     <article class="guide-item">
-                        <h4>Арбитраж P2P → Спот</h4>
-                        <p>Как мыслить: что считать, какие комиссии учитывать и почему «на глаз» почти всегда минус.</p>
-                        <a href="./p2p-to-spot-arbitrage.html">Открыть гайд →</a>
+                        <span class="badge best-badge"
+                            style="margin-bottom: 12px; background: rgba(0, 192, 135, 0.1);">Продвинутый</span>
+                        <h4>Арбитраж: P2P → Спот</h4>
+                        <p>Математика круга. Как искать разницу курсов внутри одной биржи и почему важен объем
+                            ликвидности в стакане.</p>
+                        <a href="/guides/p2p-to-spot-arbitrage.html" class="btn-link">Читать гайд →</a>
                     </article>
 
+                    <!-- 5. pay-subscriptions.html -->
                     <article class="guide-item">
+                        <span class="badge simple-badge" style="margin-bottom: 12px;">Лайфхак</span>
                         <h4>Оплата подписок через USDT</h4>
-                        <p>Без «волшебных сервисов». Типовая логика: покупка USDT → оплата доступным инструментом.</p>
-                        <a href="./pay-subscriptions.html">Открыть гайд →</a>
+                        <p>Инструкция по пополнению зарубежных сервисов через крипто-баланс и виртуальные карты.</p>
+                        <a href="/guides/pay-subscriptions.html" class="btn-link">Читать гайд →</a>
                     </article>
 
+                    <!-- 6. kyc-basics.html -->
                     <article class="guide-item">
-                        <h4>KYC: когда нужен и что меняется</h4>
-                        <p>Что реально влияет: лимиты, вывод, доступ к функциям. Нейтрально, без «страшилок».</p>
-                        <a href="./kyc-basics.html">Открыть гайд →</a>
+                        <span class="badge simple-badge" style="margin-bottom: 12px;">Важно</span>
+                        <h4>Всё про KYC (Верификацию)</h4>
+                        <p>Зачем биржам ваши документы в 2026 году, на что влияют уровни KYC и можно ли торговать
+                            анонимно.</p>
+                        <a href="/guides/kyc-basics.html" class="btn-link">Читать гайд →</a>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- CHECKLISTS -->
+        <!-- CHECKLISTS (4 ШТ) -->
         <section class="section" id="checklists">
             <div class="container">
                 <div class="section-title">
-                    <h2>Чек-листы</h2>
-                    <p>Короткие правила, которые экономят нервы. Их надо не читать — их надо соблюдать.</p>
+                    <h2>Чек-листы по безопасности</h2>
+                    <p>Короткие списки правил, которые должны быть под рукой при каждой крупной сделке.</p>
                 </div>
 
                 <div class="scenario-list">
+                    <!-- 1. p2p-safety-checklist.html -->
                     <article class="scenario-item">
                         <div class="scenario-icon">🛡</div>
                         <div class="scenario-content">
-                            <h3>P2P безопасность: 10 правил</h3>
-                            <p>Не уходить в мессенджеры, не менять реквизиты, не отменять после оплаты и хранить
-                                доказательства.</p>
+                            <h3>Безопасность сделки: 10 правил</h3>
+                            <p>Защита от "треугольника", проверка ФИО и почему нельзя отменять ордер после оплаты.</p>
                             <div class="scenario-links">
-                                <a href="./p2p-safety-checklist.html">Открыть →</a>
-                                <a href="../p2p.html">Разбор P2P →</a>
+                                <a href="/guides/p2p-safety-checklist.html">Открыть чек-лист</a>
                             </div>
                         </div>
                     </article>
 
+                    <!-- 2. fees-checklist.html -->
                     <article class="scenario-item">
                         <div class="scenario-icon">💸</div>
                         <div class="scenario-content">
-                            <h3>Комиссии: что считать всегда</h3>
-                            <p>Торговые комиссии, спред, вывод, сеть, время и «скрытая цена» через курс P2P.</p>
+                            <h3>Расчет комиссий: на что смотреть</h3>
+                            <p>Учимся считать "чистый спред". Скрытые потери на выводе и конвертации внутри сетей.</p>
                             <div class="scenario-links">
-                                <a href="./fees-checklist.html">Открыть →</a>
-                                <a href="../arbitrage.html">Арбитраж →</a>
+                                <a href="/guides/fees-checklist.html">Открыть чек-лист</a>
                             </div>
                         </div>
                     </article>
 
+                    <!-- 3. p2p-dispute-checklist.html -->
                     <article class="scenario-item">
                         <div class="scenario-icon">🧾</div>
                         <div class="scenario-content">
-                            <h3>Спор в P2P: что приложить</h3>
-                            <p>Какие доказательства реально помогают и как не проиграть спор из-за глупой мелочи.</p>
+                            <h3>Апелляция: база доказательств</h3>
+                            <p>Что делать, если возник спор. Как подготовить скриншоты и чеки для поддержки.</p>
                             <div class="scenario-links">
-                                <a href="./p2p-dispute-checklist.html">Открыть →</a>
-                                <a href="../p2p.html#risks">Риски P2P →</a>
+                                <a href="/guides/p2p-dispute-checklist.html">Инструкция по спорам</a>
                             </div>
                         </div>
                     </article>
 
+                    <!-- 4. account-security.html -->
                     <article class="scenario-item">
                         <div class="scenario-icon">🔐</div>
                         <div class="scenario-content">
-                            <h3>Аккаунт: базовая гигиена</h3>
-                            <p>2FA, антифишинг, белые адреса, безопасность почты. Скучно — значит работает.</p>
+                            <h3>Гигиена крипто-аккаунта</h3>
+                            <p>2FA, белые списки адресов (Whitelisting) и защита основной почты от взлома.</p>
                             <div class="scenario-links">
-                                <a href="./account-security.html">Открыть →</a>
+                                <a href="/guides/account-security.html">Открыть гайд</a>
                             </div>
                         </div>
                     </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEO / HOW TO USE -->
-        <section class="catalog-page">
-            <div class="container selection-guide">
-                <h2>Как пользоваться гайдами BIT-MAIN</h2>
-
-                <div class="guide-steps-row">
-                    <div class="guide-step">
-                        <span class="step-icon">1</span>
-                        <h4>Выберите сценарий</h4>
-                        <p>Покупка/продажа USDT, перевод, арбитраж или оплата подписок — это разные маршруты.</p>
-                    </div>
-
-                    <div class="guide-step">
-                        <span class="step-icon">2</span>
-                        <h4>Сверьте ограничения</h4>
-                        <p>Лимиты, методы оплаты, комиссии и требования KYC меняются. Проверка — часть процесса.</p>
-                    </div>
-
-                    <div class="guide-step">
-                        <span class="step-icon">3</span>
-                        <h4>Действуйте по чек-листу</h4>
-                        <p>Большинство проблем в P2P — это дисциплина, а не «не повезло».</p>
-                    </div>
-                </div>
-
-                <div class="center-link">
-                    <a class="text-link" href="../compare.html">Сначала сравнить биржи →</a>
                 </div>
             </div>
         </section>
@@ -265,8 +257,7 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer-content">
-            <img src="../assets/img/bitmain_logo.png" alt="BIT-MAIN" class="footer-logo">
-
+            <img class="footer-logo" src="/assets/img/bitmain_logo.png" alt="BIT-MAIN" />
             <div class="footer-nav">
                 <a href="/exchanges/">Биржи</a>
                 <a href="/compare.html">Сравнение</a>
@@ -276,12 +267,13 @@
             </div>
 
             <div class="footer-bottom">
-                <div class="note">
-                    Информация носит справочный характер и не является финансовой или юридической консультацией.
-                    Криптовалюты связаны с риском.
-                </div>
+                <p class="note">
+                    <strong>Важно:</strong> Все инструкции носят ознакомительный характер. Редакция BIT-MAIN не несет
+                    ответственности за ваши финансовые решения.
+                    Криптовалюты — это высокорисковый актив.
+                </p>
                 <div class="copyright">
-                    © 2026 BIT-MAIN
+                    © 2026 BIT-MAIN. Все материалы проверены экспертами.
                 </div>
             </div>
         </div>

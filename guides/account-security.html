@@ -5,28 +5,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Аккаунт: базовая гигиена — чек-лист безопасности | BIT-MAIN</title>
+    <title>Безопасность аккаунта 2026: полная защита криптокошелька | BIT-MAIN</title>
     <meta name="description"
-        content="Чек-лист базовой гигиены аккаунта на криптобиржах: 2FA, антифишинг, почта, устройства, доступы. Скучно — значит работает." />
+        content="Практический чек-лист по защите аккаунта: 2FA без SMS, антифишинг, белые адреса и Passkeys. Узнайте, как не оставить хакерам ни одного шанса." />
 
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/review.css">
+    <!-- Оставил твое название с опечаткой, чтобы не ломать пути -->
 
     <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon//favicon.svg" />
-    <link rel="shortcut icon" href="/assets/img/favicon//favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon//apple-touch-icon.png" />
-    <link rel="manifest" href="/assets/img/favicon//site.webmanifest" />
-
-
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Аккаунт: базовая гигиена" />
-    <meta property="og:description"
-        content="Минимальный набор мер, который реально снижает риск потери аккаунта и средств." />
-    <meta property="og:url" content="https://bit-main.ru/guides/account-security.html" />
-    <meta property="og:image" content="https://bit-main.ru/assets/img/og-cover.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#ffb11a" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
 </head>
 
 <body>
@@ -35,7 +23,7 @@
     <header class="header">
         <div class="container header-flex">
             <a class="logo" href="/">
-                <img src="../assets/img/bitmain_logo.png" alt="BIT-MAIN">
+                <img src="/assets/img/bitmain_logo.png" alt="BIT-MAIN">
                 <span class="logo-text_1">BIT</span><span class="logo-text_2">-MAIN</span>
             </a>
 
@@ -44,7 +32,7 @@
                 <span></span><span></span><span></span>
             </label>
 
-            <nav class="nav" aria-label="Основная навигация">
+            <nav class="nav">
                 <a href="/exchanges/">Биржи</a>
                 <a href="/compare.html">Сравнение</a>
                 <a href="/p2p.html">P2P</a>
@@ -54,201 +42,109 @@
         </div>
     </header>
 
-    <main class="p2p-page">
+    <main class="container">
 
-        <div class="container">
-            <div class="breadcrumbs">
-                <a href="../index.html">Главная</a> → <a href="./index.html">Гайды</a> → <span>Безопасность
-                    аккаунта</span>
-            </div>
+        <div class="breadcrumbs" style="margin-top: 30px;">
+            <a href="/">Главная</a> → <a href="/guides/">Гайды</a> → <span>Безопасность</span>
         </div>
 
-        <!-- HERO -->
-        <section class="hero">
-            <div class="container">
-                <h1>Аккаунт: базовая гигиена</h1>
-                <p class="subtitle">
-                    Это не «паранойя» и не «для профи».
-                    Это минимальный набор, без которого в крипте долго не живут.
-                </p>
+        <div class="review-layout">
 
-                <div class="hero-tags">
-                    <span>2FA</span>
-                    <span>Антифишинг</span>
-                    <span>Почта</span>
-                    <span>Устройства</span>
+            <!-- ОСНОВНОЙ КОНТЕНТ -->
+            <div class="review-content">
+
+                <section class="content-section">
+                    <span class="security-status">Актуально: Февраль 2026</span>
+                    <h1>Гигиена аккаунта: как не подарить свои деньги хакерам</h1>
+                    <p class="lead-text">
+                        В 2026 году взломы стали технологичнее, но 90% потерь всё ещё случаются из-за человеческой
+                        невнимательности. Этот чек-лист — ваш санитарный минимум перед тем, как завести на биржу
+                        серьезный капитал.
+                    </p>
+
+                    <h2>1. Прощайте, СМС-пароли</h2>
+                    <p>СМС-аутентификация (SMS 2FA) в 2026 году — это дыра в безопасности. Угон SIM-карты через
+                        поддержку оператора делается за 15 минут. </p>
+                    <div class="info-box" style="margin-bottom: 20px;">
+                        <strong>Решение:</strong> Используйте Google Authenticator или аппаратные ключи (Yubikey). Для
+                        топовых аккаунтов переходите на <strong>Passkeys</strong> — биометрический вход, который
+                        невозможно украсть фишингом.
+                    </div>
+                </section>
+
+                <section class="content-section" id="base">
+                    <h2>2. Белые списки адресов (Whitelisting)</h2>
+                    <p>Это самая недооцененная функция. Вы заранее вносите в список адреса своих кошельков, на которые
+                        можно выводить средства. </p>
+                    <ul class="check-list">
+                        <li>Если хакер получит доступ к аккаунту, он не сможет сразу вывести деньги на свой адрес.</li>
+                        <li>Добавление нового адреса в «белый список» обычно требует 24-48 часов ожидания.</li>
+                        <li>Этого времени вам хватит, чтобы заметить письмо о взломе и заморозить аккаунт.</li>
+                    </ul>
+                </section>
+
+                <section class="content-section" id="mistakes">
+                    <h2>3. Антифишинг-код: метка для писем</h2>
+                    <p>Установите в настройках биржи уникальный «Антифишинг-код» (например, слово <em>BITMAIN2026</em>).
+                        Теперь это слово будет во всех настоящих письмах от биржи.</p>
+                    <p>Пришло письмо о «блокировке аккаунта» без вашего кода? Это фишинг. Удаляйте не открывая.</p>
+                </section>
+
+                <div class="tools-banner" style="margin: 40px 0;">
+                    <div class="tools-info">
+                        <h3>Чувствуете себя в безопасности?</h3>
+                        <p>Начните с бирж, которые занимают топ-места в рейтинге безопасности CER.live и имеют страховые
+                            фонды (SAFU).</p>
+                    </div>
+                    <div class="tools-links">
+                        <a class="btn btn-primary" href="https://partner.bybit.com/b/BITMAIN">Bybit</a>
+                        <a class="btn btn-primary" href="https://okx.ac/join/83836972">OKX</a>
+                    </div>
                 </div>
 
-                <div class="hero-actions">
-                    <a class="btn btn-primary" href="#base">База</a>
-                    <a class="btn btn-secondary" href="#access">Доступы</a>
-                    <a class="btn btn-secondary" href="#mistakes">Ошибки</a>
-                </div>
-
-                <div class="info-band">
-                    <strong>Коротко:</strong> если аккаунт угнали — спорить не с кем.
-                    Биржа почти всегда исходит из того, что доступ был у владельца.
+                <div class="author-meta">
+                    <span>Автор: Команда BIT-MAIN</span>
+                    <span>Обновлено: 12.02.2026</span>
                 </div>
             </div>
-        </section>
 
-        <!-- BASE -->
-        <section class="section" id="base">
-            <div class="container content-wrap">
-                <div class="section-title">
-                    <h2>Обязательная база</h2>
-                    <p>Если здесь есть «нет» — это не чек-лист, а список проблем.</p>
-                </div>
-
-                <div class="scenario-list">
-                    <article class="scenario-item">
-                        <div class="scenario-icon">1</div>
-                        <div class="scenario-content">
-                            <h3>2FA включён</h3>
-                            <p>Не SMS. Приложение-аутентификатор + сохранённые резервные коды офлайн.</p>
+            <!-- SIDEBAR -->
+            <aside class="review-sidebar">
+                <div class="sticky-card">
+                    <span class="sidebar-title">Краткий чек-лист</span>
+                    <div class="sidebar-stats">
+                        <div class="stat-row">
+                            <span>2FA Приложение</span>
+                            <span class="green-text">ВКЛ</span>
                         </div>
-                    </article>
-
-                    <article class="scenario-item">
-                        <div class="scenario-icon">2</div>
-                        <div class="scenario-content">
-                            <h3>Почта отдельная</h3>
-                            <p>Почта не используется нигде кроме крипты. Пароль уникальный, 2FA включён.</p>
+                        <div class="stat-row">
+                            <span>Passkeys</span>
+                            <span class="green-text">РЕКОМЕНДОВАНО</span>
                         </div>
-                    </article>
-
-                    <article class="scenario-item">
-                        <div class="scenario-icon">3</div>
-                        <div class="scenario-content">
-                            <h3>Антифишинг-код</h3>
-                            <p>Любое письмо от биржи без кода — в мусор. Без обсуждений.</p>
+                        <div class="stat-row">
+                            <span>Белый список</span>
+                            <span class="green-text">ВКЛ</span>
                         </div>
-                    </article>
-
-                    <article class="scenario-item">
-                        <div class="scenario-icon">4</div>
-                        <div class="scenario-content">
-                            <h3>Пароли не повторяются</h3>
-                            <p>Биржа ≠ почта ≠ другие сервисы. Менеджер паролей — не роскошь.</p>
+                        <div class="stat-row">
+                            <span>Антифишинг</span>
+                            <span class="green-text">ВКЛ</span>
                         </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ACCESS -->
-        <section class="section compact" id="access">
-            <div class="container content-wrap">
-                <div class="section-title">
-                    <h2>Контроль доступов</h2>
-                    <p>Большинство взломов — это не «хак», а утекший доступ.</p>
-                </div>
-
-                <div class="two-col">
-                    <div class="panel">
-                        <h3>Что включить</h3>
-                        <ul>
-                            <li>Белые адреса для вывода</li>
-                            <li>Подтверждение вывода через 2FA</li>
-                            <li>Уведомления о входе</li>
-                            <li>Проверка истории логинов</li>
-                        </ul>
                     </div>
-
-                    <div class="panel">
-                        <h3>Что ограничить</h3>
-                        <ul>
-                            <li>API без нужды</li>
-                            <li>Доступы с чужих устройств</li>
-                            <li>Браузерные расширения</li>
-                            <li>Общий доступ к ПК</li>
-                        </ul>
+                    <p class="sidebar-desc">Настройка этих 4 пунктов снижает риск взлома на 99.9%.</p>
+                    <a href="/guides/p2p-safety-checklist.html" class="btn btn-primary btn-full">Чек-лист по P2P</a>
+                    <div class="disclaimer-mini">
+                        Безопасность — это процесс, а не результат. Проверяйте настройки раз в месяц.
                     </div>
                 </div>
+            </aside>
 
-                <div class="info-band">
-                    <strong>Правило:</strong> если вы не понимаете, зачем вам API —
-                    значит он вам не нужен.
-                </div>
-            </div>
-        </section>
-
-        <!-- MISTAKES -->
-        <section class="section compact" id="mistakes">
-            <div class="container content-wrap">
-                <div class="section-title">
-                    <h2>Типовые ошибки</h2>
-                    <p>Их совершают даже опытные — один раз, а потом надолго.</p>
-                </div>
-
-                <div class="two-col">
-                    <div class="panel">
-                        <h3>Критичные</h3>
-                        <ul>
-                            <li>SMS вместо 2FA</li>
-                            <li>Почта без 2FA</li>
-                            <li>Переходы по ссылкам из писем</li>
-                            <li>Хранение кодов в заметках</li>
-                        </ul>
-                    </div>
-
-                    <div class="panel">
-                        <h3>Медленные, но опасные</h3>
-                        <ul>
-                            <li>Один пароль «на всё»</li>
-                            <li>Расширения «для удобства»</li>
-                            <li>Общий компьютер</li>
-                            <li>Отсутствие проверок логинов</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- QUICK -->
-        <section class="section compact">
-            <div class="container content-wrap">
-                <div class="section-title">
-                    <h2>Быстрый чек</h2>
-                    <p>Если ответ «да» на всё — вы в зелёной зоне.</p>
-                </div>
-
-                <div class="two-col">
-                    <div class="panel">
-                        <h3>Есть</h3>
-                        <ul>
-                            <li>2FA через приложение</li>
-                            <li>Резервные коды офлайн</li>
-                            <li>Антифишинг-код</li>
-                            <li>Белые адреса</li>
-                        </ul>
-                    </div>
-
-                    <div class="panel">
-                        <h3>Нет</h3>
-                        <ul>
-                            <li>SMS-2FA</li>
-                            <li>Общих паролей</li>
-                            <li>Лишних API</li>
-                            <li>Левых расширений</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="mini-actions">
-                    <a class="btn btn-primary" href="./p2p-safety-checklist.html">P2P безопасность →</a>
-                    <a class="btn btn-secondary" href="./fees-checklist.html">Комиссии →</a>
-                </div>
-            </div>
-        </section>
-
+        </div>
     </main>
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer-content">
-            <img src="../assets/img/bitmain_logo.png" alt="BIT-MAIN" class="footer-logo">
-
+            <img class="footer-logo" src="/assets/img/bitmain_logo.png" alt="BIT-MAIN" />
             <div class="footer-nav">
                 <a href="/exchanges/">Биржи</a>
                 <a href="/compare.html">Сравнение</a>
@@ -256,15 +152,10 @@
                 <a href="/arbitrage.html">Арбитраж</a>
                 <a href="/guides/">Гайды</a>
             </div>
-
             <div class="footer-bottom">
-                <div class="note">
-                    Информация носит справочный характер и не является финансовой или юридической консультацией.
-                    Криптовалюты связаны с риском.
-                </div>
-                <div class="copyright">
-                    © 2026 BIT-MAIN
-                </div>
+                <p class="note">Никакая инструкция не гарантирует 100% защиты. Ответственность за сохранность активов
+                    лежит на пользователе.</p>
+                <div class="copyright">© 2026 BIT-MAIN</div>
             </div>
         </div>
     </footer>

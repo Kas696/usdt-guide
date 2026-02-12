@@ -4,47 +4,22 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Арбитраж P2P → Спот — что считать и где скрытый минус | BIT-MAIN</title>
-    <meta name="description"
-        content="Арбитраж P2P→Спот: как считать прибыль, какие комиссии учитывать, где скрывается минус (курс P2P, спред, вывод, сеть). Чек-лист и типовые ошибки." />
-
-    <link rel="stylesheet" href="../assets/css/style.css" />
-
-    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon//favicon.svg" />
-    <link rel="shortcut icon" href="/assets/img/favicon//favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon//apple-touch-icon.png" />
-    <link rel="manifest" href="/assets/img/favicon//site.webmanifest" />
-
-
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Арбитраж P2P → Спот — как считать прибыль" />
-    <meta property="og:description"
-        content="Формула расчёта, комиссии, спред и типовые ошибки. Без обещаний лёгких денег — только математика." />
-    <meta property="og:url" content="https://bit-main.ru/guides/p2p-to-spot-arbitrage.html" />
-    <meta property="og:image" content="https://bit-main.ru/assets/img/og-cover.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#ffb11a" />
+    <title>Арбитраж P2P → Спот 2026: как считать реальный спред | BIT-MAIN</title>
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/review.css">
 </head>
 
 <body>
 
-    <!-- HEADER -->
     <header class="header">
         <div class="container header-flex">
             <a class="logo" href="/">
-                <img src="../assets/img/bitmain_logo.png" alt="BIT-MAIN">
+                <img src="/assets/img/bitmain_logo.png" alt="BM">
                 <span class="logo-text_1">BIT</span><span class="logo-text_2">-MAIN</span>
             </a>
-
             <input type="checkbox" id="menu-toggle" hidden />
-            <label class="burger" for="menu-toggle">
-                <span></span><span></span><span></span>
-            </label>
-
-            <nav class="nav" aria-label="Основная навигация">
+            <label class="burger" for="menu-toggle"><span></span><span></span><span></span></label>
+            <nav class="nav">
                 <a href="/exchanges/">Биржи</a>
                 <a href="/compare.html">Сравнение</a>
                 <a href="/p2p.html">P2P</a>
@@ -54,355 +29,105 @@
         </div>
     </header>
 
-    <main class="p2p-page">
-
-        <div class="container">
-            <div class="breadcrumbs">
-                <a href="../index.html">Главная</a> → <a href="./index.html">Гайды</a> → <span>Арбитраж P2P →
-                    Спот</span>
-            </div>
+    <main class="container">
+        <div class="breadcrumbs">
+            <a href="/">Главная</a> → <a href="/guides/">Гайды</a> → <span>Арбитраж P2P-Спот</span>
         </div>
 
-        <!-- HERO -->
-        <section class="hero">
-            <div class="container">
-                <h1>Арбитраж P2P → Спот: что считать и где скрытый минус</h1>
-                <p class="subtitle">
-                    “Купил USDT дешевле на P2P — продал дороже на споте” звучит красиво.
-                    На практике прибыль съедают курс P2P, торговая комиссия, спред и комиссии вывода.
-                    Здесь — как считать по-взрослому.
-                </p>
+        <div class="review-layout">
+            <div class="review-content">
+                <section class="content-section">
+                    <span class="security-status">Методология 2026</span>
+                    <h1>Арбитраж P2P → Спот: математика против «сигналов»</h1>
+                    <p class="lead-text">Схема «купил на P2P — продал на споте» кажется элементарной. Но в 2026 году
+                        прибыль прячется в деталях, которые 90% новичков не учитывают.</p>
 
-                <div class="hero-tags">
-                    <span>Формула прибыли</span>
-                    <span>Комиссии</span>
-                    <span>Спред</span>
-                    <span>Риск времени</span>
-                </div>
+                    <h2>Почему математика важнее интуиции?</h2>
+                    <p>Большинство «связок» показывают «грязный» спред. Но арбитражника кормит <strong>чистый
+                            профит</strong>. Если разница курсов 1%, а комиссии 1.1% — вы работаете в убыток.</p>
+                </section>
 
-                <div class="hero-actions">
-                    <a class="btn btn-primary" href="#formula">Формула</a>
-                    <a class="btn btn-secondary" href="#scenarios">Сценарии</a>
-                    <a class="btn btn-secondary" href="#checklist">Чек-лист</a>
-                </div>
-
-                <div class="info-band">
-                    <strong>Трезво:</strong> если вы не можете за 2 минуты посчитать итог “на руки” — это не арбитраж,
-                    это гадание на курсе.
-                </div>
-            </div>
-        </section>
-
-        <!-- FORMULA -->
-        <section class="section" id="formula">
-            <div class="container content-wrap">
-                <div class="section-title">
-                    <h2>Базовая формула</h2>
-                    <p>Цель — получить итоговую цену 1 USDT (или 1 единицы актива) на выходе и сравнить с альтернативой.
-                    </p>
-                </div>
-
-                <div class="two-col">
-                    <div class="panel">
-                        <h3>Идея (простыми словами)</h3>
-                        <ul>
-                            <li>На входе вы платите фиатом по курсу P2P.</li>
-                            <li>Дальше у вас есть комиссии/потери на конвертации.</li>
-                            <li>На выходе вы получаете фиат/другой актив — тоже по курсу и с комиссиями.</li>
-                            <li>Профит есть только если итог лучше, чем “прямой” вариант.</li>
-                        </ul>
+                <section class="content-section">
+                    <h2>Золотая формула расчета круга</h2>
+                    <div class="info-box">
+                        <strong>Профит = (Сумма вывода - Сумма ввода) / Сумма ввода * 100%</strong>
+                        <br><small>Где Сумма вывода — это то, что упало на карту по факту после всех обменов.</small>
                     </div>
-
-                    <div class="panel">
-                        <h3>Что считается всегда</h3>
-                        <ul>
-                            <li>Курс P2P (в реальной сумме сделки, не “сверху списка”).</li>
-                            <li>Торговая комиссия на споте.</li>
-                            <li>Спред/проскальзывание (особенно на неликвидных парах).</li>
-                            <li>Комиссия вывода/сети (если есть перевод между площадками).</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="p2p-compare">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Элемент</th>
-                                <th>Где появляется</th>
-                                <th>Почему убивает прибыль</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Курс P2P</td>
-                                <td>Покупка/продажа USDT</td>
-                                <td class="warn">Главная “скрытая комиссия” внутри курса</td>
-                            </tr>
-                            <tr>
-                                <td>Торг. комиссия</td>
-                                <td>Спот-сделка</td>
-                                <td class="warn">На объёмах заметно, на маленьких — особенно больно</td>
-                            </tr>
-                            <tr>
-                                <td>Спред</td>
-                                <td>Покупка/продажа на споте</td>
-                                <td class="warn">На тонком стакане вы покупаете дороже/продаёте дешевле</td>
-                            </tr>
-                            <tr>
-                                <td>Вывод/сеть</td>
-                                <td>Переводы между биржами/кошельками</td>
-                                <td class="warn">Может съесть весь “плюс” одной цифрой</td>
-                            </tr>
-                            <tr>
-                                <td>Время</td>
-                                <td>Везде</td>
-                                <td class="warn">Цена меняется быстрее, чем вы успеваете “обрадоваться”</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- SCENARIOS -->
-        <section class="section" id="scenarios">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Два типовых сценария</h2>
-                    <p>Это не “сигналы”. Это шаблоны мышления: что вы делаете и где могут быть потери.</p>
-                </div>
-
-                <div class="scenario-list">
-                    <article class="scenario-item">
-                        <div class="scenario-icon">A</div>
-                        <div class="scenario-content">
-                            <h3>P2P (купить USDT) → Спот (купить актив)</h3>
-                            <p>Вы покупаете USDT через P2P, затем на споте покупаете BTC/ETH/другой актив.</p>
-                            <div class="scenario-links">
-                                <a href="./buy-usdt-p2p.html">Купить USDT</a>
-                                <a href="#mistakes">Ошибки</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="scenario-item">
-                        <div class="scenario-icon">B</div>
-                        <div class="scenario-content">
-                            <h3>Спот (продать актив) → P2P (продать USDT)</h3>
-                            <p>Вы фиксируете актив на споте в USDT и дальше продаёте USDT в фиат через P2P.</p>
-                            <div class="scenario-links">
-                                <a href="./sell-usdt-p2p.html">Продать USDT</a>
-                                <a href="#checklist">Чек-лист</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="scenario-item">
-                        <div class="scenario-icon">+</div>
-                        <div class="scenario-content">
-                            <h3>Когда это может иметь смысл</h3>
-                            <p>Когда разница курсов/условий достаточно большая, а ваша операция быстрая и без лишних
-                                выводов.</p>
-                            <div class="scenario-links">
-                                <a href="../compare.html">Сравнения</a>
-                                <a href="../arbitrage.html">Арбитраж</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="scenario-item">
-                        <div class="scenario-icon">×</div>
-                        <div class="scenario-content">
-                            <h3>Когда это чаще всего не работает</h3>
-                            <p>Небольшие суммы, высокая комиссия вывода, неликвидная пара, “длинный маршрут” и надежда
-                                на удачу.</p>
-                            <div class="scenario-links">
-                                <a href="#mistakes">Типовые ошибки</a>
-                                <a href="./fees-checklist.html">Комиссии</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- WHAT TO CHECK -->
-        <section class="section compact" id="what-to-check">
-            <div class="container content-wrap">
-                <div class="section-title">
-                    <h2>Что проверить до сделки</h2>
-                    <p>Если не проверить это заранее — потом вы “внезапно” обнаружите минус.</p>
-                </div>
-
-                <div class="two-col">
-                    <div class="panel">
-                        <h3>В P2P</h3>
-                        <ul>
-                            <li>Реальный курс на вашу сумму (по лимитам ордера).</li>
-                            <li>Способ оплаты и время сделки.</li>
-                            <li>Условия ордера (комментарии, требования).</li>
-                            <li>Риск спорной ситуации и необходимость доказательств.</li>
-                        </ul>
-                    </div>
-
-                    <div class="panel">
-                        <h3>На споте</h3>
-                        <ul>
-                            <li>Комиссия торговли и доступные пары.</li>
-                            <li>Ликвидность пары (спред, глубина стакана).</li>
-                            <li>Ограничения на вывод/перевод (если нужен).</li>
-                            <li>Комиссия вывода по выбранной сети.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CHECKLIST -->
-        <section class="section" id="checklist">
-            <div class="container content-wrap">
-                <div class="section-title">
-                    <h2>Чек-лист “перед нажатием кнопки”</h2>
-                    <p>Если вы это делаете каждый раз — вы уже лучше 90% “арбитражников”.</p>
-                </div>
-
-                <div class="panel">
-                    <ul>
-                        <li>Посчитал входную цену USDT/актива на вашу сумму (учёл курс P2P и лимиты).</li>
-                        <li>Знаю торговую комиссию на споте и оценил спред (не по “красивой цене”, а по факту
-                            исполнения).</li>
-                        <li>Если нужен перевод — выбрал сеть и знаю комиссию вывода/ввода.</li>
-                        <li>Понимаю итоговую цену “на руки” и сравнил с альтернативным маршрутом (без этой схемы).</li>
-                        <li>Понимаю риск времени: если цена сдвинется на X — схема умирает.</li>
-                        <li>Имею план выхода: что делаю, если курс пошёл против меня.</li>
+                    <p>Для точного расчета вы обязаны вычитать:</p>
+                    <ul class="check-list">
+                        <li><strong>Спред P2P:</strong> Реальная разница курсов покупки и продажи.</li>
+                        <li><strong>Spot Fee:</strong> Комиссия за обмен (на MEXC она 0%).</li>
+                        <li><strong>Slippage:</strong> Потеря цены в «тонком» стакане.</li>
+                        <li><strong>Network Fee:</strong> Комиссия за перевод крипты.</li>
                     </ul>
+                </section>
+
+                <div class="tools-banner">
+                    <div class="tools-info">
+                        <h3>Где крутить спреды?</h3>
+                        <p>Для арбитража важны биржи с минимальными комиссиями.</p>
+                    </div>
+                    <div class="tools-links">
+                        <a class="btn btn-primary btn-sm" href="#">MEXC (0% Fee)</a>
+                        <a class="btn btn-primary btn-sm" href="#">Bybit (Топ P2P)</a>
+                    </div>
                 </div>
 
-                <div class="mini-actions">
-                    <a class="btn btn-primary" href="./fees-checklist.html">Чек-лист комиссий</a>
-                    <a class="btn btn-secondary" href="../arbitrage.html">Страница арбитража</a>
+                <section class="content-section">
+                    <h2>Скрытые ловушки 2026 года</h2>
+                    <p><strong>1. Ликвидность:</strong> Если в стакане мало ордеров, ваша продажа обвалит курс
+                        мгновенно.</p>
+                    <p><strong>2. Т+1:</strong> Защитный блок вывода на 24 часа. Пока ждете — спред на споте закроется.
+                    </p>
+                </section>
+
+                <div class="author-meta">
+                    <span>Автор: Команда BIT-MAIN</span>
+                    <span>Редакция: 12.02.2026</span>
                 </div>
             </div>
-        </section>
 
-        <!-- MISTAKES -->
-        <section class="section" id="mistakes">
-            <div class="container content-wrap">
-                <div class="section-title">
-                    <h2>Типовые ошибки</h2>
-                    <p>Это то, почему “на бумаге плюс”, а по факту минус.</p>
+            <aside class="review-sidebar">
+                <div class="sticky-card">
+                    <span class="sidebar-title">Чек-лист перед кругом</span>
+                    <div class="sidebar-stats">
+                        <div class="stat-row"><span>Комиссия спот</span><span class="green-text">Проверена</span></div>
+                        <div class="stat-row"><span>Глубина стакана</span><span class="green-text">Достаточна</span>
+                        </div>
+                        <div class="stat-row"><span>Вывод (T+1)</span><span class="green-text">Нет блока</span></div>
+                        <div class="stat-row"><span>Сеть (Fee)</span><span class="green-text">Учтена</span></div>
+                    </div>
+                    <p class="sidebar-desc">Если хотя бы один пункт под вопросом — будет минус.</p>
+                    <a href="/arbitrage.html" class="btn btn-primary btn-full">Все стратегии</a>
                 </div>
 
-                <div class="scenario-list">
-                    <article class="scenario-item">
-                        <div class="scenario-icon">1</div>
-                        <div class="scenario-content">
-                            <h3>Считать без спреда</h3>
-                            <p>Вы смотрите “лучшую цену”, но исполняетесь хуже. На неликвидных парах это убивает всё.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="scenario-item">
-                        <div class="scenario-icon">2</div>
-                        <div class="scenario-content">
-                            <h3>Игнорировать вывод/сеть</h3>
-                            <p>Одна комиссия вывода может съесть вашу “прибыль” полностью. Особенно на маленьких суммах.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="scenario-item">
-                        <div class="scenario-icon">3</div>
-                        <div class="scenario-content">
-                            <h3>Верить “среднему курсу”</h3>
-                            <p>В P2P важно, по какому курсу реально сделка на вашу сумму, а не “вверху списка”.</p>
-                        </div>
-                    </article>
-
-                    <article class="scenario-item">
-                        <div class="scenario-icon">4</div>
-                        <div class="scenario-content">
-                            <h3>Нет плана выхода</h3>
-                            <p>Цена ушла — вы зависли. Арбитраж без плана выхода превращается в “инвестора поневоле”.
-                            </p>
-                        </div>
-                    </article>
+                <div class="sticky-card" style="border-color: var(--accent-green);">
+                    <span class="sidebar-title">Выбор экспертов</span>
+                    <a href="#" class="btn btn-secondary btn-full">Регистрация на Bybit</a>
+                    <a href="#" class="btn btn-secondary btn-full">Регистрация на MEXC</a>
+                    <a href="#" class="btn btn-secondary btn-full" style="margin-bottom: 0;">Регистрация на CoinEx</a>
                 </div>
-
-                <div class="mini-actions">
-                    <a class="btn btn-primary" href="./index.html">Все гайды</a>
-                    <a class="btn btn-secondary" href="../compare.html">Сравнения</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ -->
-        <section class="faq">
-            <h2>FAQ</h2>
-
-            <div class="faq-grid">
-                <details>
-                    <summary>Можно ли делать арбитраж без вывода между биржами?</summary>
-                    <div class="faq-content">
-                        Да, и это часто проще: меньше комиссий и меньше риска “зависнуть” в переводах.
-                        Но всё равно остаются курс P2P, торговая комиссия и спред.
-                    </div>
-                </details>
-
-                <details>
-                    <summary>Почему арбитраж “виден”, но не зарабатывается?</summary>
-                    <div class="faq-content">
-                        Потому что “видимая разница” не учитывает комиссии, спред и реальный курс P2P на вашу сумму.
-                        А ещё цена может измениться, пока вы выполняете шаги.
-                    </div>
-                </details>
-
-                <details>
-                    <summary>С каких сумм имеет смысл считать?</summary>
-                    <div class="faq-content">
-                        Универсального ответа нет: зависит от комиссий вывода и ликвидности пары.
-                        Если на вашей сумме фиксированные комиссии съедают всё — это не ваш маршрут.
-                    </div>
-                </details>
-
-                <details>
-                    <summary>Это “лёгкие деньги”?</summary>
-                    <div class="faq-content">
-                        Нет. Это математика + скорость + дисциплина. Если вы не считаете — вы не арбитражите.
-                    </div>
-                </details>
-            </div>
-        </section>
-
+            </aside>
+        </div>
     </main>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer-content">
-            <img src="../assets/img/bitmain_logo.png" alt="BIT-MAIN" class="footer-logo">
-
-            <div class="footer-nav">
+            <img class="footer-logo" src="/assets/img/bitmain_logo.png" alt="BIT-MAIN" />
+            <nav class="footer-nav">
                 <a href="/exchanges/">Биржи</a>
                 <a href="/compare.html">Сравнение</a>
                 <a href="/p2p.html">P2P</a>
                 <a href="/arbitrage.html">Арбитраж</a>
                 <a href="/guides/">Гайды</a>
-            </div>
-
+            </nav>
             <div class="footer-bottom">
-                <div class="note">
-                    Информация носит справочный характер и не является финансовой или юридической консультацией.
-                    Криптовалюты связаны с риском.
-                </div>
-                <div class="copyright">
-                    © 2026 BIT-MAIN
-                </div>
+                <p class="note">Дисклеймер: криптовалюта связана с высокими рисками. Материалы на сайте bit-main.ru
+                    носят исключительно информационный характер. Мы не даём финансовых советов.</p>
+                <div class="copyright">© 2026 BIT-MAIN. Независимый крипто-портал.</div>
             </div>
         </div>
     </footer>
-
 </body>
 
 </html>

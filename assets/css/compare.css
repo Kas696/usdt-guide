@@ -1,0 +1,229 @@
+:root {
+    /* Ширина первой колонки */
+    --col-width: 125px;
+    /* Цвет фона карточек (темный) */
+    --bg-solid: #1e2329;
+}
+
+.catalog-page {
+    padding-top: 20px;
+    padding-bottom: 80px;
+}
+
+/* Оформление заголовков и крошек */
+.breadcrumbs {
+    margin-bottom: 10px;
+    color: #888;
+    font-size: 14px;
+}
+
+.hero {
+    padding: 10px 0 20px;
+}
+
+.hero h1 {
+    font-size: 32px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.hero .subtitle {
+    color: #888;
+    font-size: 15px;
+}
+
+.content-section {
+    margin-top: 30px;
+}
+
+.content-section h2 {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: #fff;
+    border-left: 4px solid #ffb11a;
+    padding-left: 14px;
+}
+
+/* ========================================= */
+/* ГЛАВНЫЙ ФИКС — КОНТЕЙНЕР ТАБЛИЦЫ */
+/* ========================================= */
+.table-wrapper {
+    /* 1. Ограничиваем высоту таблицы, чтобы она скроллилась сама */
+    max-height: 75vh;
+
+    /* 2. Включаем скролл во все стороны внутри этого блока */
+    overflow: auto;
+
+    /* Оформление рамки */
+    border: 1px solid #2b3139;
+    border-radius: 12px;
+    background: var(--bg-solid);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 50px;
+
+    /* Для плавной прокрутки на мобилках */
+    -webkit-overflow-scrolling: touch;
+}
+
+.compare-table.fixed-header {
+    width: 100%;
+    border-collapse: separate;
+    /* Нужно для sticky */
+    border-spacing: 0;
+    min-width: 1000px;
+    /* Чтобы не сжималась гармошкой */
+}
+
+.compare-table.fixed-header th,
+.compare-table.fixed-header td {
+    padding: 14px 10px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+/* ========================================= */
+/* ЛОГИКА ПРИЛИПАНИЯ (STICKY) */
+/* ========================================= */
+
+/* 1. ШАПКА ТАБЛИЦЫ */
+.compare-table.fixed-header thead th {
+    position: sticky;
+    /* Липнем к верху КОНТЕЙНЕРА .table-wrapper, а не к окну браузера */
+    top: 0;
+    z-index: 20;
+    background: var(--bg-solid);
+    /* Непрозрачный фон */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    /* Яркая линия снизу */
+    height: 60px;
+}
+
+/* 2. ПЕРВАЯ КОЛОНКА */
+.compare-table.fixed-header tbody td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 10;
+    background: var(--bg-solid);
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: left;
+    font-weight: 700;
+    color: #fff;
+    min-width: var(--col-width);
+    max-width: var(--col-width);
+
+    /* Тень справа, чтобы отделить колонку визуально */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 3. УГЛОВАЯ ЯЧЕЙКА (ЛЕВЫЙ ВЕРХНИЙ УГОЛ) */
+.compare-table.fixed-header thead th.param-col {
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 30;
+    /* Поверх всего */
+    background: var(--bg-solid);
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    min-width: var(--col-width);
+    width: var(--col-width);
+    text-align: left;
+}
+
+/* ========================================= */
+/* ОФОРМЛЕНИЕ КОНТЕНТА */
+/* ========================================= */
+.exch-logo {
+    height: 24px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Зебра для строк (кроме первой колонки) */
+.compare-table.fixed-header tbody tr:nth-child(odd) td:not(:first-child) {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.compare-table.fixed-header tbody tr:hover td:not(:first-child) {
+    background: rgba(255, 177, 26, 0.1);
+}
+
+/* Цвета текста */
+.highlight {
+    color: #00c087;
+    font-weight: bold;
+}
+
+/* Кнопки */
+.btn-full {
+    background: #ffb11a;
+    color: #000;
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.action-row td {
+    border-bottom: none;
+    padding: 15px 10px;
+}
+
+/* Блоки сценариев внизу */
+.scenario-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.scenario-item {
+    background: #161a1f;
+    border: 1px solid #333;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    gap: 15px;
+}
+
+.scenario-icon {
+    font-size: 24px;
+}
+
+.scenario-content h3 {
+    font-size: 16px;
+    margin: 0 0 5px 0;
+    color: #fff;
+}
+
+.scenario-content p {
+    font-size: 13px;
+    color: #aaa;
+    margin: 0 0 10px 0;
+}
+
+.scenario-links a {
+    color: #ffb11a;
+    font-size: 12px;
+    margin-right: 10px;
+    text-decoration: underline;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .scenario-list {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+}

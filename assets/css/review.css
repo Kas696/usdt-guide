@@ -1,0 +1,617 @@
+/* --- СТРУКТУРА СТАТЬИ --- */
+.review-layout {
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 40px !important;
+    margin-top: 40px !important;
+    align-items: flex-start !important;
+}
+
+.review-content {
+    flex: 1 !important;
+    min-width: 0;
+}
+
+.review-sidebar {
+    width: 320px !important;
+    flex-shrink: 0 !important;
+    position: sticky !important;
+    top: 100px;
+}
+
+/* --- ТЕКСТ И ОТСТУПЫ --- */
+.review-content h1 {
+    font-size: 38px;
+    margin-bottom: 24px;
+    color: var(--text-main);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.lead-text {
+    font-size: 19px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: var(--text-main);
+    display: block;
+    opacity: 0.9;
+}
+
+.content-section {
+    margin-bottom: 40px;
+}
+
+.content-section h2 {
+    font-size: 26px;
+    border-left: 4px solid var(--primary);
+    padding-left: 15px;
+    margin: 40px 0 24px 0;
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+.content-section p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+/* --- СПИСКИ (РАЗЛЕПИЛ) --- */
+.check-list {
+    margin: 25px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.check-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 16px;
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.check-list li::before {
+    content: "•";
+    position: absolute;
+    left: 10px;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 1;
+    top: -2px;
+}
+
+/* --- ПЛАШКИ --- */
+.info-box {
+    background: rgba(255, 177, 26, 0.05);
+    border: 1px dashed var(--primary);
+    padding: 24px;
+    border-radius: 12px;
+    margin: 35px 0;
+    color: var(--text-main);
+}
+
+.security-status {
+    background: rgba(0, 192, 135, 0.1);
+    color: var(--accent-green);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 12px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+/* --- САЙДБАР --- */
+.sticky-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+}
+
+.sidebar-title {
+    display: block;
+    font-weight: 800;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 18px;
+    color: var(--text-main);
+}
+
+.stat-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-row span {
+    font-size: 14px;
+}
+
+.green-text {
+    color: var(--accent-green);
+    font-weight: 700;
+}
+
+.sidebar-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 15px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* КНОПКИ САЙДБАРА (РАЗЛЕПИЛ) */
+.review-sidebar .btn-full {
+    margin-bottom: 12px;
+}
+
+.review-sidebar .btn-full:last-child {
+    margin-bottom: 0;
+}
+
+/* --- БАННЕР ИНСТРУМЕНТОВ (РАЗЛЕПИЛ КНОПКИ) --- */
+.tools-banner {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 45px 0;
+    gap: 20px;
+}
+
+.tools-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* --- ФУТЕР СТАТЬИ --- */
+.author-meta {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+    margin-top: 60px;
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* --- АДАПТИВ --- */
+@media (max-width: 900px) {
+    .review-layout {
+        flex-direction: column !important;
+    }
+
+    .review-sidebar {
+        width: 100% !important;
+        position: static !important;
+    }
+
+    .tools-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* =========================================================
+   ДОБАВКА: стили для блоков, которые есть в HTML, но не были
+   описаны в текущем review.css
+   (вставить В КОНЕЦ файла)
+   ========================================================= */
+
+/* Breadcrumbs (если вдруг в base.css нет) */
+.breadcrumbs {
+    margin-top: 16px;
+    margin-bottom: 10px;
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.breadcrumbs a {
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    color: var(--primary);
+}
+
+/* HERO card */
+.review-hero-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 40px;
+}
+
+.review-hero-inner {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+.review-hero-brand {
+    flex: 0 0 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.exch-wordmark.hero {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.exch-wordmark-img {
+    width: 100%;
+    max-width: 170px;
+    height: auto;
+    display: block;
+}
+
+.review-hero-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.review-hero-sub {
+    margin: 0 0 16px 0;
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.review-hero-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.review-badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-main);
+}
+
+.badge.simple-badge {
+    opacity: 0.95;
+}
+
+.badge.best-badge {
+    background: rgba(0, 192, 135, 0.12);
+    border-color: rgba(0, 192, 135, 0.35);
+}
+
+.update-date {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+/* Note under hero */
+.review-hero-note {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    gap: 10px;
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.review-hero-note .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent-green);
+    flex: 0 0 auto;
+    margin-top: 6px;
+}
+
+/* Muted helper (используется в блоке комиссий) */
+.muted {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+/* Pros & Cons */
+.pros-cons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.pc-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.pc-card h3 {
+    margin: 0 0 14px 0;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.pc-card ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.pc-card.pros h3 {
+    color: var(--accent-green);
+}
+
+.pc-card.cons h3 {
+    color: var(--primary);
+}
+
+/* Fees */
+.fees-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.1fr;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.fee-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.fee-head {
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.fee-title {
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.fee-badge {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(255, 177, 26, 0.10);
+    border: 1px solid rgba(255, 177, 26, 0.22);
+    color: var(--text-main);
+    white-space: nowrap;
+}
+
+.fee-body {
+    padding: 16px 18px 18px;
+}
+
+.fee-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+.fee-row:last-child {
+    border-bottom: 0;
+}
+
+.fee-row strong {
+    color: var(--text-main);
+    font-weight: 900;
+}
+
+.fee-row.big strong {
+    font-size: 20px;
+}
+
+.fee-card.fee-highlight {
+    border-color: rgba(255, 177, 26, 0.28);
+    box-shadow: 0 0 0 1px rgba(255, 177, 26, 0.10) inset;
+}
+
+
+/* Score circle in sidebar (у тебя есть в HTML, но нет в CSS) */
+.score-circle {
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 14px;
+    border: 2px solid rgba(255, 177, 26, 0.55);
+    background: rgba(255, 177, 26, 0.08);
+}
+
+.score-val {
+    font-size: 26px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--text-main);
+}
+
+.score-max {
+    font-size: 12px;
+    margin-top: -6px;
+    color: var(--text-muted);
+}
+
+/* Мобилка */
+@media (max-width: 900px) {
+    .review-hero-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .review-hero-brand {
+        flex: 0 0 auto;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .pros-cons-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fees-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== SIDEBAR polish (finish) ===== */
+
+/* карточка */
+.review-page .review-sidebar .sticky-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 22px;
+}
+
+/* шапка: название + рейтинг справа */
+.review-page .review-sidebar .sticky-card {
+    position: relative;
+}
+
+.review-page .review-sidebar h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.2px;
+}
+
+/* рейтинг как бейдж в правом верхнем углу */
+.review-page .review-sidebar .score-circle {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    padding: 7px 10px;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    border: 1px solid rgba(255, 177, 26, 0.35);
+    background: rgba(255, 177, 26, 0.06);
+}
+
+.review-page .review-sidebar .score-val {
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.review-page .review-sidebar .score-max {
+    font-size: 12px;
+    margin: 0;
+    color: var(--text-muted);
+}
+
+/* описание — компактнее и под заголовком */
+.review-page .review-sidebar .sidebar-desc {
+    margin: 10px 0 16px;
+    text-align: left;
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.55;
+    padding-right: 92px;
+    /* чтобы текст не залезал под бейдж рейтинга */
+}
+
+/* статы: сетка 2 колонки, аккуратные линии */
+.review-page .review-sidebar .sidebar-stats {
+    margin: 0 0 16px;
+    padding: 2px 0 8px;
+    background: transparent;
+    border: 0;
+}
+
+.review-page .review-sidebar .stat-row {
+    display: grid !important;
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+    padding: 11px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.review-page .review-sidebar .stat-row:last-child {
+    border-bottom: 0;
+    padding-bottom: 2px !important;
+}
+
+.review-page .review-sidebar .stat-row span:first-child {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.review-page .review-sidebar .stat-row span:last-child {
+    color: var(--text-main);
+    font-weight: 800;
+}
+
+/* кнопка: в отдельной зоне */
+.review-page .review-sidebar .btn.btn-primary.btn-full {
+    margin-top: 6px;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-weight: 800;
+}
+
+/* разделитель перед дисклеймером */
+.review-page .review-sidebar .disclaimer-mini {
+    margin: 14px 0 0;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--text-muted);
+    opacity: 0.9;
+}

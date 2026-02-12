@@ -5,29 +5,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Криптоарбитраж — виды, риски и когда он реально работает | BIT-MAIN</title>
+    <title>Арбитраж криптовалют 2026: реально ли заработать на связках? | BIT-MAIN</title>
     <meta name="description"
-        content="Криптоарбитраж: межбиржевой, P2P→спот, треугольный. Когда арбитраж имеет смысл, кому не подходит и где чаще всего теряют деньги." />
+        content="Честный разбор криптоарбитража: межбиржевой спред, P2P-связки и почему 90% сигналов в Telegram — это скам. Узнайте, как считать комиссии правильно." />
 
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/arbitrage.css" />
 
     <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon//favicon.svg" />
-    <link rel="shortcut icon" href="/assets/img/favicon//favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon//apple-touch-icon.png" />
-    <link rel="manifest" href="/assets/img/favicon//site.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
 
-
-    <!-- OG для хаба -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Криптоарбитраж — как работает и где ломается" />
+    <!-- OG Tags -->
+    <meta property="og:title" content="Криптоарбитраж 2026 — вся правда о связках" />
     <meta property="og:description"
-        content="Разбор криптоарбитража без обещаний прибыли: виды, ограничения, фильтр входа и реальные риски." />
-    <meta property="og:url" content="https://bit-main.ru/arbitrage.html" />
-    <meta property="og:image" content="https://bit-main.ru/assets/img/og-cover.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#ffb11a" />
+        content="Разбор арбитража: от межбиржевых спредов до защиты от скама. Только факты и математика." />
+    <meta property="og:image" content="/assets/img/og-arbitrage.png" />
 </head>
 
 <body>
@@ -35,8 +30,8 @@
     <!-- HEADER -->
     <header class="header">
         <div class="container header-flex">
-            <a class="logo" href="/">
-                <img src="./assets/img/bitmain_logo.png" alt="BIT-MAIN">
+            <a class="logo" href="/" aria-label="BIT-MAIN">
+                <img src="/assets/img/bitmain_logo.png" alt="BM">
                 <span class="logo-text_1">BIT</span><span class="logo-text_2">-MAIN</span>
             </a>
 
@@ -45,7 +40,7 @@
                 <span></span><span></span><span></span>
             </label>
 
-            <nav class="nav" aria-label="Основная навигация">
+            <nav class="nav">
                 <a href="/exchanges/">Биржи</a>
                 <a href="/compare.html">Сравнение</a>
                 <a href="/p2p.html">P2P</a>
@@ -55,169 +50,229 @@
         </div>
     </header>
 
-    <main class="content-wrap">
+    <main class="p2p-page"> <!-- Используем тот же класс для общих отступов -->
 
-        <!-- BREADCRUMBS -->
-        <div class="breadcrumbs">
-            <a href="./index.html">Главная</a> → <span>Арбитраж</span>
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="/">Главная</a> → <span>Арбитраж</span>
+            </div>
         </div>
 
         <!-- HERO -->
         <section class="hero">
-            <h1>Криптоарбитраж: где он работает, а где нет</h1>
-            <p class="subtitle">
-                Арбитраж — это не «бесплатные деньги», а игра на неэффективности рынков.
-                Здесь разбираем, <strong>когда он имеет смысл</strong>, какие бывают виды
-                и почему большинство попыток заканчиваются минусом.
-            </p>
+            <div class="container">
+                <h1>Криптоарбитраж: математика прибыли и реальные риски</h1>
+                <p class="subtitle">
+                    Арбитраж — это использование разницы цен на один актив. В 2026 году это не «легкая прогулка»,
+                    а работа с софтом, ликвидностью и комиссиями банков. Разбираем, что еще работает.
+                </p>
 
-            <div class="hero-tags">
-                <span>Межбиржевой</span>
-                <span>P2P → Спот</span>
-                <span>Треугольный</span>
-                <span>Комиссии и риски</span>
-            </div>
+                <div class="hero-tags">
+                    <span>Спред от 0.5%</span>
+                    <span>Межбиржевой</span>
+                    <span>P2P Связки</span>
+                    <span>Без «скам-ботов»</span>
+                </div>
 
-            <div class="hero-actions">
-                <a class="btn btn-primary" href="#types">Виды арбитража</a>
-                <a class="btn btn-secondary" href="#filter">Подходит ли вам</a>
-            </div>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#types">Виды стратегий</a>
+                    <a class="btn btn-secondary" href="#scam">Как не попасть на скам</a>
+                </div>
 
-            <div class="info-band">
-                <strong>Важно:</strong> арбитраж не масштабируется бесконечно.
-                Чем больше денег и людей в стратегии — тем быстрее она умирает.
+                <div class="info-band">
+                    <strong>Осторожно:</strong> 99% объявлений в соцсетях о «бесплатных связках со спредом 5-10%» —
+                    это попытка заманить вас на фишинговую биржу или вшить вирус в бота.
+                </div>
             </div>
         </section>
+
+        <!-- SCAM ALERT (НОВЫЙ БЛОК) -->
+        <div class="container" id="scam">
+            <div class="scam-warning">
+                <h3>⚠ Осторожно: Скам-связки в Telegram</h3>
+                <p>Самая популярная схема 2026: вам дают связку «Биржа A → Обменник B → Биржа A». На первом круге вам
+                    дают вывести 10$, на втором (когда сумма больше) — ваши деньги пропадают.
+                    <strong>Правило:</strong> никогда не работайте с неизвестными обменниками из чатов.
+                </p>
+            </div>
+        </div>
 
         <!-- FILTER -->
         <section class="section compact" id="filter">
-            <div class="section-title">
-                <h2>Кому арбитраж НЕ подходит</h2>
-                <p>Если узнали себя — лучше не начинать. Это сэкономит деньги.</p>
-            </div>
-
-            <div class="two-col">
-                <div class="panel">
-                    <h3>Плохая идея, если</h3>
-                    <ul>
-                        <li>Капитал меньше 1–2 тыс. USDT.</li>
-                        <li>Нет времени следить за сделками.</li>
-                        <li>Вы не считаете комиссии заранее.</li>
-                        <li>Ожидаете «стабильный доход».</li>
-                    </ul>
+            <div class="container">
+                <div class="section-title">
+                    <h2>Подходит ли вам арбитраж?</h2>
+                    <p>Честный фильтр: экономим ваше время и деньги.</p>
                 </div>
 
-                <div class="panel">
-                    <h3>Имеет смысл, если</h3>
-                    <ul>
-                        <li>Есть доступ к нескольким биржам.</li>
-                        <li>Понимаете механику P2P и спота.</li>
-                        <li>Готовы к убыточным итерациям.</li>
-                        <li>Работаете с цифрами, а не надеждой.</li>
-                    </ul>
+                <div class="two-col">
+                    <div class="panel">
+                        <h3>Забудьте про арбитраж, если</h3>
+                        <ul>
+                            <li>Ваш банк меньше $1,000 (комиссии за перевод съедят всё).</li>
+                            <li>Вы ищете «кнопку бабло» и не хотите считать в Excel.</li>
+                            <li>Вы доверяете сигналам из бесплатных чатов.</li>
+                            <li>У вас всего одна карта и один аккаунт на бирже.</li>
+                        </ul>
+                    </div>
+
+                    <div class="panel">
+                        <h3>Вам стоит попробовать, если</h3>
+                        <ul>
+                            <li>У вас есть аккаунты на 3-5 топовых биржах.</li>
+                            <li>Вы понимаете, чем отличается сеть TRC-20 от ERC-20.</li>
+                            <li>Вы готовы к «охоте» за спредом по несколько часов.</li>
+                            <li>Вы умеете быстро работать с P2P-ордерами.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- TYPES -->
-        <section class="section" id="types">
-            <div class="section-title">
-                <h2>Основные виды арбитража</h2>
-                <p>Разница не в названии, а в источнике неэффективности.</p>
-            </div>
+        <!-- EXCHANGE LINKS (ДОБАВИЛ COINEX) -->
+        <section class="section compact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Инструменты для поиска спреда</h2>
+                    <p>Для успешного круга вам нужно иметь верифицированные аккаунты как минимум на 3-4 площадках:</p>
+                </div>
 
-            <div class="scenario-list">
-                <article class="scenario-item">
-                    <div class="scenario-icon">↔</div>
-                    <div class="scenario-content">
-                        <h3>Межбиржевой</h3>
-                        <p>Разница цен одного актива на разных биржах.</p>
-                        <p class="muted">Зависит от скорости вывода и комиссий.</p>
-                    </div>
-                </article>
-
-                <article class="scenario-item">
-                    <div class="scenario-icon">₽</div>
-                    <div class="scenario-content">
-                        <h3>P2P → Спот</h3>
-                        <p>Покупка через P2P и продажа на споте.</p>
-                        <p class="muted">Часто «съедается» курсом и фиатными рисками.</p>
-                    </div>
-                </article>
-
-                <article class="scenario-item">
-                    <div class="scenario-icon">△</div>
-                    <div class="scenario-content">
-                        <h3>Треугольный</h3>
-                        <p>Перекос цен внутри одной биржи.</p>
-                        <p class="muted">Редко живёт без ботов и скорости.</p>
-                    </div>
-                </article>
-
-                <article class="scenario-item">
-                    <div class="scenario-icon">⚠</div>
-                    <div class="scenario-content">
-                        <h3>Псевдоарбитраж</h3>
-                        <p>Кажется прибыльным до учёта комиссий.</p>
-                        <p class="muted">Самая частая ловушка новичков.</p>
-                    </div>
-                </article>
+                <div class="mini-actions">
+                    <a class="btn btn-primary" href="https://partner.bybit.com/b/BITMAIN" target="_blank"
+                        rel="nofollow">Bybit (P2P Лидер)</a>
+                    <a class="btn btn-primary" href="https://okx.ac/join/83836972" target="_blank" rel="nofollow">OKX
+                        (Безопасность)</a>
+                    <a class="btn btn-primary" href="https://promote.mexc.com/r/5mShIa9n" target="_blank"
+                        rel="nofollow">MEXC (0% комиссии)</a>
+                    <a class="btn btn-primary" href="https://www.coinex.com/register?rc=s2vyu&channel=Referral"
+                        target="_blank" rel="nofollow">CoinEx (Редкие
+                        пары)</a>
+                </div>
             </div>
         </section>
 
-        <!-- MATRIX -->
-        <section class="section compact">
-            <div class="section-title">
-                <h2>Как выбирать стратегию</h2>
-                <p>Не по доходности, а по ограничениям.</p>
-            </div>
+        <!-- ТЕКСТОВЫЙ БЛОК (РАЗБАВЛЯЕМ ПЛАШКИ) -->
+        <section class="container">
+            <div class="prose-block">
+                <h2>Реальность арбитража: математика против ожиданий</h2>
+                <p>Многие приходят в арбитраж, думая, что это легкий поиск «дыр» в системе. На самом деле, современный
+                    арбитраж в 2026 году — это <strong>борьба за доли процента</strong>. Если вы видите спред в 5%,
+                    скорее всего, вы не сможете его реализовать: либо на одной из бирж закрыт вывод этой монеты, либо
+                    сеть перегружена и транзакция будет идти 3 часа, за которые цена выровняется.</p>
 
-            <div class="p2p-compare">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Условие</th>
-                            <th>Подходит</th>
-                            <th>Почему</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Малый капитал</td>
-                            <td class="warn">Редко</td>
-                            <td>Комиссии съедают спред</td>
-                        </tr>
-                        <tr>
-                            <td>Фиат РФ</td>
-                            <td class="good">P2P → Спот</td>
-                            <td>Есть локальная ликвидность</td>
-                        </tr>
-                        <tr>
-                            <td>Чистая крипта</td>
-                            <td class="good">Межбиржевой</td>
-                            <td>Проще считать и быстрее</td>
-                        </tr>
-                        <tr>
-                            <td>Нет времени</td>
-                            <td class="warn">Не подходит</td>
-                            <td>Арбитраж — это контроль</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="explanation-list">
+                    <p><strong>Что такое Т+1?</strong> Это защитный механизм бирж (особенно часто на OKX и Bybit). Если
+                        вы купили криптовалюту через P2P, биржа блокирует возможность её вывода на внешний кошелек или
+                        другую биржу на <strong>24 часа</strong>. Это сделано для того, чтобы мошенники не могли
+                        мгновенно вывести украденные деньги. Для арбитражника это означает, что «быстрый круг» между
+                        биржами через P2P может растянуться на сутки.</p>
+                </div>
+
+                <p>Успешные арбитражники работают по стратегии <strong>«зацикливания»</strong>: они не ждут 24 часа, а
+                    имеют капитал сразу на обеих биржах. Когда спред появляется, они одновременно покупают на одной и
+                    продают на другой, балансируя свои запасы раз в несколько дней.</p>
             </div>
         </section>
 
-        <!-- NEXT -->
+        <!-- MATRIX (РАСШИРЕННАЯ ТАБЛИЦА) -->
         <section class="section compact">
-            <div class="section-title">
-                <h2>Что делать дальше</h2>
-                <p>Арбитраж — это инструмент, а не цель.</p>
-            </div>
+            <div class="container">
+                <div class="section-title">
+                    <h2>Сравнение стратегий арбитража</h2>
+                </div>
 
-            <div class="mini-actions">
-                <a class="btn btn-primary" href="./compare.html">Сравнить биржи</a>
-                <a class="btn btn-secondary" href="./p2p.html">Посмотреть P2P</a>
-                <a class="btn btn-secondary" href="./guides.html">Гайды</a>
+                <div class="p2p-compare">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Стратегия</th>
+                                <th>Сложность</th>
+                                <th>Спред (чистый)</th>
+                                <th>Главный нюанс</th>
+                                <th>Риск</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>P2P внутри биржи</strong></td>
+                                <td class="good">Низкая</td>
+                                <td>0.2% — 0.7%</td>
+                                <td>Нужно долго стоять в стакане мейкером</td>
+                                <td>Т+1 (Блокировка вывода на 24ч)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Межбиржевой</strong></td>
+                                <td class="warn">Средняя</td>
+                                <td>0.4% — 1.5%</td>
+                                <td>Требует баланса на 2+ биржах сразу</td>
+                                <td>Изменение цены во время перевода</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CoinEx / MEXC связки</strong></td>
+                                <td class="warn">Средняя</td>
+                                <td>1.0% — 3.0%</td>
+                                <td>Поиск разницы на низколиквидных щиткоинах</td>
+                                <td>Низкая ликвидность (трудно продать много)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Международный</strong></td>
+                                <td style="color:#ff5e5e">Высокая</td>
+                                <td>2.0% — 5.0%</td>
+                                <td>Нужны карты иностранных банков (КЗ, Турция)</td>
+                                <td>Блокировка карт банками (115-ФЗ и аналоги)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ (РАСШИРЕННЫЙ) -->
+        <section class="faq">
+            <div class="container">
+                <h2>Часто задаваемые вопросы</h2>
+                <div class="faq-grid">
+                    <details>
+                        <summary>Законно ли заниматься арбитражем?</summary>
+                        <div class="faq-content">
+                            Сам по себе арбитраж — это законная торговая деятельность (купил дешевле, продал дороже).
+                            Однако основные проблемы возникают с банками: частые переводы между физлицами могут привести
+                            к блокировке карты. Всегда платите налоги и будьте готовы объяснить происхождение средств.
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Сколько можно заработать в месяц?</summary>
+                        <div class="faq-content">
+                            Профессиональные команды делают от 10% до 30% к банку в месяц. Одиночки с небольшим
+                            капиталом ($1,000) могут рассчитывать на 5-15%, если уделяют этому по 4-6 часов в день.
+                            Арбитраж — это полноценная работа, а не пассивный доход.
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Какое ПО использовать для поиска связок?</summary>
+                        <div class="faq-content">
+                            Начинать лучше с ручного мониторинга или бесплатных сканеров (например, P2P.Army или
+                            аналоги). Платные боты-сканеры стоят от $50/мес. Помните: если бот обещает "автоматическую
+                            прибыль без участия" — это мошенничество.
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Как избежать блокировок карт при P2P?</summary>
+                        <div class="faq-content">
+                            Не используйте карты, на которые получаете зарплату. Заведите отдельные карты разных банков.
+                            Не делайте более 10-15 переводов в день. "Прогревайте" карты мелкими покупками в магазинах,
+                            чтобы банк видел в вас обычного человека, а не транзитный узел.
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Что делать, если монета застряла в сети при переводе?</summary>
+                        <div class="faq-content">
+                            Это самый большой риск межбиржевого арбитража. Если цена на целевой бирже падает, пока идет
+                            перевод, вы закроетесь в минус. Именно поэтому профессионалы выбирают быстрые сети (Solana,
+                            BSC, Polygon) и избегают медленного Bitcoin или дорогого Ethereum.
+                        </div>
+                    </details>
+                </div>
             </div>
         </section>
 
@@ -226,23 +281,22 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer-content">
-            <img src="./assets/img/bitmain_logo.png" alt="BIT-MAIN" class="footer-logo">
-
-            <nav class="footer-nav">
+            <img class="footer-logo" src="/assets/img/bitmain_logo.png" alt="BIT-MAIN" />
+            <div class="footer-nav">
                 <a href="/exchanges/">Биржи</a>
                 <a href="/compare.html">Сравнение</a>
                 <a href="/p2p.html">P2P</a>
                 <a href="/arbitrage.html">Арбитраж</a>
                 <a href="/guides/">Гайды</a>
-            </nav>
+            </div>
 
             <div class="footer-bottom">
-                <div class="note">
-                    Информация не является финансовой рекомендацией.
-                    Криптовалюты связаны с повышенным риском.
-                </div>
+                <p class="note">
+                    <strong>Дисклеймер:</strong> Арбитраж криптовалют связан с риском полной потери капитала.
+                    Информация не является призывом к действию. Всегда проводите собственный аудит (DYOR).
+                </p>
                 <div class="copyright">
-                    © 2026 BIT-MAIN
+                    © 2026 BIT-MAIN. Все права защищены.
                 </div>
             </div>
         </div>

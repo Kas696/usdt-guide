@@ -1,0 +1,183 @@
+/* --- GUIDES GRID --- */
+.guides-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.guide-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.guide-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.guide-item h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    color: var(--text-main);
+}
+
+.guide-item p {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    flex-grow: 1;
+    line-height: 1.6;
+}
+
+.guide-item .btn-link {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* --- SEO SELECTION GUIDE BLOCK --- */
+.selection-guide {
+    background: linear-gradient(135deg, rgba(30, 35, 41, 0.4) 0%, rgba(14, 17, 22, 0.4) 100%);
+    border: 1px solid var(--border);
+    padding: 60px 40px;
+    border-radius: 24px;
+    margin-top: 60px;
+}
+
+.guide-steps-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.guide-step {
+    text-align: center;
+}
+
+.step-icon {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--primary);
+    background: rgba(255, 177, 26, 0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    border: 1px solid rgba(255, 177, 26, 0.2);
+}
+
+.guide-step h4 {
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+/* Стили для панелей (дублируем из p2p, так как они тут нужны) */
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+}
+
+.panel h3 {
+    margin-bottom: 15px;
+}
+
+.panel li {
+    margin-bottom: 10px;
+    color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+    .two-col {
+        grid-template-columns: 1fr;
+    }
+
+    .selection-guide {
+        padding: 30px 20px;
+    }
+}
+
+/* --- ГЛОБАЛЬНЫЙ ВОЗДУХ --- */
+.section {
+    padding: 80px 0;
+    /* Увеличили отступы между секциями */
+}
+
+.section.compact {
+    padding: 40px 0;
+}
+
+.section-title {
+    margin-bottom: 50px;
+    /* Больше места под заголовком */
+}
+
+.guides-grid {
+    gap: 32px;
+    /* Больше места между карточками */
+    margin-top: 40px;
+}
+
+/* --- БЛОК С ПАРТНЕРКАМИ (TOOLS) --- */
+.tools-banner {
+    background: linear-gradient(135deg, rgba(255, 177, 26, 0.1) 0%, rgba(30, 35, 41, 1) 100%);
+    border: 1px solid var(--primary);
+    border-radius: var(--radius);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.tools-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.tools-info p {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+.tools-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Адаптив для баннера */
+@media (max-width: 900px) {
+    .tools-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tools-links {
+        justify-content: center;
+    }
+}

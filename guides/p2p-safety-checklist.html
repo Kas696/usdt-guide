@@ -5,28 +5,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>P2P безопасность: 10 правил — чек-лист | BIT-MAIN</title>
+    <title>P2P безопасность 2026: регламент из 10 обязательных правил | BIT-MAIN</title>
     <meta name="description"
-        content="Чек-лист безопасности P2P: 10 правил, которые снижают риск спора и потери средств. Что нельзя делать в P2P и что обязательно проверять перед переводом." />
+        content="Технический регламент безопасности при P2P обмене: противодействие мошенническим схемам, верификация платежей и порядок ведения споров." />
 
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/review.css">
 
     <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon//favicon.svg" />
-    <link rel="shortcut icon" href="/assets/img/favicon//favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon//apple-touch-icon.png" />
-    <link rel="manifest" href="/assets/img/favicon//site.webmanifest" />
-
-
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="P2P безопасность: 10 правил" />
-    <meta property="og:description"
-        content="Короткий чек-лист: не уходить в мессенджеры, не менять реквизиты, не отменять после оплаты, хранить доказательства." />
-    <meta property="og:url" content="https://bit-main.ru/guides/p2p-safety-checklist.html" />
-    <meta property="og:image" content="https://bit-main.ru/assets/img/og-cover.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#ffb11a" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
 </head>
 
 <body>
@@ -34,8 +21,8 @@
     <!-- HEADER -->
     <header class="header">
         <div class="container header-flex">
-            <a class="logo" href="/">
-                <img src="../assets/img/bitmain_logo.png" alt="BIT-MAIN">
+            <a class="logo" href="/" aria-label="BIT-MAIN">
+                <img src="/assets/img/bitmain_logo.png" alt="BM">
                 <span class="logo-text_1">BIT</span><span class="logo-text_2">-MAIN</span>
             </a>
 
@@ -44,7 +31,7 @@
                 <span></span><span></span><span></span>
             </label>
 
-            <nav class="nav" aria-label="Основная навигация">
+            <nav class="nav">
                 <a href="/exchanges/">Биржи</a>
                 <a href="/compare.html">Сравнение</a>
                 <a href="/p2p.html">P2P</a>
@@ -54,286 +41,135 @@
         </div>
     </header>
 
-    <main class="p2p-page">
+    <main class="container">
 
-        <div class="container">
-            <div class="breadcrumbs">
-                <a href="../index.html">Главная</a> → <a href="./index.html">Гайды</a> → <span>P2P безопасность</span>
-            </div>
+        <div class="breadcrumbs" style="margin-top: 30px;">
+            <a href="/">Главная</a> → <a href="/guides/">Гайды</a> → <span>Регламент безопасности</span>
         </div>
 
-        <!-- HERO -->
-        <section class="hero">
-            <div class="container">
-                <h1>P2P безопасность: 10 правил</h1>
-                <p class="subtitle">
-                    Это не “теория”. Это правила, которые реально уменьшают шанс попасть в спор и потерять время/деньги.
-                    Если соблюдать хотя бы эти 10 — вы уже не лёгкая добыча для типовых схем.
-                </p>
+        <div class="review-layout">
 
-                <div class="hero-tags">
-                    <span>Эскроу</span>
-                    <span>Доказательства</span>
-                    <span>Реквизиты</span>
-                    <span>Апелляция</span>
+            <!-- ОСНОВНОЙ КОНТЕНТ -->
+            <div class="review-content">
+
+                <section class="content-section">
+                    <span class="security-status"
+                        style="background: rgba(0, 192, 135, 0.1); color: var(--accent-green);">Протокол защиты</span>
+                    <h1>Регламент P2P-безопасности: 10 правил выживания</h1>
+                    <p class="lead-text">
+                        В P2P-сделках биржа является лишь техническим посредником. Ответственность за верификацию
+                        контрагента и подтверждение транзакций полностью лежит на пользователях.
+                    </p>
+
+                    <h2>10 обязательных правил обмена</h2>
+                    <ul class="check-list">
+                        <li><strong>1. Изоляция коммуникаций:</strong> Переписка разрешена только во внутреннем чате
+                            биржи. Любые договоренности в Telegram не имеют юридической силы для арбитража биржи.</li>
+                        <li><strong>2. Верификация получателя:</strong> При покупке крипты ФИО владельца банковской
+                            карты должны строго совпадать с ФИО, указанными в профиле продавца на бирже.</li>
+                        <li><strong>3. Верификация отправителя:</strong> При продаже крипты принимайте средства только с
+                            личных счетов контрагента. Платежи от третьих лиц (схема «треугольник») — повод для
+                            апелляции.</li>
+                        <li><strong>4. Приоритет банковского баланса:</strong> Факт оплаты подтверждается только
+                            выпиской в приложении банка. СМС-уведомления и PDF-чеки в чате — вторичны и легко
+                            подделываются.</li>
+                        <li><strong>5. Запрет отмены после транзакции:</strong> Если фиатные средства отправлены, кнопка
+                            «Отменить ордер» блокируется. Отмена сделки после оплаты — прямая потеря активов.</li>
+                        <li><strong>6. Нейтральность комментариев:</strong> Запрещено использовать слова «крипта»,
+                            «биткоин», «USDT» в банковском переводе. Это триггер для блокировки карты по 115-ФЗ.</li>
+                        <li><strong>7. Запрос фото подтверждения:</strong> В сомнительных случаях требуйте фото
+                            физической карты на фоне открытого чата сделки (с закрытыми средними цифрами).</li>
+                        <li><strong>8. Архивирование доказательств:</strong> Сохраняйте чеки и делайте запись экрана
+                            процесса оплаты до момента зачисления активов.</li>
+                        <li><strong>9. Игнорирование «псевдо-поддержки»:</strong> Сотрудники биржи никогда не пишут в
+                            чате сделки с просьбами сообщить код или отпустить крипту досрочно.</li>
+                        <li><strong>10. Принудительный арбитраж:</strong> При возникновении любой нестандартной ситуации
+                            прекращайте общение и немедленно открывайте апелляцию.</li>
+                    </ul>
+                </section>
+
+                <section class="content-section" id="scams">
+                    <h2>Сценарные риски 2026 года</h2>
+                    <p><strong>Эмуляторы банковского ПО:</strong> Современные мошеннические схемы включают использование
+                        софта, который имитирует успешный перевод в интерфейсе популярных банков. Единственный способ
+                        защиты — проверка <strong>доступного остатка</strong> на вашем счете через независимый вход в
+                        банк.</p>
+                </section>
+
+                <!-- ПАРТНЕРСКИЙ БЛОК -->
+                <div class="tools-banner">
+                    <div class="tools-info">
+                        <h3>Где надежнее арбитраж?</h3>
+                        <p>В случае спора критически важна работа техподдержки. Лидеры рынка по скорости решения
+                            P2P-конфликтов:</p>
+                    </div>
+                    <div class="tools-links">
+                        <a class="btn btn-primary btn-sm" href="https://partner.bybit.com/b/BITMAIN">Bybit</a>
+                        <a class="btn btn-primary btn-sm" href="https://okx.ac/join/83836972">OKX</a>
+                    </div>
                 </div>
 
-                <div class="hero-actions">
-                    <a class="btn btn-primary" href="#rules">10 правил</a>
-                    <a class="btn btn-secondary" href="#redflags">Красные флаги</a>
-                    <a class="btn btn-secondary" href="#faq">FAQ</a>
-                </div>
-
-                <div class="info-band">
-                    <strong>Запомнить легко:</strong> эскроу защищает только внутри платформы.
-                    Всё, что “снаружи” (мессенджеры, “скинь на другую карту”, “отмени и я отправлю”) — это снятие защиты
-                    своими руками.
+                <div class="author-meta">
+                    <span>Источник: Аналитический отдел BIT-MAIN</span>
+                    <span>Редакция: 13.02.2026</span>
                 </div>
             </div>
-        </section>
 
-        <!-- RULES -->
-        <section class="section" id="rules">
-            <div class="container content-wrap">
-                <div class="section-title">
-                    <h2>10 правил P2P</h2>
-                    <p>Коротко и жёстко. Без “можно иногда”.</p>
-                </div>
-
-                <div class="scenario-list">
-                    <article class="scenario-item">
-                        <div class="scenario-icon">1</div>
-                        <div class="scenario-content">
-                            <h3>Не уходить в мессенджеры</h3>
-                            <p>Переписка, условия и доказательства должны быть внутри платформы. Иначе эскроу
-                                превращается в декорацию.</p>
+            <!-- SIDEBAR -->
+            <aside class="review-sidebar">
+                <div class="sticky-card">
+                    <span class="sidebar-title">Статус безопасности</span>
+                    <div class="sidebar-stats">
+                        <div class="stat-row">
+                            <span>Внешние чаты</span>
+                            <span style="color: #ff5e5e; font-weight: 700;">ЗАПРЕЩЕНО</span>
                         </div>
-                    </article>
-
-                    <article class="scenario-item">
-                        <div class="scenario-icon">2</div>
-                        <div class="scenario-content">
-                            <h3>Не менять реквизиты “по просьбе”</h3>
-                            <p>Любая просьба “скинь на другую карту/родственнику/другу” — стоп. Работаете только по
-                                реквизитам ордера.</p>
+                        <div class="stat-row">
+                            <span>Сторонние ФИО</span>
+                            <span style="color: #ff5e5e; font-weight: 700;">РИСК</span>
                         </div>
-                    </article>
-
-                    <article class="scenario-item">
-                        <div class="scenario-icon">3</div>
-                        <div class="scenario-content">
-                            <h3>Сверять имя получателя до перевода</h3>
-                            <p>Сначала проверка реквизитов и имени, потом перевод. Не наоборот.</p>
+                        <div class="stat-row">
+                            <span>Прямой баланс</span>
+                            <span class="green-text">ОК</span>
                         </div>
-                    </article>
-
-                    <article class="scenario-item">
-                        <div class="scenario-icon">4</div>
-                        <div class="scenario-content">
-                            <h3>Не подтверждать “получил”, пока реально не получил</h3>
-                            <p>Если вы продавец — подтверждаете только после фактического зачисления. “Скрин/чек” — не
-                                зачисление.</p>
+                        <div class="stat-row">
+                            <span>Апелляция</span>
+                            <span class="green-text">ДОСТУПНА</span>
                         </div>
-                    </article>
-
-                    <article class="scenario-item">
-                        <div class="scenario-icon">5</div>
-                        <div class="scenario-content">
-                            <h3>Не отменять сделку после оплаты</h3>
-                            <p><strong>Оплатили — не отменяйте.</strong> Отмена снимает защиту эскроу. Это классическая
-                                ошибка №1.</p>
-                        </div>
-                    </article>
-
-                    <article class="scenario-item">
-                        <div class="scenario-icon">6</div>
-                        <div class="scenario-content">
-                            <h3>Фиксировать доказательства</h3>
-                            <p>Скрин подтверждения, выписка/чек, время, сумма, реквизиты, чат — всё сохраняете. Спор
-                                выигрывается документами.</p>
-                        </div>
-                    </article>
-
-                    <article class="scenario-item">
-                        <div class="scenario-icon">7</div>
-                        <div class="scenario-content">
-                            <h3>Не “оптимизировать” комментарии к платежу</h3>
-                            <p>Не пишите ничего лишнего и тем более “крипта/USDT”. Если биржа/ордер требует конкретный
-                                комментарий — следуете ему.</p>
-                        </div>
-                    </article>
-
-                    <article class="scenario-item">
-                        <div class="scenario-icon">8</div>
-                        <div class="scenario-content">
-                            <h3>Смотреть лимиты и условия ордера</h3>
-                            <p>Сделка должна попадать в лимиты. Любые “частями туда-сюда” без правил — источник споров.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="scenario-item">
-                        <div class="scenario-icon">9</div>
-                        <div class="scenario-content">
-                            <h3>Не спешить: 30 секунд проверки экономят часы</h3>
-                            <p>Большинство проблем из-за спешки. P2P — это дисциплина, а не скорость пальцев.</p>
-                        </div>
-                    </article>
-
-                    <article class="scenario-item">
-                        <div class="scenario-icon">10</div>
-                        <div class="scenario-content">
-                            <h3>Если что-то странно — апелляция, а не “договоримся”</h3>
-                            <p>В спорной ситуации вы не “решаете по-человечески”, вы включаете механизмы платформы.
-                                Иначе вы один на один.</p>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="mini-actions">
-                    <a class="btn btn-primary" href="./p2p-dispute-checklist.html">Спор: что приложить →</a>
-                    <a class="btn btn-secondary" href="../p2p.html">Разбор P2P →</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- RED FLAGS -->
-        <section class="section compact" id="redflags">
-            <div class="container content-wrap">
-                <div class="section-title">
-                    <h2>Красные флаги</h2>
-                    <p>Если видите это — вы уже знаете, что делать: стоп, перепроверка, апелляция при необходимости.</p>
-                </div>
-
-                <div class="two-col">
-                    <div class="panel">
-                        <h3>Почти всегда “разводка”</h3>
-                        <ul>
-                            <li>“Скинь на другую карту, эта не работает.”</li>
-                            <li>“Давай в телегу, тут неудобно.”</li>
-                            <li>“Я отправил, отпусти крипту, банк задержал.”</li>
-                            <li>“Отмени ордер и я сразу оплачу.”</li>
-                        </ul>
                     </div>
-
-                    <div class="panel">
-                        <h3>Требует внимания</h3>
-                        <ul>
-                            <li>Нестандартные условия ордера мелким текстом.</li>
-                            <li>Сильное давление по времени.</li>
-                            <li>Разные имена у отправителя и получателя без объяснений.</li>
-                            <li>Предложение “частями” без чёткой логики.</li>
-                        </ul>
-                    </div>
+                    <p class="sidebar-desc">Следование данному регламенту сводит вероятность потери средств к нулю.</p>
+                    <a href="/guides/account-security.html" class="btn btn-primary btn-full">Защита аккаунта</a>
                 </div>
 
-                <div class="info-band">
-                    <strong>Простая проверка:</strong> если вас пытаются вывести за рамки ордера — вас пытаются вывести
-                    из защиты.
+                <div class="sticky-card" style="border-color: var(--primary);">
+                    <span class="sidebar-title">Рекомендовано</span>
+                    <a href="https://partner.bybit.com/b/BITMAIN" class="btn btn-secondary btn-full">Регистрация на
+                        Bybit</a>
+                    <a href="https://okx.ac/join/83836972" class="btn btn-secondary btn-full">Регистрация на OKX</a>
+                    <a href="https://www.coinex.com/register?rc=s2vyu&channel=Referral"
+                        class="btn btn-secondary btn-full" style="margin-bottom: 0;">Регистрация на CoinEx</a>
                 </div>
-            </div>
-        </section>
+            </aside>
 
-        <!-- WHAT TO DO IF -->
-        <section class="section compact" id="what-to-do">
-            <div class="container content-wrap">
-                <div class="section-title">
-                    <h2>Если уже пошло не так</h2>
-                    <p>План действий без эмоций. Эмоции можно потом, когда деньги вернулись.</p>
-                </div>
-
-                <div class="two-col">
-                    <div class="panel">
-                        <h3>Если вы покупатель</h3>
-                        <ul>
-                            <li>Не отменяйте ордер после оплаты.</li>
-                            <li>Соберите доказательства: чек/выписка/скрин.</li>
-                            <li>Пишите в чат ордера кратко и по факту.</li>
-                            <li>Если задержка/отказ — открывайте апелляцию.</li>
-                        </ul>
-                    </div>
-
-                    <div class="panel">
-                        <h3>Если вы продавец</h3>
-                        <ul>
-                            <li>Не отпускайте крипту без фактического зачисления.</li>
-                            <li>“Скрин оплаты” не равен получению денег.</li>
-                            <li>Фиксируйте попытки давления/ухода в мессенджеры.</li>
-                            <li>При споре — апелляция + документы.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="mini-actions">
-                    <a class="btn btn-primary" href="./sell-usdt-p2p.html">Как продать USDT →</a>
-                    <a class="btn btn-secondary" href="./buy-usdt-p2p.html">Как купить USDT →</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ -->
-        <section class="faq" id="faq">
-            <h2>FAQ</h2>
-
-            <div class="faq-grid">
-                <details>
-                    <summary>Почему нельзя уходить в мессенджеры?</summary>
-                    <div class="faq-content">
-                        Потому что платформа не видит договорённостей и не сможет опереться на “скрины из телеги”.
-                        В споре важны данные внутри ордера: чат, реквизиты, таймлайн, подтверждения.
-                    </div>
-                </details>
-
-                <details>
-                    <summary>Если покупатель давит “я уже оплатил”, что делать?</summary>
-                    <div class="faq-content">
-                        Давление — это шум. Факт — это зачисление денег на ваш счёт (если вы продавец) и подтверждение
-                        внутри платформы.
-                        Нет зачисления — нет отпуска крипты. При конфликте — апелляция.
-                    </div>
-                </details>
-
-                <details>
-                    <summary>Можно ли переводить на карту другого человека?</summary>
-                    <div class="faq-content">
-                        В рамках безопасного P2P — нет. Переводите строго по реквизитам ордера.
-                        Любые “давай на другую карту” — причина остановиться и выбрать другой ордер.
-                    </div>
-                </details>
-
-                <details>
-                    <summary>Что самое важное для выигрыша спора?</summary>
-                    <div class="faq-content">
-                        Документы: чек/выписка, время, сумма, реквизиты, переписка в ордере.
-                        И правильное действие: не отменять ордер после оплаты.
-                    </div>
-                </details>
-            </div>
-        </section>
-
+        </div>
     </main>
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer-content">
-            <img src="../assets/img/bitmain_logo.png" alt="BIT-MAIN" class="footer-logo">
-
-            <div class="footer-nav">
+            <img class="footer-logo" src="/assets/img/bitmain_logo.png" alt="BIT-MAIN" />
+            <nav class="footer-nav">
                 <a href="/exchanges/">Биржи</a>
                 <a href="/compare.html">Сравнение</a>
                 <a href="/p2p.html">P2P</a>
                 <a href="/arbitrage.html">Арбитраж</a>
                 <a href="/guides/">Гайды</a>
-            </div>
-
+            </nav>
             <div class="footer-bottom">
-                <div class="note">
-                    Информация носит справочный характер и не является финансовой или юридической консультацией.
-                    Криптовалюты связаны с риском.
-                </div>
-                <div class="copyright">
-                    © 2026 BIT-MAIN
-                </div>
+                <p class="note">Отказ от ответственности: Администрация ресурса не несет ответственности за убытки,
+                    понесенные в результате использования данных рекомендаций. P2P-торговля — это высокорисковый вид
+                    деятельности.</p>
+                <div class="copyright">© 2026 BIT-MAIN. Независимый крипто-портал.</div>
             </div>
         </div>
     </footer>
