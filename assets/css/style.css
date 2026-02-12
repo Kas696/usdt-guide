@@ -266,7 +266,6 @@ img {
     font-size: 24px;
     font-weight: 900;
     color: var(--text-muted);
-    opacity: 0.3;
     width: auto;
     flex-shrink: 0;
     letter-spacing: 0.5px;
@@ -274,7 +273,6 @@ img {
 
 .rating-item:first-child .rating-rank {
     color: var(--primary);
-    opacity: 1;
 }
 
 /* Левый блок */
@@ -616,7 +614,7 @@ img {
 
 .footer-bottom .copyright {
     font-size: 13px;
-    color: #484f5a;
+    color: #b8c2cc;
 }
 
 /* --- MEDIA QUERIES (Mobile) --- */
