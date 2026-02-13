@@ -214,15 +214,25 @@
 
     <script>
         document.addEventListener('click', function (e) {
-            const link = e.target.closest('a');
+            const link = e.target.closest('a[href]');
             if (!link) return;
 
-            const isExternal = link.hostname !== location.hostname;
-            if (isExternal) {
-                if (typeof ym === 'function') {
-                    ym(106820779, 'reachGoal', 'exchange_click');
-                }
-            }
+            const url = new URL(link.href, location.href);
+            const isExternal = url.hostname !== location.hostname;
+            if (!isExternal) return;
+
+            if (typeof ym !== 'function') return;
+
+            e.preventDefault();
+
+            ym(106820779, 'reachGoal', 'exchange_click', {}, function () {
+                window.open(url.href, '_blank');
+            });
+
+            // fallback если callback не сработает
+            setTimeout(function () {
+                window.open(url.href, '_blank');
+            }, 150);
         });
     </script>
 
