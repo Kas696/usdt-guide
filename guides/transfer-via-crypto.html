@@ -198,6 +198,20 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('click', function (e) {
+            const link = e.target.closest('a');
+            if (!link) return;
+
+            const isExternal = link.hostname !== location.hostname;
+            if (isExternal) {
+                if (typeof ym === 'function') {
+                    ym(106820779, 'reachGoal', 'exchange_click');
+                }
+            }
+        });
+    </script>
+
 </body>
 
 </html>
