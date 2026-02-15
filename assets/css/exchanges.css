@@ -196,13 +196,25 @@
 }
 
 .guide-step {
-    text-align: center;
+    display: felx;
+    justify-content: center;
 }
 
-.step-icon {
-    font-size: 40px;
-    display: block;
-    margin-bottom: 15px;
+.step-img {
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.step-img img {
+    max-height: 150px;
+    width: 70%;
+
+}
+
+.center-link p {
+    margin-bottom: 20px;
 }
 
 .guide-step h4 {

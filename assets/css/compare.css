@@ -194,8 +194,9 @@
     gap: 15px;
 }
 
-.scenario-icon {
-    font-size: 24px;
+.scenario-img img {
+    max-width: 100%;
+    height: auto;
 }
 
 .scenario-content h3 {
@@ -226,4 +227,22 @@
     .hero h1 {
         font-size: 26px;
     }
+
+    .scenario-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .scenario-img {
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .scenario-img img {
+        max-width: 60%;
+        height: auto;
+    }
+
+
 }
