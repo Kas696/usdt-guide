@@ -21,7 +21,7 @@
 }
 
 .section-title h2 {
-    font-size: 32px;
+    font-size: 24px;
     margin-bottom: 12px;
 }
 
@@ -135,7 +135,7 @@
 }
 
 .prose-block p {
-    margin-bottom: 20px;
+    margin: 20px 0;
     color: var(--text-muted);
     font-size: 16px;
 }
@@ -150,4 +150,67 @@
     padding: 20px;
     margin: 20px 0;
     border-radius: 0 12px 12px 0;
+}
+
+/* ===== Responsive table (как в review.css) ===== */
+.p2p-compare .table-scroll {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+/* Таблица внутри скролла */
+.p2p-compare .table-scroll table {
+    width: max-content;
+    min-width: 100%;
+    border-collapse: collapse;
+    background: transparent;
+}
+
+/* Ячейки */
+.p2p-compare .table-scroll th,
+.p2p-compare .table-scroll td {
+    white-space: nowrap;
+}
+
+/* Сохраняем твой хедер */
+.p2p-compare .table-scroll th {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* Sticky первая колонка */
+.p2p-compare .table-scroll th:first-child,
+.p2p-compare .table-scroll td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: var(--bg-card);
+}
+
+.p2p-compare .table-scroll thead th:first-child {
+    z-index: 3;
+}
+
+/* Мобилка: чуть компактнее + гарантируем ширину для скролла */
+@media (max-width: 700px) {
+    .p2p-compare .table-scroll {
+        width: calc(100vw - 40px);
+        max-width: calc(100vw - 40px);
+    }
+
+    .p2p-compare .table-scroll table {
+        min-width: 760px;
+    }
+
+    .p2p-compare .table-scroll th,
+    .p2p-compare .table-scroll td {
+        padding: 12px;
+        font-size: 14px;
+    }
 }

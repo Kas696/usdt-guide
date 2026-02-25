@@ -219,7 +219,7 @@ img {
 }
 
 .hero-actions {
-    margin-top: 18px;
+    margin: 20px 0;
     display: flex;
     justify-content: center;
     gap: 12px;
@@ -433,7 +433,7 @@ img {
     color: var(--text-muted);
     font-size: 14px;
     line-height: 1.6;
-    margin-bottom: 12px;
+    margin: 20px 0;
 }
 
 .scenario-links {
@@ -647,16 +647,26 @@ img {
         left: 0;
         right: 0;
         background: var(--bg-card);
-        padding: 20px 0;
+        padding: 14px 0;
         border-bottom: 1px solid var(--border);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     }
 
     .nav a {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin: 0;
-        padding: 12px 20px;
-        text-align: center;
+        padding: 14px 20px;
+        font-size: 18px;
+        font-weight: 700;
+        min-height: 48px;
+        line-height: 1.2;
+        letter-spacing: 0.2px;
+    }
+
+    .nav a:active {
+        background: rgba(255, 255, 255, 0.04);
     }
 
     #menu-toggle:checked~.nav {
@@ -676,6 +686,10 @@ img {
     }
 
     /* Hero Mobile */
+    .hero {
+        padding: 20px;
+    }
+
     .hero h1 {
         font-size: 32px;
     }
