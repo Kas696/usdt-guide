@@ -90,6 +90,14 @@
     color: var(--text-main);
 }
 
+.info-box ol {
+    padding: 10px;
+}
+
+.info-box ol li {
+    margin-bottom: 12px;
+}
+
 .security-status {
     background: rgba(0, 192, 135, 0.1);
     color: var(--accent-green);
