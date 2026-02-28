@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ликвидность и стакан в 2026: проскальзывание и почему ломается расчет | BIT-MAIN</title>
+    <meta name="description"
+        content="Почему арбитражные расчёты не сходятся на практике: стакан, глубина рынка, спред bid/ask и проскальзывание. Быстрая диагностика ликвидности и примеры потерь на объёме." />
+    <link rel="canonical" href="https://bit-main.ru/guides/orderbook-liquidity-slippage.html" />
+
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/review.css">
+
+    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=106820779', 'ym');
+
+        ym(106820779, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/106820779" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container header-flex">
+            <a class="logo" href="/">
+                <img src="/assets/img/bitmain_logo.png" alt="BM">
+                <span class="logo-text_1">BIT</span><span class="logo-text_2">-MAIN</span>
+            </a>
+            <input type="checkbox" id="menu-toggle" hidden />
+            <label class="burger" for="menu-toggle"><span></span><span></span><span></span></label>
+            <nav class="nav">
+                <a href="/exchanges/">Биржи</a>
+                <a href="/compare.html">Сравнение</a>
+                <a href="/p2p.html">P2P</a>
+                <a href="/arbitrage.html">Арбитраж</a>
+                <a href="/guides/">Гайды</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs">
+            <a href="/">Главная</a> — <a href="/guides/">Гайды</a> — <a href="/arbitrage.html">Арбитраж</a> —
+            Ликвидность и стакан
+        </nav>
+
+        <div class="review-layout">
+            <!-- Main Content Column -->
+            <div class="review-content">
+                <h1>Ликвидность и стакан: почему математика ломается в 2026</h1>
+                <p class="lead-text">
+                    В таблице у вас +1%, в реальности — минус из-за стакана.
+                    Проскальзывание и глубина ликвидности — главные причины, по которым расчёты на бумаге не сходятся с
+                    практикой.
+                </p>
+
+                <!-- Section A: Quick Diagnostics -->
+                <div class="content-section" id="diagnostics">
+                    <h2>Быстрая диагностика ликвидности за 60 секунд</h2>
+                    <p>
+                        Перед входом в сделку потратьте минуту на проверку стакана.
+                        Эти пункты помогают отсеять опасные пары до того, как вы потеряете деньги.
+                    </p>
+
+                    <ul class="check-list">
+                        <li><strong>Объём на ±0.5%:</strong> хватает ли заявок на вашу сумму в пределах 0.5% от цены?
+                        </li>
+                        <li><strong>Спред Bid/Ask:</strong> разница между лучшей покупкой и продажей не больше 0.2–0.3%
+                            (пример).</li>
+                        <li><strong>Частота сделок:</strong> в ленте идут сделки регулярно, без длинных пауз.</li>
+                        <li><strong>Глубина стакана:</strong> есть несколько уровней цен с объёмом по обе стороны.</li>
+                        <li><strong>Отсутствие «стен»:</strong> нет аномально крупных заявок, которые могут задавить
+                            цену.</li>
+                        <li><strong>Резкие разрывы:</strong> между уровнями цен нет пустых зон (гэпов) около 1% и выше.
+                        </li>
+                        <li><strong>Объём 24ч:</strong> суточный объём пары заметно выше вашего оборота (в разы).</li>
+                        <li><strong>Количество ордеров:</strong> в стакане много заявок, а не “пара десятков”.</li>
+                        <li><strong>Время суток:</strong> в периоды низкой активности ликвидность хуже, риск
+                            проскальзывания выше.</li>
+                        <li><strong>Новости по активу:</strong> проверьте, нет ли анонсов делистинга или техработ.</li>
+                        <li><strong>История спреда:</strong> спред не расширяется кратно без причины.</li>
+                        <li><strong>Пара к стейблу:</strong> чаще безопаснее пары к USDT/USDC, чем к редким активам.
+                        </li>
+                    </ul>
+
+                    <div class="info-box">
+                        <strong>Предохранитель:</strong> Если хотя бы 3 пункта из списка вызывают сомнения —
+                        не входите. Потерянная возможность дешевле потерянных денег.
+                    </div>
+                </div>
+
+                <!-- Section B: Order Book Basics -->
+                <div class="content-section" id="orderbook-basics">
+                    <h2>Что такое стакан и где прячется проскальзывание</h2>
+                    <p>
+                        Стакан (Order Book) — это список всех активных заявок на покупку и продажу актива.
+                        Понимание его структуры критично для арбитража.
+                    </p>
+
+                    <div class="table-scroll">
+                        <table class="standard-table">
+                            <thead>
+                                <tr>
+                                    <th>Термин</th>
+                                    <th>Простое объяснение</th>
+                                    <th>Почему важно</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Bid (покупка)</td>
+                                    <td>Заявки тех, кто хочет купить актив</td>
+                                    <td>По этой цене вы можете продать</td>
+                                </tr>
+                                <tr>
+                                    <td>Ask (продажа)</td>
+                                    <td>Заявки тех, кто хочет продать актив</td>
+                                    <td>По этой цене вы можете купить</td>
+                                </tr>
+                                <tr>
+                                    <td>Спред</td>
+                                    <td>Разница между лучшим Bid и Ask</td>
+                                    <td>Чем уже — тем меньше потерь при входе/выходе</td>
+                                </tr>
+                                <tr>
+                                    <td>Глубина</td>
+                                    <td>Объём заявок на разных уровнях цены</td>
+                                    <td>Определяет, насколько можно «проесть» стакан</td>
+                                </tr>
+                                <tr>
+                                    <td>Проскальзывание</td>
+                                    <td>Разница между ожидаемой и реальной ценой исполнения</td>
+                                    <td>Съедает прибыль при больших объёмах</td>
+                                </tr>
+                                <tr>
+                                    <td>Стена</td>
+                                    <td>Крупная заявка, влияющая на движение цены</td>
+                                    <td>Может быть поддержкой или элементом манипуляции</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>
+                        <strong>Ключевое правило:</strong> цена последней сделки ≠ цена, по которой вы исполнитесь.
+                        Смотрите глубину стакана под свой объём.
+                    </p>
+                </div>
+
+                <!-- Section C: Profit Erosion Example -->
+                <div class="content-section" id="example">
+                    <h2>Пример: как «съедается» прибыль</h2>
+                    <p>
+                        Все цифры ниже — примерные. Реальные значения зависят от конкретной пары и момента времени.
+                    </p>
+
+                    <div class="table-scroll">
+                        <table class="standard-table">
+                            <thead>
+                                <tr>
+                                    <th>Объём</th>
+                                    <th>Видимая цена</th>
+                                    <th>Средняя цена исполнения</th>
+                                    <th>Потеря %</th>
+                                    <th>Итог по кругу</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>100 000 ₽</td>
+                                    <td>100.00 ₽</td>
+                                    <td>100.05 ₽</td>
+                                    <td>0.05% (пример)</td>
+                                    <td>Прибыль сохраняется</td>
+                                </tr>
+                                <tr>
+                                    <td>500 000 ₽</td>
+                                    <td>100.00 ₽</td>
+                                    <td>100.25 ₽</td>
+                                    <td>0.25% (пример)</td>
+                                    <td>Прибыль снижается</td>
+                                </tr>
+                                <tr>
+                                    <td>1 000 000 ₽</td>
+                                    <td>100.00 ₽</td>
+                                    <td>100.60 ₽</td>
+                                    <td>0.60% (пример)</td>
+                                    <td>Прибыль под угрозой</td>
+                                </tr>
+                                <tr>
+                                    <td>5 000 000 ₽</td>
+                                    <td>100.00 ₽</td>
+                                    <td>102.50 ₽</td>
+                                    <td>2.50% (пример)</td>
+                                    <td>Круг убыточен</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="info-box">
+                        <strong>Вывод:</strong> С ростом объёма проскальзывание растёт нелинейно.
+                        То, что работает на 100 000 ₽, может стать убыточным на 1 000 000 ₽ в той же паре.
+                    </div>
+                </div>
+
+                <!-- Section D: Low Liquidity Risk -->
+                <div class="content-section" id="low-liquidity">
+                    <h2>Почему в низколиквидных монетах вы становитесь «инвестором поневоле»</h2>
+                    <p>
+                        Низкая ликвидность превращает арбитраж в вынужденное удержание актива.
+                        Вот как это происходит.
+                    </p>
+
+                    <ul class="check-list">
+                        <li><strong>Невозможность выхода:</strong> продать актив без просадки на проценты сложно.</li>
+                        <li><strong>Расширение спреда:</strong> в моменты волатильности спред растёт кратно.</li>
+                        <li><strong>Частичное исполнение:</strong> ордер исполняется частями, остальное “висит”.</li>
+                        <li><strong>Отсутствие покупателей:</strong> на нужном уровне цены нет заявок.</li>
+                        <li><strong>Манипуляции:</strong> крупные заявки могут двигать цену против вас.</li>
+                        <li><strong>Делистинг:</strong> биржа может убрать пару — ликвидность исчезает.</li>
+                        <li><strong>Паузы торгов:</strong> при резких движениях торги могут ограничиваться.</li>
+                        <li><strong>Нет истории:</strong> трудно оценить типичную глубину стакана.</li>
+                        <li><strong>Комиссии/правила:</strong> на некоторых парах условия менее выгодны.</li>
+                        <li><strong>Время на выход:</strong> продажа может занять часы или дни.</li>
+                    </ul>
+
+                    <div class="info-box">
+                        <strong>Правило:</strong> Если вы не готовы держать актив дольше, чем план круга —
+                        не входите в низколиквидную пару. Арбитраж ≠ инвестиция.
+                    </div>
+                </div>
+
+                <!-- Section E: Market Modes -->
+                <div class="content-section" id="market-modes">
+                    <h2>Режимы рынка: когда стакан хуже всего</h2>
+                    <p>
+                        Ликвидность непостоянна. В определённые периоды даже топ-пары могут стать заметно “тоньше”.
+                    </p>
+
+                    <ul class="check-list">
+                        <li><strong>Периоды низкой активности:</strong> объёмы падают, спреды расширяются.</li>
+                        <li><strong>Выходные:</strong> в некоторые дни оборот меньше, чем в будни.</li>
+                        <li><strong>Крупные новости:</strong> спреды расширяются, стакан “разъезжается”.</li>
+                        <li><strong>Пампы/дампы:</strong> одна сторона стакана может исчезать.</li>
+                        <li><strong>Делистинг:</strong> перед снятием пары ликвидность деградирует.</li>
+                        <li><strong>Техработы:</strong> ограничения в торгах/выводах меняют поведение рынка.</li>
+                        <li><strong>Сильное движение BTC:</strong> альты часто теряют ликвидность первыми.</li>
+                        <li><strong>Редкие пары:</strong> в них стакан тонкий почти всегда — риск выше по умолчанию.
+                        </li>
+                    </ul>
+
+                    <div class="info-box">
+                        <strong>Предохранитель:</strong> Если в момент входа вы видите расширяющийся спред и пустеющую
+                        глубину —
+                        это обычно не “возможность”, а предупреждение.
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <div class="content-section" id="faq">
+                    <h2>FAQ</h2>
+                    <div class="faq-grid">
+                        <details>
+                            <summary>Как быстро оценить глубину стакана?</summary>
+                            <div class="faq-content">
+                                Посмотрите объём заявок в пределах ±0.5% от цены. Если объёма мало относительно вашей
+                                сделки —
+                                риск проскальзывания высокий.
+                            </div>
+                        </details>
+                        <details>
+                            <summary>Что делать, если спред внезапно расширился?</summary>
+                            <div class="faq-content">
+                                Обычно — не входить. Расширение спреда означает падение ликвидности или повышенный риск
+                                события.
+                                Дождитесь нормализации.
+                            </div>
+                        </details>
+                        <details>
+                            <summary>Можно ли доверять объёму 24ч у пары?</summary>
+                            <div class="faq-content">
+                                Это ориентир, но не гарантия. Смотрите на реальную ленту сделок и глубину стакана “здесь
+                                и сейчас”.
+                            </div>
+                        </details>
+                        <details>
+                            <summary>Почему цена “последней сделки” отличается от цены в стакане?</summary>
+                            <div class="faq-content">
+                                “Последняя сделка” — то, что уже случилось. Стакан — то, по каким ценам можно
+                                исполниться прямо сейчас.
+                            </div>
+                        </details>
+                        <details>
+                            <summary>Как уменьшить проскальзывание?</summary>
+                            <div class="faq-content">
+                                Выбирать ликвидные пары, не заходить “в рынок” крупным объёмом, использовать лимитные
+                                ордера
+                                и проверять глубину стакана под свою сумму.
+                            </div>
+                        </details>
+                        <details>
+                            <summary>Что такое «стена» в стакане?</summary>
+                            <div class="faq-content">
+                                Крупная заявка. Иногда это реальная поддержка/сопротивление, иногда — инструмент
+                                давления на участников.
+                            </div>
+                        </details>
+                        <details>
+                            <summary>Влияет ли время суток на ликвидность?</summary>
+                            <div class="faq-content">
+                                Да. В периоды низкой активности стакан становится тоньше, спред шире, а проскальзывание
+                                выше.
+                            </div>
+                        </details>
+                        <details>
+                            <summary>Какие пары обычно самые ликвидные?</summary>
+                            <div class="faq-content">
+                                Как правило, топ-активы к USDT и крупные стейбл-пары. Но проверять глубину нужно всегда
+                                — ситуация меняется.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Author Meta -->
+                <div class="author-meta">
+                    <span>Автор: Команда BIT-MAIN</span>
+                    <span>Обновлено: 28.02.2026</span>
+                </div>
+
+                <!-- Related Section -->
+                <section class="content-section related-section" id="related">
+                    <h2>Кластер P2P Арбитраж</h2>
+                    <div class="related-grid">
+                        <a href="/guides/p2p-to-spot-arbitrage.html" class="related-card">
+                            <span class="related-title">Арбитраж: P2P → Спот (база)</span>
+                            <span class="related-desc">Как работает круг внутри одной биржи, где возникает прибыль и
+                                основные риски.</span>
+                        </a>
+                        <a href="/guides/p2p-spot-arbitrage-math.html" class="related-card">
+                            <span class="related-title">Как считать круг: комиссии и спред</span>
+                            <span class="related-desc">Детальный разбор формул, скрытых комиссий и точки
+                                безубыточности.</span>
+                        </a>
+                        <a href="/guides/interexchange-arbitrage-works.html" class="related-card">
+                            <span class="related-title">Межбиржевой арбитраж</span>
+                            <span class="related-desc">Когда имеет смысл переводить активы между разными биржами, а не
+                                внутри одной.</span>
+                        </a>
+                        <a href="/guides/arbitrage-scam-schemes.html" class="related-card">
+                            <span class="related-title">Схемы мошенничества в связках</span>
+                            <span class="related-desc">Как отличают рабочую связку от скама и ловушек для
+                                новичков.</span>
+                        </a>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sidebar Column -->
+            <aside class="review-sidebar">
+                <div class="sticky-card">
+                    <span class="sidebar-title">Краткий вывод</span>
+                    <div class="sidebar-stats">
+                        <div class="stat-row">
+                            <span>Главный убийца расчёта</span>
+                            <span class="green-text">ПРОСКАЛЬЗЫВАНИЕ</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>Что смотреть первым</span>
+                            <span class="green-text">ГЛУБИНА</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>Красный флаг</span>
+                            <span class="green-text">СПРЕД РАСТЁТ</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>Безопаснее новичку</span>
+                            <span class="green-text">ТОП-ПАРЫ</span>
+                        </div>
+                    </div>
+                    <p class="sidebar-desc">
+                        Ликвидность определяет, сможете ли вы выйти из сделки по запланированной цене.
+                    </p>
+                    <a href="/compare.html" class="btn btn-primary btn-full">Сравнить условия бирж</a>
+                </div>
+
+                <div class="sticky-card">
+                    <span class="sidebar-title">Выбор площадки</span>
+
+                    <a href="https://partner.bybit.com/b/BITMAIN" class="btn btn-secondary btn-full"
+                        rel="nofollow sponsored noopener" target="_blank">Регистрация на Bybit</a>
+                    <a href="https://okx.ac/join/83836972" class="btn btn-secondary btn-full"
+                        rel="nofollow sponsored noopener" target="_blank">Регистрация на OKX</a>
+                    <a href="https://www.coinex.com/register?rc=s2vyu&channel=Referral"
+                        class="btn btn-secondary btn-full" rel="nofollow sponsored noopener" target="_blank">Регистрация
+                        на CoinEx</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-top">
+                <img src="/assets/img/bitmain_logo_vertical.png" width="164" height="159" alt="BIT-MAIN"
+                    class="footer-logo">
+            </div>
+
+            <div class="footer-nav">
+                <a href="/exchanges/">Биржи</a>
+                <a href="/compare.html">Сравнение</a>
+                <a href="/p2p.html">P2P</a>
+                <a href="/arbitrage.html">Арбитраж</a>
+                <a href="/guides/">Гайды</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="note">
+                    Дисклеймер: криптовалюта связана с высокими рисками. Материалы на сайте bit-main.ru носят
+                    исключительно информационный характер.
+                    Мы не даём финансовых советов.
+                </p>
+                <p class="copyright">© 2026 BIT-MAIN. Независимый крипто-портал.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('click', function (e) {
+            const link = e.target.closest('a[href]');
+            if (!link) return;
+
+            const url = new URL(link.href, location.href);
+            const isExternal = url.hostname !== location.hostname;
+            if (!isExternal) return;
+
+            if (typeof ym !== 'function') return;
+
+            e.preventDefault();
+
+            ym(106820779, 'reachGoal', 'exchange_click', {}, function () {
+                window.open(url.href, '_blank');
+            });
+
+            // fallback если callback не сработает
+            setTimeout(function () {
+                window.open(url.href, '_blank');
+            }, 150);
+        });
+    </script>
+
+</body>
+
+</html>

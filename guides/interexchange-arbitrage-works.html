@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Межбиржевой арбитраж в 2026: когда работает и где ломается | BIT-MAIN</title>
+    <meta name="description"
+        content="Межбиржевой арбитраж: почему спред на экране не равен прибыли. Комиссия вывода, время сети, ликвидность и проскальзывание, формула реальной прибыли и пример расчёта." />
+    <link rel="canonical" href="https://bit-main.ru/guides/interexchange-arbitrage-works.html" />
+
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/review.css">
+
+    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=106820779', 'ym');
+
+        ym(106820779, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/106820779" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container header-flex">
+            <a class="logo" href="/">
+                <img src="/assets/img/bitmain_logo.png" alt="BM">
+                <span class="logo-text_1">BIT</span><span class="logo-text_2">-MAIN</span>
+            </a>
+            <input type="checkbox" id="menu-toggle" hidden />
+            <label class="burger" for="menu-toggle"><span></span><span></span><span></span></label>
+            <nav class="nav">
+                <a href="/exchanges/">Биржи</a>
+                <a href="/compare.html">Сравнение</a>
+                <a href="/p2p.html">P2P</a>
+                <a href="/arbitrage.html">Арбитраж</a>
+                <a href="/guides/">Гайды</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs">
+            <a href="/">Главная</a> — <a href="/guides/">Гайды</a> — <a href="/arbitrage.html">Арбитраж</a> —
+            Межбиржевой арбитраж
+        </nav>
+
+        <div class="review-layout">
+            <!-- Main Content Column -->
+            <div class="review-content">
+                <h1>Межбиржевой арбитраж: когда он работает и когда нет в 2026 году</h1>
+                <p class="lead-text">
+                    Купить дешевле на бирже A, продать дороже на бирже B — звучит просто, но между «купить» и «продать»
+                    лежат комиссия вывода, время подтверждений сети и риск движения рынка.
+                </p>
+
+                <!-- Section A: Scheme -->
+                <div class="content-section" id="scheme">
+                    <h2>Как выглядит межбиржевой арбитраж (схема)</h2>
+                    <p>
+                        В отличие от внутрибиржевого круга (P2P → Спот), здесь актив перемещается между площадками.
+                        Каждый шаг имеет стоимость и занимает время.
+                    </p>
+
+                    <ul class="check-list">
+                        <li><strong>Биржа A:</strong> покупка актива по более низкой цене.</li>
+                        <li><strong>Вывод:</strong> перевод актива с биржи A на биржу B (или на внешний кошелёк).</li>
+                        <li><strong>Сеть:</strong> ожидание подтверждений блокчейна.</li>
+                        <li><strong>Ввод:</strong> зачисление на биржу B (иногда с задержкой обработки депозита).</li>
+                        <li><strong>Биржа B:</strong> продажа актива по более высокой цене.</li>
+                        <li><strong>Возврат капитала:</strong> перевод стейбла/фиата обратно на биржу A (если нужно
+                            повторять цикл).</li>
+                        <li><strong>Повтор:</strong> цикл имеет смысл только если чистая прибыль перекрывает издержки и
+                            риск времени.</li>
+                    </ul>
+
+                    <div class="info-box">
+                        <strong>Предохранитель:</strong> Главный враг межбиржевого арбитража — время.
+                        Пока актив идёт по сети, цены на обеих биржах успевают измениться, и “дельта” часто исчезает.
+                    </div>
+                </div>
+
+                <!-- Section B: Where Economy Breaks -->
+                <div class="content-section" id="breaks">
+                    <h2>Где экономика ломается</h2>
+                    <p>
+                        На скриншоте вы видите разницу цен 3%. После учёта издержек остаётся 0.5% или убыток.
+                        Ниже — типовые «пожиратели прибыли».
+                    </p>
+
+                    <ul class="check-list">
+                        <li><strong>Комиссия вывода:</strong> фиксированная сумма в активе или в стейбле, зависит от
+                            сети и биржи.</li>
+                        <li><strong>Время подтверждений:</strong> сеть работает не по расписанию, возможны очереди и
+                            задержки.</li>
+                        <li><strong>Волатильность:</strong> цена меняется, пока идёт перевод и пока депозит “дойдёт”.
+                        </li>
+                        <li><strong>Паузы на вывод:</strong> биржа может временно приостановить вывод по сети/активу.
+                        </li>
+                        <li><strong>Разные лимиты и KYC:</strong> на одной бирже вывод доступен, на другой — ограничен
+                            до проверки.</li>
+                        <li><strong>Разная ликвидность:</strong> на бирже B может не быть объёма в стакане под вашу
+                            сумму.</li>
+                        <li><strong>Спред в стакане:</strong> лучшая цена в интерфейсе ≠ цена, по которой вы реально
+                            исполнитесь.</li>
+                        <li><strong>Минимальные суммы:</strong> минимальный вывод/минимальный депозит/минимальный ордер
+                            могут ломать мелкие объёмы.</li>
+                        <li><strong>Комиссии торговли:</strong> вход/выход на двух биржах — это всегда две сделки (и две
+                            комиссии).</li>
+                    </ul>
+
+                    <div class="info-box">
+                        <strong>Важно:</strong> “Дельта” должна покрывать не только комиссии, но и риск времени.
+                        Если запас маленький — вы фактически ставите на то, что рынок не двинется за время перевода.
+                    </div>
+                </div>
+
+                <!-- Section C: Formula -->
+                <div class="content-section" id="formula">
+                    <h2>Формула реальной прибыли</h2>
+                    <p>
+                        Видимый спред — это не прибыль. Реальный результат считается после вычета издержек и учёта того,
+                        по какой цене вы действительно исполняетесь.
+                    </p>
+
+                    <div class="info-box">
+                        <code>Profit ≈ (Price_B − Price_A) − Trading Fees − Withdrawal/Network − Slippage − Time Risk</code>
+                    </div>
+
+                    <ul class="check-list">
+                        <li><strong>Price_B − Price_A:</strong> разница цен между биржами в моменте.</li>
+                        <li><strong>Trading Fees:</strong> комиссии за сделки на бирже A и бирже B.</li>
+                        <li><strong>Withdrawal/Network:</strong> комиссия вывода и комиссии сети.</li>
+                        <li><strong>Slippage:</strong> ухудшение цены из-за глубины стакана (особенно на бирже B).</li>
+                        <li><strong>Time Risk:</strong> потери из-за движения рынка, пока актив в пути.</li>
+                    </ul>
+
+                    <p>
+                        Если итог отрицательный — круг убыточен, даже если “на скрине” красиво.
+                    </p>
+                </div>
+
+                <!-- Section D: Calculation Example -->
+                <div class="content-section" id="example">
+                    <h2>Пример расчёта (100 000 ₽ или эквивалент)</h2>
+                    <p>
+                        Все цифры ниже — <strong>пример</strong>. Перед сделкой проверяйте комиссии вывода, текущую
+                        нагрузку сети и ликвидность стакана.
+                    </p>
+
+                    <div class="table-scroll">
+                        <table class="standard-table">
+                            <thead>
+                                <tr>
+                                    <th>Параметр</th>
+                                    <th>Пример</th>
+                                    <th>Влияние</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Цена на бирже A</td>
+                                    <td>95.00 ₽/USDT</td>
+                                    <td>База для покупки</td>
+                                </tr>
+                                <tr>
+                                    <td>Цена на бирже B</td>
+                                    <td>97.00 ₽/USDT</td>
+                                    <td>База для продажи</td>
+                                </tr>
+                                <tr>
+                                    <td>Видимый спред</td>
+                                    <td>2.1% (пример)</td>
+                                    <td>Кажется прибыльным</td>
+                                </tr>
+                                <tr>
+                                    <td>Торговые комиссии (A + B)</td>
+                                    <td>0.2% (пример)</td>
+                                    <td>−200 ₽</td>
+                                </tr>
+                                <tr>
+                                    <td>Комиссия вывода/сети</td>
+                                    <td>~1 USDT (пример)</td>
+                                    <td>−95 ₽</td>
+                                </tr>
+                                <tr>
+                                    <td>Проскальзывание на бирже B</td>
+                                    <td>0.5% (пример)</td>
+                                    <td>−500 ₽</td>
+                                </tr>
+                                <tr>
+                                    <td>Time Risk (цена ушла)</td>
+                                    <td>0.8% (пример)</td>
+                                    <td>−800 ₽</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Итого</strong></td>
+                                    <td><strong>~0.6% (пример)</strong></td>
+                                    <td><strong>~600 ₽</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="info-box">
+                        <strong>Вывод:</strong> Видимый спред 2.1% превратился в ~0.6% чистыми.
+                        При чуть более дорогой сети или задержке подтверждений круг легко уходит в минус.
+                    </div>
+                </div>
+
+                <!-- Section E: When It Makes Sense -->
+                <div class="content-section" id="when-yes">
+                    <h2>Когда межбиржевой арбитраж имеет смысл</h2>
+                    <p>
+                        Входить стоит только когда условия реально складываются в вашу пользу.
+                    </p>
+
+                    <ul class="check-list">
+                        <li><strong>Большая разница цен:</strong> запас остаётся <em>после</em> всех комиссий и
+                            проскальзывания (редко).</li>
+                        <li><strong>Быстрая и предсказуемая сеть:</strong> меньше время в пути — меньше time risk.</li>
+                        <li><strong>Низкая комиссия вывода:</strong> особенно важно на небольших объёмах.</li>
+                        <li><strong>Ликвидность на обеих биржах:</strong> вы можете выйти объёмом без сильной просадки.
+                        </li>
+                        <li><strong>Выводы работают стабильно:</strong> нет техработ/паузы по нужной сети.</li>
+                        <li><strong>KYC пройден:</strong> лимиты на ввод/вывод позволяют не “упираться в потолок”.</li>
+                    </ul>
+                </div>
+
+                <!-- Section F: When It Doesn't Make Sense -->
+                <div class="content-section" id="when-no">
+                    <h2>Когда не имеет смысла</h2>
+                    <p>
+                        В этих ситуациях риск обычно выше потенциальной прибыли.
+                    </p>
+
+                    <ul class="check-list">
+                        <li><strong>Рынок “летит”:</strong> высокая волатильность, дельта меняется каждую минуту.</li>
+                        <li><strong>Вывод занимает 30+ минут:</strong> time risk становится главным фактором.</li>
+                        <li><strong>Актив волатильный:</strong> не стейбл, а монета с движениями 2–5% за час.</li>
+                        <li><strong>Разница &lt; 1%:</strong> чаще всего не покрывает издержки и риск времени.</li>
+                        <li><strong>Есть риск паузы на вывод:</strong> техработы/ограничения по сети.</li>
+                        <li><strong>Нет ликвидности на выход:</strong> стакан тонкий — проскальзывание съедает всё.</li>
+                    </ul>
+                </div>
+
+                <!-- FAQ -->
+                <div class="content-section" id="faq">
+                    <h2>FAQ</h2>
+                    <div class="faq-grid">
+                        <details>
+                            <summary>Сколько времени занимает перевод между биржами?</summary>
+                            <div class="faq-content">
+                                Зависит от сети и её нагрузки. Время может колебаться от минут до десятков минут.
+                                Перед отправкой проверяйте статус сети и требования по подтверждениям на
+                                бирже-получателе.
+                            </div>
+                        </details>
+                        <details>
+                            <summary>Можно ли выводить напрямую с биржи A на биржу B?</summary>
+                            <div class="faq-content">
+                                Обычно да, если вы выбираете правильную сеть и адрес депозита биржи B.
+                                Главное — совпадение сети на отправке и на депозите, иначе средства можно потерять.
+                            </div>
+                        </details>
+                        <details>
+                            <summary>Что делать, если цена ушла пока шёл перевод?</summary>
+                            <div class="faq-content">
+                                Это и есть time risk. В моменте вы решаете: фиксировать результат или ждать.
+                                Чтобы снизить риск, чаще используют стейблы и быстрые сети, а не волатильные активы.
+                            </div>
+                        </details>
+                        <details>
+                            <summary>Нужен ли KYC на обеих биржах?</summary>
+                            <div class="faq-content">
+                                Для нормальных лимитов и стабильных выводов — обычно да.
+                                Без KYC лимиты могут быть слишком низкими или вывод может быть недоступен.
+                            </div>
+                        </details>
+                        <details>
+                            <summary>Какая сеть дешевле для переводов USDT?</summary>
+                            <div class="faq-content">
+                                Комиссии зависят от бирж и текущих условий сети. Часто выбирают сети с низкой комиссией,
+                                но важнее не “дешевле”, а “быстрее и стабильнее” под вашу задачу.
+                            </div>
+                        </details>
+                        <details>
+                            <summary>Можно ли автоматизировать межбиржевой арбитраж?</summary>
+                            <div class="faq-content">
+                                Технически да, но это требует API, контроля рисков и понимания ограничений вывода/ввода.
+                                Для новичков ручной подход безопаснее.
+                            </div>
+                        </details>
+                        <details>
+                            <summary>Почему “связки” из телеграма часто не работают?</summary>
+                            <div class="faq-content">
+                                Дельта живёт недолго. Пока информация стала публичной — она часто уже закрылась,
+                                а вы заходите в момент, когда риск времени максимальный.
+                            </div>
+                        </details>
+                        <details>
+                            <summary>Что делать, если актив “застрял” между биржами?</summary>
+                            <div class="faq-content">
+                                Это сценарий, который нужно закладывать заранее: держать запас ликвидности, не начинать
+                                на весь капитал
+                                и выбирать предсказуемые сети. Чем меньше “время в пути”, тем меньше шанс застрять в
+                                плохом движении.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Author Meta -->
+                <div class="author-meta">
+                    <span>Автор: Команда BIT-MAIN</span>
+                    <span>Обновлено: 28.02.2026</span>
+                </div>
+
+                <!-- Related Section -->
+                <section class="content-section related-section" id="related">
+                    <h2>Кластер P2P Арбитраж</h2>
+
+                    <div class="related-grid">
+                        <a href="/guides/p2p-to-spot-arbitrage.html" class="related-card">
+                            <span class="related-title">Арбитраж: P2P → Спот (база)</span>
+                            <span class="related-desc">Как работает круг внутри одной биржи, где возникает прибыль и
+                                основные риски.</span>
+                        </a>
+                        <a href="/guides/p2p-spot-arbitrage-math.html" class="related-card">
+                            <span class="related-title">Как считать круг: комиссии, спред, лимиты</span>
+                            <span class="related-desc">Формулы прибыли и безубыточности, проскальзывание и типовые
+                                ошибки расчёта.</span>
+                        </a>
+                        <a href="/guides/orderbook-liquidity-slippage.html" class="related-card">
+                            <span class="related-title">Ликвидность и стакан: почему математика ломается</span>
+                            <span class="related-desc">Как глубина рынка и проскальзывание превращают “плюс” на экране в
+                                минус.</span>
+                        </a>
+                        <a href="/guides/arbitrage-scam-schemes.html" class="related-card">
+                            <span class="related-title">Типовые схемы мошенничества в связках</span>
+                            <span class="related-desc">Красные флаги и правила безопасности при работе с арбитражными
+                                “связками”.</span>
+                        </a>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sidebar Column -->
+            <aside class="review-sidebar">
+                <div class="sticky-card">
+                    <span class="sidebar-title">Краткий вывод</span>
+                    <div class="sidebar-stats">
+                        <div class="stat-row">
+                            <span>Где иллюзия</span>
+                            <span class="green-text">СПРЕД НА СКРИНЕ</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>Что забывают</span>
+                            <span class="green-text">КОМИССИЯ ВЫВОДА</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>Главный риск</span>
+                            <span class="green-text">ВРЕМЯ СЕТИ</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>Когда работает</span>
+                            <span class="green-text">БОЛЬШАЯ ДЕЛЬТА</span>
+                        </div>
+                    </div>
+                    <p class="sidebar-desc">
+                        Межбиржевой арбитраж живёт на скорости: пока актив в пути, “дельта” может исчезнуть.
+                    </p>
+                    <a href="/compare.html" class="btn btn-primary btn-full">Сравнить условия бирж</a>
+                </div>
+
+                <div class="sticky-card">
+                    <span class="sidebar-title">Выбор площадки</span>
+
+                    <a href="https://partner.bybit.com/b/BITMAIN" class="btn btn-secondary btn-full" target="_blank"
+                        rel="nofollow sponsored noopener">Регистрация на Bybit</a>
+
+                    <a href="https://okx.ac/join/83836972" class="btn btn-secondary btn-full" target="_blank"
+                        rel="nofollow sponsored noopener">Регистрация на OKX</a>
+
+                    <a href="https://www.coinex.com/register?rc=s2vyu&channel=Referral"
+                        class="btn btn-secondary btn-full" target="_blank" rel="nofollow sponsored noopener">Регистрация
+                        на CoinEx</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-top">
+                <img src="/assets/img/bitmain_logo_vertical.png" width="164" height="159" alt="BIT-MAIN"
+                    class="footer-logo">
+            </div>
+
+            <div class="footer-nav">
+                <a href="/exchanges/">Биржи</a>
+                <a href="/compare.html">Сравнение</a>
+                <a href="/p2p.html">P2P</a>
+                <a href="/arbitrage.html">Арбитраж</a>
+                <a href="/guides/">Гайды</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="note">
+                    Дисклеймер: криптовалюта связана с высокими рисками. Материалы на сайте bit-main.ru носят
+                    исключительно информационный характер.
+                    Мы не даём финансовых советов.
+                </p>
+                <p class="copyright">© 2026 BIT-MAIN. Независимый крипто-портал.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('click', function (e) {
+            const link = e.target.closest('a[href]');
+            if (!link) return;
+
+            const url = new URL(link.href, location.href);
+            const isExternal = url.hostname !== location.hostname;
+            if (!isExternal) return;
+
+            if (typeof ym !== 'function') return;
+
+            e.preventDefault();
+
+            ym(106820779, 'reachGoal', 'exchange_click', {}, function () {
+                window.open(url.href, '_blank');
+            });
+
+            // fallback если callback не сработает
+            setTimeout(function () {
+                window.open(url.href, '_blank');
+            }, 150);
+        });
+    </script>
+
+</body>
+
+</html>
