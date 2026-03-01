@@ -309,3 +309,42 @@
 .guides-grid .badge.best-badge {
     background: rgba(0, 192, 135, 0.10);
 }
+
+.pagination {
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.pagination-btn,
+.pagination-page {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.pagination-pages {
+    display: inline-flex;
+    gap: 8px;
+}
+
+.pagination-page.is-active {
+    border-color: rgba(255, 177, 26, 0.65);
+    background: rgba(255, 177, 26, 0.12);
+}
+
+.pagination-btn.is-disabled {
+    opacity: 0.45;
+    pointer-events: none;
+}

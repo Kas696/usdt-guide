@@ -165,6 +165,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
     <url>
     <loc>https://bit-main.ru/guides/usdt-vs-usdc.html</loc>
     <changefreq>monthly</changefreq>
@@ -194,4 +195,45 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://bit-main.ru/guides/how-to-choose-merchant-p2p.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://bit-main.ru/guides/p2p-banks-115fz.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://bit-main.ru/guides/p2p-spot-arbitrage-math.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://bit-main.ru/guides/interexchange-arbitrage-works.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://bit-main.ru/guides/orderbook-liquidity-slippage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://bit-main.ru/guides/arbitrage-scam-schemes.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+  <loc>https://bit-main.ru/guides/page-2.html</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.6</priority>
+</url>
 </urlset>
