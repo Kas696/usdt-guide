@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Уровни KYC и лимиты в 2026: как связаны верификация, P2P и вывод средств | BIT-MAIN</title>
+    <meta name="description"
+        content="Как устроены уровни KYC на криптобиржах в 2026 году: какие функции зависят от уровня, от чего меняются лимиты и где смотреть актуальные условия в профиле аккаунта." />
+    <link rel="canonical" href="https://bit-main.ru/guides/kyc-levels-and-limits.html" />
+
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/review.css">
+
+    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=106820779', 'ym');
+
+        ym(106820779, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/106820779" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-flex">
+            <a class="logo" href="/" aria-label="BIT-MAIN">
+                <img src="/assets/img/bitmain_logo.png" alt="BM">
+                <span class="logo-text_1">BIT</span><span class="logo-text_2">-MAIN</span>
+            </a>
+
+            <input type="checkbox" id="menu-toggle" hidden />
+            <label class="burger" for="menu-toggle">
+                <span></span><span></span><span></span>
+            </label>
+
+            <nav class="nav">
+                <a href="/exchanges/">Биржи</a>
+                <a href="/compare.html">Сравнение</a>
+                <a href="/p2p.html">P2P</a>
+                <a href="/arbitrage.html">Арбитраж</a>
+                <a href="/guides/">Гайды</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav class="breadcrumbs">
+            <a href="/">Главная</a> —
+            <a href="/guides/">Гайды</a> —
+            Уровни KYC и лимиты
+        </nav>
+
+        <div class="review-layout">
+            <div class="review-content">
+                <h1>Уровни KYC и лимиты на криптобиржах в 2026</h1>
+                <p class="lead-text">
+                    Уровни верификации влияют на лимиты, доступ к P2P и фиатным операциям, а иногда — на восстановление
+                    аккаунта и некоторые настройки безопасности.
+                    Конкретные цифры и условия меняются и зависят от страны и биржи, поэтому важно уметь проверять их в
+                    интерфейсе.
+                </p>
+
+                <div class="content-section" id="how-kyc-levels-work">
+                    <h2>Как устроены уровни KYC</h2>
+                    <p>
+                        У большинства бирж логика похожая: чем больше данных подтверждено, тем выше лимиты и шире набор
+                        функций.
+                        Названия этапов отличаются, но обычно встречаются такие уровни:
+                    </p>
+                    <ul class="check-list">
+                        <li><strong>Базовый доступ (без KYC):</strong> минимальный функционал, часто с ограничениями на
+                            вывод и на части сервисов.</li>
+                        <li><strong>Подтверждение личности (ID):</strong> документ + селфи или liveness-проверка. Обычно
+                            расширяет лимиты и открывает больше операций.</li>
+                        <li><strong>Расширенная проверка (ID + адрес):</strong> подтверждение проживания по документу с
+                            адресом. Часто связано с доступом к фиатным методам и P2P (если это доступно в регионе).
+                        </li>
+                        <li><strong>Дополнительные проверки:</strong> иногда запрашивают сведения/документы по источнику
+                            средств или отдельным операциям. Это не «уровень ради уровня», а риск-процедуры.</li>
+                    </ul>
+                    <p>
+                        Если какая-то операция недоступна, биржа обычно показывает требование прямо в интерфейсе: какой
+                        уровень нужен и что не хватает.
+                    </p>
+                </div>
+
+                <div class="content-section" id="what-depends-on-level">
+                    <h2>Какие функции зависят от уровня</h2>
+                    <p>
+                        Уровень KYC обычно влияет не только на «сколько можно вывести», но и на доступ к отдельным
+                        разделам и способам ввода/вывода.
+                        Типовая привязка выглядит так:
+                    </p>
+
+                    <div class="table-scroll">
+                        <table class="standard-table">
+                            <thead>
+                                <tr>
+                                    <th>Функция</th>
+                                    <th>Базовый</th>
+                                    <th>ID</th>
+                                    <th>ID + адрес</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Спот-торговля</td>
+                                    <td>Иногда частично</td>
+                                    <td>Обычно да</td>
+                                    <td>Обычно да</td>
+                                </tr>
+                                <tr>
+                                    <td>Ввод/вывод крипто</td>
+                                    <td>Ограничено или недоступно</td>
+                                    <td>Да (с лимитами)</td>
+                                    <td>Выше лимиты</td>
+                                </tr>
+                                <tr>
+                                    <td>P2P и фиатные методы</td>
+                                    <td>Часто нет</td>
+                                    <td>Иногда</td>
+                                    <td>Чаще да</td>
+                                </tr>
+                                <tr>
+                                    <td>Восстановление доступа и смена настроек</td>
+                                    <td>Базовые варианты</td>
+                                    <td>Больше вариантов</td>
+                                    <td>Могут быть дополнительные опции</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>
+                        В реальности таблица у каждой площадки своя: какие-то функции могут не зависеть от адреса, а
+                        где-то адрес нужен только для определённых
+                        фиатных способов. Поэтому финальная проверка — всегда в профиле аккаунта.
+                    </p>
+                </div>
+
+                <div class="content-section" id="what-affects-limits">
+                    <h2>От чего зависят лимиты</h2>
+                    <p>
+                        Лимиты — это не одна «цифра», а набор ограничений: на ввод, вывод, фиатные операции, P2P, иногда
+                        — отдельные активы или методы.
+                        На условия обычно влияет несколько факторов:
+                    </p>
+                    <ul class="check-list">
+                        <li><strong>Регион и доступность функций:</strong> в разных странах один и тот же продукт может
+                            работать по-разному.</li>
+                        <li><strong>Тип аккаунта:</strong> если биржа поддерживает разные типы профиля, условия могут
+                            отличаться.</li>
+                        <li><strong>Уровень верификации:</strong> подтверждённые данные обычно повышают лимиты и
+                            открывают дополнительные методы.</li>
+                        <li><strong>Риск-профиль:</strong> история операций, нетипичная активность, частые изменения
+                            устройства/географии входов могут приводить к дополнительным проверкам.</li>
+                    </ul>
+
+                    <div class="info-box">
+                        Лимиты и требования меняются. Чужие скриншоты и обзоры часто устаревают: актуальные условия
+                        смотрите в своём аккаунте.
+                    </div>
+                </div>
+
+                <div class="content-section" id="how-to-check-limits">
+                    <h2>Как проверять актуальные лимиты в интерфейсе</h2>
+                    <p>
+                        Универсальный маршрут похож почти везде: профиль → уровень аккаунта → лимиты и требования к
+                        следующему уровню.
+                    </p>
+                    <ul class="check-list">
+                        <li>Открой профиль и найди разделы вроде <strong>Verification</strong>, <strong>Account
+                                level</strong> или <strong>Limits</strong>.</li>
+                        <li>Посмотри лимиты по категориям: дневные/месячные, по вводу/выводу, по фиатным методам и по
+                            отдельным активам (если есть).</li>
+                        <li>Проверь примечания: некоторые лимиты действуют только для конкретных стран или для
+                            определённых методов оплаты.</li>
+                        <li>Если условия поменялись — смотри уведомления в кабинете. При нестыковках проще опираться на
+                            то, что показывает профиль прямо сейчас.</li>
+                    </ul>
+                    <p>
+                        Если часто работаешь на границе лимитов, полезно фиксировать свой текущий уровень и лимиты
+                        (например, скриншотом) — так проще
+                        объяснять ситуацию поддержке, если что-то изменилось внезапно.
+                    </p>
+                </div>
+
+                <div class="content-section" id="practical-scenarios">
+                    <h2>Практические сценарии: какой уровень выбрать</h2>
+                    <p>
+                        Уровень выбирается не «на всякий случай», а под задачи. Примеры, как обычно это выглядит:
+                    </p>
+                    <ul class="check-list">
+                        <li><strong>Редкие покупки/продажи:</strong> часто хватает подтверждения личности, если лимиты
+                            покрывают объёмы.</li>
+                        <li><strong>Регулярный фиат или P2P:</strong> имеет смысл заранее пройти уровень, который нужен
+                            именно для этих функций в вашем регионе.</li>
+                        <li><strong>Хранение активов на бирже:</strong> более высокий уровень может упростить
+                            восстановление доступа и отдельные изменения профиля.</li>
+                        <li><strong>Частые выводы на внешний кошелёк:</strong> смотри лимиты именно на вывод крипто, они
+                            могут отличаться от фиатных ограничений.</li>
+                    </ul>
+                    <p>
+                        Если сценарии меняются, уровень обычно можно повысить позже. Ключевой момент — заранее понимать,
+                        где в профиле смотреть требования и лимиты.
+                    </p>
+                </div>
+
+                <div class="content-section" id="checklists">
+                    <h2>Чек-листы</h2>
+
+                    <p><strong>Перед повышением уровня:</strong></p>
+                    <ul class="check-list">
+                        <li>Подготовь чёткие фото/сканы документа: без бликов, без обрезанных углов, текст читается.
+                        </li>
+                        <li>Сверь ФИО и дату рождения в профиле с документом символ в символ (включая транслитерацию,
+                            если требуется).</li>
+                        <li>Заранее посмотри, какие документы принимает биржа для адреса (если это нужно для выбранной
+                            функции).</li>
+                        <li>Включи 2FA и сохрани резервные коды, чтобы потом не упереться в ограничения безопасности.
+                        </li>
+                    </ul>
+
+                    <p><strong>Если запросили адрес или источник средств:</strong></p>
+                    <ul class="check-list">
+                        <li>Посмотри в интерфейсе, какие типы документов подходят именно на этой бирже — требования
+                            отличаются.</li>
+                        <li>Для адреса обычно нужен официальный документ с твоим именем и полным адресом; срок
+                            «свежести» зависит от правил площадки.</li>
+                        <li>По источнику средств лучше отвечать коротко и по делу, документами, которые реально
+                            подтверждают объяснение.</li>
+                        <li>Отправляй файлы только через официальный интерфейс биржи и не передавай документы третьим
+                            лицам.</li>
+                    </ul>
+                </div>
+
+                <div class="content-section" id="faq">
+                    <h2>Частые вопросы</h2>
+
+                    <div class="faq-grid">
+                        <details>
+                            <summary>Почему лимиты разные у людей с одинаковым уровнем?</summary>
+                            <div class="faq-content">
+                                <p>
+                                    Потому что уровень KYC — не единственный фактор. Влияет регион, доступность функций
+                                    в стране, а также внутренние правила риск-менеджмента
+                                    и история аккаунта.
+                                </p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Можно ли понизить уровень верификации?</summary>
+                            <div class="faq-content">
+                                <p>
+                                    Иногда это возможно через поддержку, но последствия почти всегда практические: часть
+                                    функций станет недоступна и лимиты могут снизиться.
+                                    Перед любыми изменениями проверь, что именно потеряется на твоём аккаунте.
+                                </p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Зачем просят подтверждение адреса?</summary>
+                            <div class="faq-content">
+                                <p>
+                                    Чаще всего это связано с требованиями комплаенса и тем, как биржа обслуживает
+                                    пользователей в разных юрисдикциях.
+                                    На практике адрес нередко привязан к фиатным методам и P2P.
+                                </p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Что будет, если не проходить верификацию дальше?</summary>
+                            <div class="faq-content">
+                                <p>
+                                    Ничего «автоматически плохого» не происходит: ты остаёшься на текущем уровне и
+                                    пользуешься тем, что доступно.
+                                    Ограничения проявляются, когда пытаешься включить функцию или выйти за лимиты.
+                                </p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Как понять, что нужен источник средств?</summary>
+                            <div class="faq-content">
+                                <p>
+                                    Запрос появляется в интерфейсе или в уведомлениях, когда бирже нужно уточнение по
+                                    операциям. Триггеры и условия не публичны и зависят
+                                    от правил площадки и страны.
+                                </p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Можно ли заменить документ после верификации?</summary>
+                            <div class="faq-content">
+                                <p>
+                                    Обычно да: если документ истёк, изменились данные или биржа просит обновление.
+                                    Процедура и сроки зависят от площадки — чаще всего это делается
+                                    через раздел верификации в профиле.
+                                </p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Почему доступ к P2P пропал после обновления правил?</summary>
+                            <div class="faq-content">
+                                <p>
+                                    Такое бывает при изменении требований по региону или по уровню аккаунта. Сначала
+                                    проверь уведомления в кабинете и раздел лимитов/верификации,
+                                    затем — какой именно шаг требует система.
+                                </p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="author-meta">
+                    <span>Автор: Команда BIT-MAIN</span>
+                    <span>Обновлено: 02.03.2026</span>
+                </div>
+            </div>
+
+            <aside class="review-sidebar">
+                <div class="sticky-card">
+                    <span class="sidebar-title">Краткий вывод</span>
+                    <ul class="summary-list">
+                        <li><strong>Уровни KYC</strong> привязаны к функциям и лимитам, а не к «галочке ради галочки».
+                        </li>
+                        <li><strong>Лимиты зависят</strong> от биржи, страны, уровня и внутренних проверок — у двух
+                            людей они могут отличаться.</li>
+                        <li><strong>Актуальные цифры</strong> смотрятся в профиле аккаунта, а не по чужим скриншотам.
+                        </li>
+                        <li><strong>Запросы адреса/источника средств</strong> бывают не у всех и не всегда — это часть
+                            комплаенс-проверок.</li>
+                    </ul>
+                </div>
+
+                <div class="sticky-card">
+                    <span class="sidebar-title">Быстрые ссылки</span>
+                    <a href="https://partner.bybit.com/b/BITMAIN" class="btn btn-secondary btn-full" target="_blank"
+                        rel="nofollow sponsored noopener">Регистрация на Bybit</a>
+                    <a href="https://okx.ac/join/83836972" class="btn btn-secondary btn-full" target="_blank"
+                        rel="nofollow sponsored noopener">Регистрация на OKX</a>
+                    <a href="https://www.coinex.com/register?rc=s2vyu&channel=Referral"
+                        class="btn btn-secondary btn-full" target="_blank" rel="nofollow sponsored noopener">Регистрация
+                        на CoinEx</a>
+                </div>
+            </aside>
+        </div>
+
+        <div class="related-section">
+            <h3>Материалы по KYC и доступу</h3>
+            <div class="related-grid">
+                <a href="/guides/kyc-basics.html" class="related-card">
+                    <span class="related-title">Всё про KYC (верификацию) в 2026 году</span>
+                    <span class="related-desc">Что проверяют на биржах, почему заявки отклоняют и как пройти проверку
+                        без лишних задержек.</span>
+                </a>
+                <a href="/guides/why-accounts-get-blocked.html" class="related-card">
+                    <span class="related-title">Почему блокируют аккаунты</span>
+                    <span class="related-desc">Типовые причины ограничений и что делать, если доступ урезали из-за
+                        проверок.</span>
+                </a>
+                <a href="/guides/sanctions-and-geo-restrictions.html" class="related-card">
+                    <span class="related-title">Санкции и региональные ограничения</span>
+                    <span class="related-desc">Как страна и правила сервиса влияют на доступ к функциям, фиату и
+                        P2P.</span>
+                </a>
+                <a href="/guides/no-kyc-trading.html" class="related-card">
+                    <span class="related-title">Можно ли работать без KYC</span>
+                    <span class="related-desc">Какие ограничения встречаются без подтверждения личности и где обычно
+                        упираются в лимиты.</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-top">
+                <img src="/assets/img/bitmain_logo_vertical.png" width="164" height="159" alt="BIT-MAIN"
+                    class="footer-logo">
+            </div>
+
+            <div class="footer-nav">
+                <a href="/exchanges/">Биржи</a>
+                <a href="/compare.html">Сравнение</a>
+                <a href="/p2p.html">P2P</a>
+                <a href="/arbitrage.html">Арбитраж</a>
+                <a href="/guides/">Гайды</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="note">
+                    Дисклеймер: криптовалюта связана с высокими рисками. Материалы на сайте bit-main.ru носят
+                    исключительно информационный характер.
+                    Мы не даём финансовых советов.
+                </p>
+                <p class="copyright">© 2026 BIT-MAIN. Независимый крипто-портал.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('click', function (e) {
+            const link = e.target.closest('a[href]');
+            if (!link) return;
+
+            const url = new URL(link.href, location.href);
+            const isExternal = url.hostname !== location.hostname;
+            if (!isExternal) return;
+
+            if (typeof ym !== 'function') return;
+
+            e.preventDefault();
+
+            ym(106820779, 'reachGoal', 'exchange_click', {}, function () {
+                window.open(url.href, '_blank');
+            });
+
+            // fallback если callback не сработает
+            setTimeout(function () {
+                window.open(url.href, '_blank');
+            }, 150);
+        });
+    </script>
+
+</body>
+
+</html>
