@@ -230,9 +230,32 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
+
+  <url>
+    <loc>https://bit-main.ru/guides/network-fees-trc20-vs-erc20.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://bit-main.ru/guides/large-sums-limits-usdt.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://bit-main.ru/guides/aml-stuck-transfers.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <url>
   <loc>https://bit-main.ru/guides/page-2.html</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://bit-main.ru/guides/page-3.html</loc>
   <changefreq>weekly</changefreq>
   <priority>0.6</priority>
 </url>
