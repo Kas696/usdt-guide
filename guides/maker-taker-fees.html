@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Торговые комиссии maker/taker: как работает и когда вы переплачиваете | BIT-MAIN</title>
+    <meta name="description"
+        content="Что такое maker и taker комиссии на криптобиржах: как тип ордера влияет на списания и цену исполнения, что такое post-only, и как выбирать между лимитным и рыночным ордером." />
+    <link rel="canonical" href="https://bit-main.ru/guides/maker-taker-fees.html" />
+
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/review.css">
+
+    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
+
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container header-flex">
+            <a class="logo" href="/">
+                <img src="/assets/img/bitmain_logo.png" width="90" height="70" alt="BIT-MAIN">
+                <span class="logo-text_1">BIT</span><span class="logo-text_2">-MAIN</span>
+            </a>
+            <input type="checkbox" id="menu-toggle" hidden />
+            <label class="burger" for="menu-toggle">
+                <span></span><span></span><span></span>
+            </label>
+            <nav class="nav">
+                <a href="/exchanges/">Биржи</a>
+                <a href="/compare.html">Сравнение</a>
+                <a href="/p2p.html">P2P</a>
+                <a href="/arbitrage.html">Арбитраж</a>
+                <a href="/guides/">Гайды</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav class="breadcrumbs">
+            <a href="/">Главная</a> —
+            <a href="/guides/">Гайды</a> —
+            Торговые комиссии maker/taker
+        </nav>
+
+        <div class="review-layout">
+            <div class="review-content">
+                <h1>Торговые комиссии maker/taker</h1>
+                <p class="lead-text">Комиссия в сделке зависит не от «настроения биржи», а от того, добавили вы
+                    ликвидность или забрали её. Maker оставляет заявку в стакане, taker исполняет чужую — и условия
+                    обычно разные.</p>
+
+                <div class="content-section" id="maker-taker-simple">
+                    <h2>Maker и taker: кто есть кто</h2>
+                    <p>В стакане уже лежат заявки на покупку и продажу. Когда вы выставляете ордер, вы либо добавляете
+                        новую заявку, либо исполняете существующую.</p>
+                    <p><strong>Maker</strong> размещает заявку, которая не исполняется мгновенно и остаётся в стакане.
+                        Он добавляет ликвидность.</p>
+                    <p><strong>Taker</strong> исполняет чужую заявку сразу. Это рыночный ордер или лимитный, который
+                        «попадает» в уже стоящую цену. Он забирает ликвидность.</p>
+                    <p>Биржам выгодно, чтобы стакан был глубоким: так проще сводить ордера, меньше рывков цены и выше
+                        оборот. Поэтому maker-условия часто мягче. Конкретные ставки зависят от биржи и уровня аккаунта
+                        и со временем меняются.</p>
+                </div>
+
+                <div class="content-section" id="comparison-table">
+                    <h2>Сравнение типов ордеров и комиссий</h2>
+                    <p>Смысл простой: смотрите не на название ордера, а на то, добавляет он заявку в стакан или
+                        исполняет чужую. Конкретные тарифы зависят от биржи, объёма и уровня аккаунта.</p>
+
+                    <div class="table-scroll">
+                        <table class="standard-table">
+                            <thead>
+                                <tr>
+                                    <th>Тип</th>
+                                    <th>Что делает</th>
+                                    <th>Как влияет на стакан</th>
+                                    <th>Типичная комиссия</th>
+                                    <th>Риск/минус</th>
+                                    <th>Когда выбирать</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Maker</strong></td>
+                                    <td>Ставит заявку, которая остаётся в стакане</td>
+                                    <td>Добавляет ликвидность</td>
+                                    <td>Обычно ниже</td>
+                                    <td>Может не исполниться</td>
+                                    <td>Есть время и нужна конкретная цена</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Taker</strong></td>
+                                    <td>Исполняет чужую заявку</td>
+                                    <td>Забирает ликвидность</td>
+                                    <td>Обычно выше</td>
+                                    <td>Проскальзывание на слабой ликвидности</td>
+                                    <td>Нужно войти/выйти сразу</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Market order</strong></td>
+                                    <td>Покупает/продаёт по лучшей доступной цене</td>
+                                    <td>Забирает ликвидность</td>
+                                    <td>Как taker</td>
+                                    <td>Цена исполнения заранее не фиксируется</td>
+                                    <td>Срочная сделка, аварийный выход</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Limit order</strong></td>
+                                    <td>Покупает/продаёт по заданной цене</td>
+                                    <td>Зависит от цены размещения</td>
+                                    <td>Maker или taker</td>
+                                    <td>Частичное исполнение</td>
+                                    <td>Нужен контроль цены</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Post-only</strong></td>
+                                    <td>Лимит, который не может исполниться сразу</td>
+                                    <td>Добавляет ликвидность</td>
+                                    <td>Как maker</td>
+                                    <td>Может быть отменён и не исполниться</td>
+                                    <td>Нужен maker-статус без сюрпризов</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="info-box">
+                        <p><strong>Важно:</strong> лимитный ордер не гарантирует maker-комиссию. Если вы поставили лимит
+                            так, что он исполняется сразу, он станет taker. Post-only делает наоборот: либо ордер
+                            остаётся в стакане, либо отменяется.</p>
+                    </div>
+                </div>
+
+                <div class="content-section" id="fee-is-not-all">
+                    <h2>Комиссия — не единственная стоимость сделки</h2>
+                    <p>Разница maker/taker — это только один слой расходов. Часто больше денег уходит в цену исполнения.
+                    </p>
+                    <p><strong>Спред</strong> — разница между лучшей ценой покупки и продажи. На редких парах он может
+                        быть заметным и легко перекрывает экономию на комиссии.</p>
+                    <p><strong>Проскальзывание</strong> — ухудшение средней цены, когда ваш объём «съедает» несколько
+                        уровней стакана.</p>
+                    <p><strong>Ликвидность</strong> — глубина стакана. Чем она ниже, тем выше шанс получить хуже цену и
+                        частичные исполнения.</p>
+                    <p><strong>Время</strong> — maker-ордер может не успеть. Если вы «сэкономили» на комиссии, но
+                        упустили движение цены, экономия превращается в самообман.</p>
+
+                    <div class="info-box">
+                        <p>На парах с низким объёмом спред и проскальзывание часто важнее, чем разница maker/taker. В
+                            таких ситуациях полезнее думать про итоговую цену исполнения, а не про «скидку на комиссию».
+                        </p>
+                    </div>
+                </div>
+
+                <div class="content-section" id="decision-rules">
+                    <h2>Практические правила выбора режима</h2>
+                    <ul class="check-list">
+                        <li>Если важна скорость входа/выхода — допускайте taker и контролируйте риск, а не «экономию»
+                        </li>
+                        <li>Если важна цена и есть время — лимитный ордер чаще подходит лучше</li>
+                        <li>Если лимит не должен случайно стать taker — используйте post-only</li>
+                        <li>Если объём крупный для пары — разбивайте на части, чтобы не ухудшить среднюю цену</li>
+                        <li>Если спред широкий — оцените, не съест ли он любую экономию на комиссии</li>
+                        <li>Если рынок “дергается” — закладывайте худшую цену исполнения, особенно для market</li>
+                        <li>Если ордер не исполняется долго — пересмотрите цену, а не ждите “из принципа”</li>
+                        <li>Перед сделкой проверьте свою тарифную ступень: условия зависят от биржи и аккаунта</li>
+                    </ul>
+                </div>
+
+                <div class="content-section" id="common-mistakes">
+                    <h2>Типичные ошибки трейдеров</h2>
+                    <ul>
+                        <li><strong>Считать, что лимитный ордер “всегда maker”.</strong> По факту он может исполниться
+                            сразу и стать taker.</li>
+                        <li><strong>Гнаться за maker и ставить цену слишком далеко.</strong> Ордер не исполняется, цена
+                            уходит, вы теряете не комиссию, а возможность.</li>
+                        <li><strong>Игнорировать спред на слабых парах.</strong> Потери в цене легко перекрывают любую
+                            «скидку» на комиссии.</li>
+                        <li><strong>Выставлять market на большом объёме без проверки стакана.</strong> Средняя цена
+                            ухудшается из-за проскальзывания.</li>
+                        <li><strong>Думать, что post-only — “магическая кнопка экономии”.</strong> Он просто не даст
+                            исполниться сразу, но не гарантирует исполнение вообще.</li>
+                        <li><strong>Дробить сделки без смысла.</strong> Много мелких операций часто увеличивают
+                            суммарные комиссии и внимание к шуму рынка.</li>
+                        <li><strong>Путать “комиссию” и “стоимость сделки”.</strong> Экономия на процентах не
+                            компенсирует плохую цену исполнения.</li>
+                    </ul>
+
+                    <p>Итог обычно один: вроде комиссия «маленькая», а по факту больше денег утекло в
+                        спред/проскальзывание и в лишние решения по ходу.</p>
+                </div>
+
+                <div class="content-section" id="mini-checklist">
+                    <h2>Чек-лист перед сделкой</h2>
+                    <ul class="check-list">
+                        <li>Определить цель: нужна скорость или нужна цена</li>
+                        <li>Проверить спред по паре прямо перед сделкой</li>
+                        <li>Посмотреть глубину стакана на ваш объём</li>
+                        <li>Выбрать тип ордера: market/limit/post-only</li>
+                        <li>Понять, станет ли лимит maker или taker при текущей цене</li>
+                        <li>Проверить свою тарифную ступень (условия зависят от биржи и аккаунта)</li>
+                        <li>Для крупных объёмов решить: разбивать или нет</li>
+                        <li>Для market заложить худшую цену исполнения</li>
+                        <li>Если ордер не исполняется — заранее решить, когда отменяете</li>
+                        <li>После исполнения проверить итоговую среднюю цену, а не только комиссию</li>
+                    </ul>
+                </div>
+
+                <div class="content-section" id="faq">
+                    <h2>Частые вопросы</h2>
+
+                    <div class="faq-grid">
+                        <details>
+                            <summary>Лимитный ордер всегда maker?</summary>
+                            <div class="faq-content">
+                                <p>Нет. Он будет maker, только если останется в стакане. Если лимит выставлен так, что
+                                    исполняется сразу, он станет taker.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Почему taker бывает дороже?</summary>
+                            <div class="faq-content">
+                                <p>Taker забирает ликвидность и упрощает “мгновенную” торговлю. Биржи часто стимулируют
+                                    стакан, поэтому условия для maker обычно мягче. Конкретные ставки зависят от биржи и
+                                    уровня аккаунта.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Что такое post-only и зачем он нужен?</summary>
+                            <div class="faq-content">
+                                <p>Post-only не позволяет лимитному ордеру исполниться сразу. Он либо останется в
+                                    стакане (maker), либо будет отменён. Это защита от ситуации “поставил лимит —
+                                    получил taker”.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Можно ли сделать лимит и стать taker?</summary>
+                            <div class="faq-content">
+                                <p>Да. Если лимит пересекает текущий лучший уровень в стакане, он исполняется сразу —
+                                    это taker-исполнение.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Как комиссии связаны с VIP-уровнями?</summary>
+                            <div class="faq-content">
+                                <p>Многие биржи меняют условия по ступеням: объём торгов, баланс, статус аккаунта.
+                                    Где-то разница сильнее, где-то слабее — проверяется в тарифах конкретной площадки.
+                                </p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Что важнее на малых суммах?</summary>
+                            <div class="faq-content">
+                                <p>Обычно важнее не “сэкономить копейки на процентах”, а не ловить широкий спред и не
+                                    делать слишком много мелких сделок подряд.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Почему ордер исполнился частями?</summary>
+                            <div class="faq-content">
+                                <p>Потому что на выбранной цене не хватило встречной ликвидности. Биржа закрывала ордер
+                                    по мере появления встречных заявок, иногда на разных уровнях стакана.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Как снизить комиссии без лишних действий?</summary>
+                            <div class="faq-content">
+                                <p>Выбирайте ликвидные пары, не размножайте сделки без цели и используйте подходящий тип
+                                    ордера. Скидки по уровням и условия оплаты комиссий зависят от биржи.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="author-meta">
+                    <span>Автор: Команда BIT-MAIN</span>
+                    <span>Обновлено: 2026-03-05</span>
+                </div>
+            </div>
+
+            <aside class="review-sidebar">
+                <div class="sticky-card">
+                    <h3 class="sidebar-title">Краткий вывод</h3>
+                    <ul class="summary-list">
+                        <li><strong>Maker</strong> оставляет заявку в стакане</li>
+                        <li><strong>Taker</strong> исполняет чужую заявку сразу</li>
+                        <li>Условия maker/taker зависят от биржи и уровня аккаунта</li>
+                        <li>Post-only защищает от случайного taker</li>
+                        <li>Спред и проскальзывание часто важнее процентов комиссии</li>
+                    </ul>
+                </div>
+
+                <div class="sticky-card">
+                    <h3 class="sidebar-title">Быстрые ссылки</h3>
+                    <a class="btn btn-secondary btn-full" href="https://partner.bybit.com/b/BITMAIN" target="_blank"
+                        rel="nofollow sponsored noopener">Регистрация на Bybit</a>
+                    <a class="btn btn-secondary btn-full" href="https://okx.ac/join/83836972" target="_blank"
+                        rel="nofollow sponsored noopener">Регистрация на OKX</a>
+                    <a class="btn btn-secondary btn-full"
+                        href="https://www.coinex.com/register?rc=s2vyu&channel=Referral" target="_blank"
+                        rel="nofollow sponsored noopener">Регистрация на CoinEx</a>
+                </div>
+            </aside>
+        </div>
+
+        <div class="related-section">
+            <div class="section-title">
+                <h2>Связанные гайды</h2>
+                <p>Другие виды комиссий и способы их снижать.</p>
+            </div>
+
+            <div class="related-grid">
+                <a class="related-card" href="/guides/all-fees-where-money-leaks.html">
+                    <h3 class="related-title">Все комиссии криптобирж: где вы теряете деньги</h3>
+                    <p class="related-desc">Как устроены явные и скрытые потери по всему маршруту операции.</p>
+                </a>
+
+                <a class="related-card" href="/guides/deposit-fees.html">
+                    <h3 class="related-title">Комиссии ввода</h3>
+                    <p class="related-desc">Где теряются деньги при пополнении и как сравнивать каналы.</p>
+                </a>
+
+                <a class="related-card" href="/guides/withdraw-fees.html">
+                    <h3 class="related-title">Комиссии вывода</h3>
+                    <p class="related-desc">Как оценивать расходы на вывод и избегать лишних шагов.</p>
+                </a>
+
+                <a class="related-card" href="/guides/how-to-reduce-fees.html">
+                    <h3 class="related-title">Как снижать комиссии</h3>
+                    <p class="related-desc">Способы сократить расходы без усложнения маршрута.</p>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-top">
+                <img src="/assets/img/bitmain_logo_vertical.png" width="164" height="159" alt="BIT-MAIN"
+                    class="footer-logo">
+            </div>
+
+            <div class="footer-nav">
+                <a href="/exchanges/">Биржи</a>
+                <a href="/compare.html">Сравнение</a>
+                <a href="/p2p.html">P2P</a>
+                <a href="/arbitrage.html">Арбитраж</a>
+                <a href="/guides/">Гайды</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="note">
+                    Дисклеймер: криптовалюта связана с высокими рисками. Материалы на сайте bit-main.ru носят
+                    исключительно информационный характер.
+                    Мы не даём финансовых советов.
+                </p>
+                <p class="copyright">© 2026 BIT-MAIN. Независимый крипто-портал.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('click', function (e) {
+            const link = e.target.closest('a[href]');
+            if (!link) return;
+            const url = new URL(link.href, location.href);
+            if (url.hostname === location.hostname) return;
+            if (typeof ym !== 'function') return;
+            e.preventDefault();
+            ym(106820779, 'reachGoal', 'exchange_click', {}, function () {
+                window.open(url.href, '_blank');
+            });
+            setTimeout(function () { window.open(url.href, '_blank'); }, 150);
+        });
+    </script>
+</body>
+
+</html>
