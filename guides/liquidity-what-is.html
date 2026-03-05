@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Что такое ликвидность и почему она важнее процента | BIT-MAIN</title>
+    <meta name="description"
+        content="Ликвидность в крипте: почему процент на экране не равен прибыли, как оценивать стакан, спред, исполнение и вывод. Практический алгоритм входа и выхода." />
+    <link rel="canonical" href="https://bit-main.ru/guides/liquidity-what-is.html" />
+
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/review.css">
+
+    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
+
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container header-flex">
+            <a class="logo" href="/">
+                <img src="/assets/img/bitmain_logo.png" width="90" height="70" alt="BIT-MAIN">
+                <span class="logo-text_1">BIT</span><span class="logo-text_2">-MAIN</span>
+            </a>
+            <input type="checkbox" id="menu-toggle" hidden />
+            <label class="burger" for="menu-toggle">
+                <span></span><span></span><span></span>
+            </label>
+            <nav class="nav">
+                <a href="/exchanges/">Биржи</a>
+                <a href="/compare.html">Сравнение</a>
+                <a href="/p2p.html">P2P</a>
+                <a href="/arbitrage.html">Арбитраж</a>
+                <a href="/guides/">Гайды</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <nav class="breadcrumbs">
+            <a href="/">Главная</a> —
+            <a href="/guides/">Гайды</a> —
+            Что такое ликвидность и почему она важнее процента
+        </nav>
+
+        <div class="review-layout">
+            <div class="review-content">
+
+                <h1>Что такое ликвидность и почему она важнее процента</h1>
+
+                <p class="lead-text">Видите высокий APR и кажется, что “нашёлся чит-код”. Потом пытаетесь выйти — и
+                    вдруг выясняется, что покупателей почти нет, а цена падает на каждом клике. Ликвидность не пишет вам
+                    пуш-уведомления, но именно она решает, сможете ли вы превратить цифры на экране в деньги.</p>
+
+                <div class="info-box">
+                    <p><strong>Суть:</strong> ликвидность — это не “сколько начислят”, а “по какой цене и с какой
+                        скоростью вы сможете выйти”. Высокий процент без ликвидности легко превращается в витрину.</p>
+                </div>
+
+                <div class="content-section" id="why-percent-lies">
+                    <h2>Почему процент на бумаге вводит в заблуждение</h2>
+                    <p>APR/APY часто выглядит как главный аргумент. Но процент — это только одна переменная. Реальная
+                        доходность зависит от цены входа и, особенно, цены выхода.</p>
+                    <p>На рынке с низкой ликвидностью вы платите дважды: спредом (уже на входе) и проскальзыванием (в
+                        момент исполнения). Когда рынок дергается, ликвидность обычно “тоньше” — как раз тогда, когда
+                        выход важнее всего.</p>
+
+                    <ul class="check-list">
+                        <li>Высокий APR на узком рынке часто пытается компенсировать слабый спрос</li>
+                        <li>Процент начисляется на баланс, но не фиксирует цену выхода</li>
+                        <li>В моменты волатильности спред и проскальзывание становятся основной “комиссией”</li>
+                    </ul>
+
+                    <div class="info-box">
+                        <p><strong>Правило:</strong> если ваш объём нельзя закрыть без заметного сдвига цены — этот
+                            рынок не подходит для вашей стратегии, даже если проценты выглядят щедро.</p>
+                    </div>
+                </div>
+
+                <div class="content-section" id="three-layers">
+                    <h2>Три слоя ликвидности, которые стоит проверять</h2>
+                    <p>Многие смотрят только на стакан. Это полезно, но этого мало: витрина не гарантирует нормальное
+                        исполнение.</p>
+
+                    <p><strong>Первый слой — визуальный.</strong> То, что видно в интерфейсе: объём, спред, стакан. Это
+                        “картинка”, и она не всегда отражает реальность.</p>
+
+                    <p><strong>Второй слой — исполнительный.</strong> Что происходит при реальной сделке: скорость
+                        исполнения, частичное исполнение, проскальзывание, “дырки” по уровням.</p>
+
+                    <p><strong>Третий слой — выводной.</strong> Возможность быстро вывести актив и не зависнуть на
+                        лимитах/паузаx/задержках. Можно заработать на бумаге, но упереться в инфраструктуру.</p>
+
+                    <div class="table-scroll">
+                        <table class="standard-table">
+                            <thead>
+                                <tr>
+                                    <th>Что видно в интерфейсе</th>
+                                    <th>Что это значит на деле</th>
+                                    <th>Чем рискуешь</th>
+                                    <th>Что делать</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Большой объём за сутки</td>
+                                    <td>Объём может быть “красивым”, но не обязательно полезным</td>
+                                    <td>Оценка ликвидности завышена</td>
+                                    <td>Смотреть стакан и спред, сравнивать с соседними площадками</td>
+                                </tr>
+                                <tr>
+                                    <td>Узкий спред “в тишине”</td>
+                                    <td>При нагрузке спред расширяется</td>
+                                    <td>Выход по заметно худшей цене</td>
+                                    <td>Проверять поведение спреда в разное время и на движениях</td>
+                                </tr>
+                                <tr>
+                                    <td>Мелкие ордера исполняются быстро</td>
+                                    <td>На рабочем объёме цена может “поплыть”</td>
+                                    <td>Серия сделок хуже ожиданий</td>
+                                    <td>Тестировать исполнение постепенно, а не одним крупным ордером</td>
+                                </tr>
+                                <tr>
+                                    <td>Вывод “доступен”</td>
+                                    <td>Лимиты/паузы/задержки бывают даже без предупреждения</td>
+                                    <td>Деньги застряли, когда нужен выход</td>
+                                    <td>Проверить лимиты и типичные задержки заранее</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-section" id="decision-algorithm">
+                    <h2>Алгоритм: входить или проходить мимо</h2>
+                    <p>Быстрая проверка перед входом. Смысл простой: оценить, сможете ли вы выйти своим объёмом без
+                        “плати сколько скажут”.</p>
+
+                    <ul class="check-list">
+                        <li>Проверьте стакан именно на своём объёме: сколько уровней нужно “съесть”, чтобы закрыться
+                        </li>
+                        <li>Сделайте тест: небольшой вход и небольшой выход, чтобы увидеть реальное исполнение</li>
+                        <li>Понаблюдайте за спредом в разные часы и на движении цены, а не только “в штиль”</li>
+                        <li>Проверьте лимиты и практику вывода: сколько времени это обычно занимает и какие есть
+                            ограничения</li>
+                        <li>Убедитесь, что есть запасной выход: другая пара, другая площадка, конвертация в более
+                            ликвидный актив</li>
+                    </ul>
+
+                    <p><strong>Если видите это — стоп:</strong></p>
+                    <p>Спред живёт своей жизнью без явных причин. Стакан выглядит “плотным”, но уровни исчезают при
+                        приближении цены. Вывод периодически уходит “на обслуживание”. Исполнение превращается в серию
+                        частичных сделок по всё более плохой цене.</p>
+
+                    <p><strong>Если видите это — можно работать:</strong></p>
+                    <p>Спред предсказуемый в разное время. Исполнение стабильное, без сюрпризов на вашем объёме. Вывод
+                        работает без регулярных пауз. Есть понятная схема выхода, если рынок резко дёрнется.</p>
+                </div>
+
+                <div class="content-section" id="small-pairs-danger">
+                    <h2>Почему на мелких парах опаснее</h2>
+                    <p>На тонком рынке вы конкурируете не с “рынком”, а с пустотой между заявками. Там любая стратегия
+                        начинает зависеть не от идеи, а от того, насколько аккуратно вы пролезете через стакан.</p>
+                    <p>На крупной паре ваш ордер обычно теряется в потоке. На мелкой — вы сами создаёте движение цены, и
+                        оно часто против вас.</p>
+                    <p>Стоп-ордера на таких рынках тоже не волшебная кнопка. При резких движениях цена может перескочить
+                        уровни, и исполнение будет хуже ожидаемого.</p>
+
+                    <div class="info-box">
+                        <p><strong>Запомните:</strong> чем тоньше рынок, тем меньше должен быть ваш объём относительно
+                            стакана. Иначе вы сами платите за собственный вход и выход.</p>
+                    </div>
+                </div>
+
+                <div class="content-section" id="faq-section">
+                    <h2>Частые вопросы</h2>
+
+                    <div class="faq-grid">
+                        <details>
+                            <summary>Почему высокий APR не спасает от убытков?</summary>
+                            <div class="faq-content">
+                                <p>APR начисляется на баланс, но цена выхода формируется рынком. Если ликвидность
+                                    слабая, потери на спреде и проскальзывании могут легко перекрыть начисления. Процент
+                                    — это про “сколько добавят”, ликвидность — про “по какой цене это можно превратить в
+                                    деньги”.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Почему ордер не исполнился по видимой цене?</summary>
+                            <div class="faq-content">
+                                <p>Стакан — это набор заявок в конкретный момент. Часть заявок может уйти, пока ваш
+                                    ордер доходит до исполнения, а часть объёма может быть “пустой” на нужных уровнях.
+                                    Итоговая цена определяется тем, что реально осталось в стакане в момент сделки.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Что хуже: спред или комиссия?</summary>
+                            <div class="faq-content">
+                                <p>Комиссия известна заранее. Спред и проскальзывание меняются и часто бьют сильнее в
+                                    моменты, когда вы спешите выйти. Поэтому в реальных потерях “невидимые” издержки
+                                    часто заметнее, чем комиссия.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Почему на мелкой паре страшнее, чем на крупной?</summary>
+                            <div class="faq-content">
+                                <p>Там меньше встречных заявок. Ваш объём быстрее “съедает” уровни стакана, из-за чего
+                                    цена уходит ступеньками. Плюс выше шанс резких провалов ликвидности на новостях и
+                                    движениях.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Что значит «ликвидность есть, но не для тебя»?</summary>
+                            <div class="faq-content">
+                                <p>Для маленькой суммы рынок может быть комфортным, а для рабочего объёма — уже нет.
+                                    Ликвидность нужно измерять не “в целом”, а относительно того, сколько вы собираетесь
+                                    купить или продать.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Как оценить ликвидность до регистрации на бирже?</summary>
+                            <div class="faq-content">
+                                <p>Смотрите стакан (если доступен без входа), сравнивайте спреды и активность по паре на
+                                    разных площадках, читайте отзывы про вывод и задержки. Это не даст абсолютной
+                                    гарантии, но быстро отсечёт заведомо тонкие рынки.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Можно ли доверять объёму торгов за сутки?</summary>
+                            <div class="faq-content">
+                                <p>Объём — полезный сигнал, но не единственный. Важно, как этот объём превращается в
+                                    реальное исполнение: какие спреды, какая глубина, как ведёт себя стакан при движении
+                                    цены.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Что делать, если ликвидность исчезла после входа?</summary>
+                            <div class="faq-content">
+                                <p>Сначала оцените масштаб проблемы: это общий рыночный стресс или тонкость конкретной
+                                    пары. Резкая продажа в пустой стакан фиксирует худшую цену. Иногда разумнее дробить
+                                    выход, искать альтернативную пару/маршрут и выходить поэтапно.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="author-meta">
+                    <span>Автор: Команда BIT-MAIN</span>
+                    <span>Обновлено: 2026-03-05</span>
+                </div>
+
+            </div>
+
+            <aside class="review-sidebar">
+
+                <div class="sticky-card">
+                    <div class="sidebar-title">Коротко</div>
+                    <ul class="summary-list">
+                        <li><strong>Процент ≠ итог</strong>Начисления не гарантируют цену выхода</li>
+                        <li><strong>Проверяй объём</strong>Оценивай рынок относительно своей суммы</li>
+                        <li><strong>Спред — это цена входа</strong>И он меняется, когда “припекает”</li>
+                        <li><strong>Нужен план Б</strong>Запасной маршрут выхода снижает потери</li>
+                    </ul>
+                </div>
+
+                <div class="sticky-card">
+                    <div class="sidebar-title">Быстрые ссылки</div>
+                    <a class="btn btn-secondary btn-full" href="https://partner.bybit.com/b/BITMAIN" target="_blank"
+                        rel="nofollow sponsored noopener">Регистрация на Bybit</a>
+                    <a class="btn btn-secondary btn-full" href="https://okx.ac/join/83836972" target="_blank"
+                        rel="nofollow sponsored noopener">Регистрация на OKX</a>
+                    <a class="btn btn-secondary btn-full"
+                        href="https://www.coinex.com/register?rc=s2vyu&channel=Referral" target="_blank"
+                        rel="nofollow sponsored noopener">Регистрация на CoinEx</a>
+                </div>
+
+            </aside>
+        </div>
+
+        <div class="related-section">
+            <h3>Другие материалы по теме:</h3>
+            <div class="related-grid">
+                <a href="/guides/liquidity-real-volume.html" class="related-card">
+                    <div class="related-title">Реальный объём vs накрученный</div>
+                    <div class="related-desc">Как отличить полезную ликвидность от красивых цифр</div>
+                </a>
+                <a href="/guides/liquidity-wash-trading.html" class="related-card">
+                    <div class="related-title">Wash Trading: признаки и защита</div>
+                    <div class="related-desc">Почему объём бывает “нарисован” и как это распознать</div>
+                </a>
+                <a href="/guides/liquidity-order-book-depth.html" class="related-card">
+                    <div class="related-title">Глубина стакана: как читать</div>
+                    <div class="related-desc">Как оценивать стакан под свой объём, а не “в целом”</div>
+                </a>
+                <a href="/guides/liquidity-slippage.html" class="related-card">
+                    <div class="related-title">Проскальзывание: расчёт и минимизация</div>
+                    <div class="related-desc">Откуда берётся разница в цене и как не платить лишнее</div>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-top">
+                <img src="/assets/img/bitmain_logo_vertical.png" width="164" height="159" alt="BIT-MAIN"
+                    class="footer-logo">
+            </div>
+
+            <div class="footer-nav">
+                <a href="/exchanges/">Биржи</a>
+                <a href="/compare.html">Сравнение</a>
+                <a href="/p2p.html">P2P</a>
+                <a href="/arbitrage.html">Арбитраж</a>
+                <a href="/guides/">Гайды</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="note">
+                    Дисклеймер: криптовалюта связана с высокими рисками. Материалы на сайте bit-main.ru носят
+                    исключительно информационный характер.
+                    Мы не даём финансовых советов.
+                </p>
+                <p class="copyright">© 2026 BIT-MAIN. Независимый крипто-портал.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('click', function (e) {
+            const link = e.target.closest('a[href]');
+            if (!link) return;
+            const url = new URL(link.href, location.href);
+            if (url.hostname === location.hostname) return;
+            if (typeof ym !== 'function') return;
+            e.preventDefault();
+            ym(106820779, 'reachGoal', 'exchange_click', {}, function () {
+                window.open(url.href, '_blank');
+            });
+            setTimeout(function () { window.open(url.href, '_blank'); }, 150);
+        });
+    </script>
+</body>
+
+</html>

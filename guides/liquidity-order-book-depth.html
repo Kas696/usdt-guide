@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Глубина стакана: как читать ордербук и понимать цену исполнения | BIT-MAIN</title>
+    <meta name="description"
+        content="Глубина стакана (ордербук): почему цена на экране не равна цене исполнения, как видеть пустоты и асимметрию, чем отличаются market/limit/stop и как снизить проскальзывание." />
+    <link rel="canonical" href="https://bit-main.ru/guides/liquidity-order-book-depth.html" />
+
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/review.css">
+
+    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=106820779', 'ym');
+
+        ym(106820779, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/106820779" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-flex">
+            <a class="logo" href="/" aria-label="BIT-MAIN">
+                <img src="/assets/img/bitmain_logo.png" width="90" height="70" alt="BM">
+                <span class="logo-text_1">BIT</span><span class="logo-text_2">-MAIN</span>
+            </a>
+
+            <input type="checkbox" id="menu-toggle" hidden />
+            <label class="burger" for="menu-toggle">
+                <span></span><span></span><span></span>
+            </label>
+
+            <nav class="nav">
+                <a href="/exchanges/">Биржи</a>
+                <a href="/compare.html">Сравнение</a>
+                <a href="/p2p.html">P2P</a>
+                <a href="/arbitrage.html">Арбитраж</a>
+                <a href="/guides/">Гайды</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <nav class="breadcrumbs">
+            <a href="/">Главная</a> —
+            <a href="/guides/">Гайды</a> —
+            Глубина стакана
+        </nav>
+
+        <div class="review-layout">
+            <div class="review-content">
+
+                <h1>Глубина стакана</h1>
+
+                <p class="lead-text">Цена на экране — это одно. Цена, по которой ордер исполняется реально — другое.
+                    Разница между ними прячется в глубине стакана: в том, сколько встречных заявок стоит на уровнях и
+                    что произойдёт, когда вы начнёте “съедать” эти уровни.</p>
+
+                <div class="info-box">
+                    <p><strong>Наблюдение:</strong> верхние строки стакана показывают цену, но не показывают, хватит ли
+                        объёма под ваш размер сделки. Чтобы понять риск проскальзывания, смотрят глубже — на диапазон
+                        уровней вокруг текущей цены, который соответствует вашей задаче и объёму.</p>
+                </div>
+
+                <div class="content-section" id="what-is-depth">
+                    <h2>Что такое глубина стакана</h2>
+                    <p>Глубина — это не количество строк в интерфейсе. Это суммарный объём ордеров на разных ценовых
+                        уровнях.</p>
+                    <p>Чем больше встречных заявок стоит по уровням, тем легче “переварить” ваш объём без заметного
+                        движения цены. Чем меньше — тем сильнее цена сдвинется в момент исполнения.</p>
+                    <p>Тонкий стакан означает одно: любая сделка, которая для этого рынка заметна, начнёт двигать цену.
+                        Это не “плохо”, это просто условие игры и риск, который нужно учитывать заранее.</p>
+                </div>
+
+                <div class="content-section" id="scenario-cant-sell">
+                    <h2>Сценарий: купил — а потом не могу продать без просадки</h2>
+                    <p><strong>Что видит человек:</strong> цена выросла, в стакане видны покупатели на верхних уровнях.
+                        Кажется, что выйти можно в любой момент.</p>
+                    <p><strong>Где ошибка:</strong> стакан может быть асимметричным. На одном плече есть заявки, на
+                        другом — пусто. Вход проходит легко, а выход становится дорогим.</p>
+                    <p><strong>Что проверить:</strong> перед входом смотрите обе стороны стакана и плотность уровней под
+                        свой объём. Если одна сторона заметно тоньше — выход будет сложнее входа.</p>
+                    <p><strong>Как действовать:</strong> закладывайте выход частями и не рассчитывайте закрыть весь
+                        объём “по красивой средней”, если глубина этого не держит.</p>
+                </div>
+
+                <div class="content-section" id="scenario-market-order">
+                    <h2>Сценарий: рыночный ордер исполнился хуже ожиданий</h2>
+                    <p><strong>Что видит человек:</strong> нажимает “по рынку” и получает среднюю цену заметно хуже той,
+                        что была на экране секунду назад.</p>
+                    <p><strong>Где ошибка:</strong> рыночный ордер забирает доступные заявки по уровням, пока не
+                        заполнится ваш объём. Если глубины мало, цена уезжает по мере исполнения.</p>
+                    <p><strong>Что проверить:</strong> оцените, сколько встречного объёма стоит на ближайших уровнях.
+                        Если ваш ордер “шире” текущей глубины, проскальзывание почти неизбежно.</p>
+                    <p><strong>Как действовать:</strong> для заметных объёмов чаще подходят лимитные заявки или
+                        дробление на части. Рыночный ордер — про скорость, а не про контроль цены.</p>
+                </div>
+
+                <div class="content-section" id="scenario-limit-waiting">
+                    <h2>Сценарий: лимитка висит и не исполняется</h2>
+                    <p><strong>Что видит человек:</strong> поставил лимитный ордер “выгодно”, цена подошла, но ордер не
+                        закрывается.</p>
+                    <p><strong>Где ошибка:</strong> на вашем уровне может стоять очередь. Исполнение идёт по приоритету
+                        цены и времени размещения.</p>
+                    <p><strong>Что проверить:</strong> смотрите не только цену, но и объём на уровне. Если на уровне
+                        стоит много заявок, а поток сделок слабый — ждать придётся дольше.</p>
+                    <p><strong>Как действовать:</strong> либо ставьте ближе к рынку, если важна скорость, либо выбирайте
+                        терпение и не рассчитывайте на “мгновенно”. Лимитка даёт цену, но не обещает время.</p>
+                </div>
+
+                <div class="content-section" id="scenario-stop-execution">
+                    <h2>Сценарий: поставил стоп — получил странное исполнение</h2>
+                    <p><strong>Что видит человек:</strong> ожидал закрытие около уровня стопа, а сделка закрылась
+                        заметно хуже.</p>
+                    <p><strong>Где ошибка:</strong> стоп-рыночный при срабатывании превращается в рыночный ордер. Если
+                        ниже (или выше) уровня срабатывания мало встречных заявок, исполнение пойдёт по тем уровням,
+                        которые есть.</p>
+                    <p><strong>Что проверить:</strong> перед установкой стопа смотрите глубину за уровнем срабатывания.
+                        Пустоты означают риск сильного проскальзывания.</p>
+                    <p><strong>Как действовать:</strong> на тонких парах иногда используют стоп-лимит, чтобы ограничить
+                        цену. Это добавляет контроль, но не гарантирует исполнение.</p>
+
+                    <div class="info-box">
+                        <p><strong>Практика:</strong> учитывайте зоны скопления ордеров и резкие разрывы в стакане. В
+                            такие моменты исполнение может быть хуже ожидаемого, особенно на тонких рынках.</p>
+                    </div>
+                </div>
+
+                <div class="content-section" id="scenario-wall-disappears">
+                    <h2>Сценарий: видел стену в стакане, а она исчезла</h2>
+                    <p><strong>Что видит человек:</strong> крупная заявка выглядит как “железная поддержка” или
+                        “бетонное сопротивление”. Цена подходит — заявка пропадает.</p>
+                    <p><strong>Где ошибка:</strong> часть крупных заявок может ставиться как сигнал для других
+                        участников, а не как реальное намерение купить/продать. Их могут убирать до исполнения.</p>
+                    <p><strong>Что проверить:</strong> наблюдайте за крупными уровнями во времени. Если “стены” часто
+                        появляются и исчезают без сделок — это сигнал не опираться на них как на факт.</p>
+                    <p><strong>Как действовать:</strong> не строить решение вокруг одного уровня стакана. Ищите
+                        подтверждение в поведении цены, спреде, потоке сделок и общей картине ликвидности.</p>
+                </div>
+
+                <div class="content-section" id="quick-assessment">
+                    <h2>Как быстро оценить стакан</h2>
+
+                    <ul class="check-list">
+                        <li>Смотрите не только верхние строки, а диапазон уровней вокруг цены</li>
+                        <li>Сравнивайте объём покупок и продаж — нет ли сильной асимметрии</li>
+                        <li>Ищите пустоты между уровнями — там цена проходит быстрее</li>
+                        <li>Наблюдайте за крупными ордерами: стоят ли они стабильно или “мигают”</li>
+                        <li>Проверяйте стакан в разное время — глубина меняется в течение суток</li>
+                        <li>Сопоставляйте с другими площадками по тому же активу</li>
+                        <li>Тестируйте исполнение небольшими сделками перед заметным входом</li>
+                    </ul>
+                </div>
+
+                <div class="content-section" id="reduce-losses">
+                    <h2>Как уменьшить потери на исполнении</h2>
+
+                    <ul class="check-list">
+                        <li>Дробите крупные заявки, если стакан тонкий</li>
+                        <li>Используйте лимитные ордера, когда важнее цена, чем скорость</li>
+                        <li>Избегайте рыночных ордеров, когда ликвидность слабая</li>
+                        <li>Перед стопами оценивайте глубину за уровнем срабатывания</li>
+                        <li>Учитывайте, что перед новостями и на движениях глубина может “тоньше”</li>
+                        <li>Держите запасной путь выхода через другую пару или площадку</li>
+                        <li>Выбирайте объём, который рынок способен исполнить без резких скачков</li>
+                    </ul>
+                </div>
+
+                <div class="content-section" id="faq-section">
+                    <h2>Частые вопросы</h2>
+
+                    <div class="faq-grid">
+                        <details>
+                            <summary>Сколько уровней стакана нужно смотреть?</summary>
+                            <div class="faq-content">
+                                <p>Зависит от вашего объёма и пары. Смысл в том, чтобы увидеть, сколько встречных заявок
+                                    есть на диапазоне уровней, который вы “затронете” своим ордером.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Почему рыночный ордер часто хуже лимитного?</summary>
+                            <div class="faq-content">
+                                <p>Рыночный ордер забирает доступные заявки по уровням и может “пройти” дальше, чем вы
+                                    ожидали. Лимитный фиксирует цену, но может исполниться частично или не исполниться
+                                    сразу.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Можно ли доверять крупным ордерам в стакане?</summary>
+                            <div class="faq-content">
+                                <p>Не всегда. Крупные заявки могут быть как реальными, так и “сигнальными”. Полезно
+                                    смотреть, стоят ли они стабильно и сопровождаются ли сделками.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Почему стоп исполнился по худшей цене?</summary>
+                            <div class="faq-content">
+                                <p>Стоп-рыночный при срабатывании становится рыночным ордером. Если за уровнем
+                                    срабатывания мало встречных заявок или есть пустоты, исполнение может уйти дальше
+                                    ожидаемого.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Глубина разная на разных биржах — это нормально?</summary>
+                            <div class="faq-content">
+                                <p>Да. Ликвидность распределена неравномерно. Перед торговлей конкретным активом полезно
+                                    сравнить стакан, спред и поток сделок на нескольких площадках.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Как часто меняется глубина стакана?</summary>
+                            <div class="faq-content">
+                                <p>Постоянно: заявки ставят и снимают непрерывно. Проверять стакан особенно важно перед
+                                    заметными сделками и в моменты повышенной волатильности.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Пустоты в стакане — это опасно?</summary>
+                            <div class="faq-content">
+                                <p>Да. Там меньше встречных заявок, поэтому цена может пройти участок быстро. Это
+                                    увеличивает риск проскальзывания.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Лучше один большой ордер или несколько меньших?</summary>
+                            <div class="faq-content">
+                                <p>Зависит от глубины. На тонких рынках дробление снижает резкость движения цены, но
+                                    добавляет время и риск изменения условий.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="author-meta">
+                    <span>Автор: Команда BIT-MAIN</span>
+                    <span>Обновлено: 2026-03-05</span>
+                </div>
+
+            </div>
+
+            <aside class="review-sidebar">
+
+                <div class="sticky-card">
+                    <div class="sidebar-title">Коротко</div>
+                    <p class="sidebar-desc">Глубина стакана показывает, сколько встречной ликвидности стоит на уровнях
+                        цены. Верхние строки могут выглядеть красиво, но не держать ваш объём.</p>
+                    <ul class="summary-list">
+                        <li><strong>Глубина ≠ строки</strong>Важен объём по уровням, а не “первый экран”</li>
+                        <li><strong>Асимметрия</strong>Одна сторона стакана может быть заметно тоньше</li>
+                        <li><strong>Стопы и пустоты</strong>Пустой диапазон за уровнем усиливает проскальзывание
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sticky-card">
+                    <div class="sidebar-title">Быстрые ссылки</div>
+                    <a class="btn btn-secondary btn-full" href="https://partner.bybit.com/b/BITMAIN" target="_blank"
+                        rel="nofollow sponsored noopener">Регистрация на Bybit</a>
+                    <a class="btn btn-secondary btn-full" href="https://okx.ac/join/83836972" target="_blank"
+                        rel="nofollow sponsored noopener">Регистрация на OKX</a>
+                    <a class="btn btn-secondary btn-full"
+                        href="https://www.coinex.com/register?rc=s2vyu&channel=Referral" target="_blank"
+                        rel="nofollow sponsored noopener">Регистрация на CoinEx</a>
+                </div>
+
+            </aside>
+        </div>
+
+        <div class="related-section">
+            <h3>Другие материалы по теме:</h3>
+            <div class="related-grid">
+                <a href="/guides/liquidity-what-is.html" class="related-card">
+                    <div class="related-title">Что такое ликвидность</div>
+                    <div class="related-desc">Почему ликвидность важнее процента и как она влияет на выход</div>
+                </a>
+                <a href="/guides/liquidity-real-volume.html" class="related-card">
+                    <div class="related-title">Как проверять реальный объём</div>
+                    <div class="related-desc">Как не верить табло: объём, стакан, сделки и согласованность метрик</div>
+                </a>
+                <a href="/guides/liquidity-wash-trading.html" class="related-card">
+                    <div class="related-title">Wash trading</div>
+                    <div class="related-desc">Как “рисуют” объём и почему это ломает выход</div>
+                </a>
+                <a href="/guides/liquidity-slippage.html" class="related-card">
+                    <div class="related-title">Проскальзывание: расчёт и минимизация</div>
+                    <div class="related-desc">Почему цена исполнения отличается от ожидаемой и как уменьшить потери
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-top">
+                <img src="/assets/img/bitmain_logo_vertical.png" width="164" height="159" alt="BIT-MAIN"
+                    class="footer-logo">
+            </div>
+
+            <div class="footer-nav">
+                <a href="/exchanges/">Биржи</a>
+                <a href="/compare.html">Сравнение</a>
+                <a href="/p2p.html">P2P</a>
+                <a href="/arbitrage.html">Арбитраж</a>
+                <a href="/guides/">Гайды</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="note">
+                    Дисклеймер: криптовалюта связана с высокими рисками. Материалы на сайте bit-main.ru носят
+                    исключительно информационный характер.
+                    Мы не даём финансовых советов.
+                </p>
+                <p class="copyright">© 2026 BIT-MAIN. Независимый крипто-портал.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('click', function (e) {
+            const link = e.target.closest('a[href]');
+            if (!link) return;
+
+            const url = new URL(link.href, location.href);
+            const isExternal = url.hostname !== location.hostname;
+            if (!isExternal) return;
+
+            if (typeof ym !== 'function') return;
+
+            e.preventDefault();
+
+            ym(106820779, 'reachGoal', 'exchange_click', {}, function () {
+                window.open(url.href, '_blank');
+            });
+
+            // fallback если callback не сработает
+            setTimeout(function () {
+                window.open(url.href, '_blank');
+            }, 150);
+        });
+    </script>
+
+</body>
+
+</html>
