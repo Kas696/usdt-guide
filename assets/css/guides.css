@@ -310,6 +310,55 @@
     background: rgba(0, 192, 135, 0.10);
 }
 
+/* ===== BADGES (уровни сложности) ===== */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 6px 10px;
+    border-radius: 999px;
+
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.86);
+}
+
+/* Новичкам — зелёный (спокойный) */
+.simple-badge {
+    border-color: rgba(16, 185, 129, 0.35);
+    background: rgba(16, 185, 129, 0.12);
+    color: rgba(16, 185, 129, 0.98);
+}
+
+/* Уверенный уровень — синий/индиго (нейтральная середина) */
+.mid-badge {
+    border-color: rgba(99, 102, 241, 0.38);
+    background: rgba(99, 102, 241, 0.14);
+    color: rgba(129, 140, 248, 0.98);
+}
+
+/* Для опытных — янтарный (внимание/сложность) */
+.best-badge {
+    border-color: rgba(245, 158, 11, 0.45);
+    background: rgba(245, 158, 11, 0.14);
+    color: rgba(245, 158, 11, 0.98);
+}
+
+/* Чуть компактнее на мобиле, чтобы бейдж не «съедал» строку */
+@media (max-width: 520px) {
+    .badge {
+        font-size: 11px;
+        padding: 6px 9px;
+    }
+}
+
 .pagination {
     margin-top: 22px;
     display: flex;

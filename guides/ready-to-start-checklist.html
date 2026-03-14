@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Чек-лист: ты точно готов начать | BIT-MAIN</title>
+    <meta name="description"
+        content="Чек-лист готовности к первой операции с криптой: цель, хранение, сеть, memo/tag, комиссии, верификация, фишинг и действия при задержке. Таблица самопроверки и короткий FAQ.">
+    <link rel="canonical" href="https://bit-main.ru/guides/ready-to-start-checklist.html">
+
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/review.css">
+
+    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
+
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container header-flex">
+            <a class="logo" href="/">
+                <img src="/assets/img/bitmain_logo.png" width="90" height="70" alt="BIT-MAIN">
+                <span class="logo-text_1">BIT</span><span class="logo-text_2">-MAIN</span>
+            </a>
+            <input type="checkbox" id="menu-toggle" hidden />
+            <label class="burger" for="menu-toggle">
+                <span></span><span></span><span></span>
+            </label>
+            <nav class="nav">
+                <a href="/exchanges/">Биржи</a>
+                <a href="/compare.html">Сравнение</a>
+                <a href="/p2p.html">P2P</a>
+                <a href="/arbitrage.html">Арбитраж</a>
+                <a href="/guides/">Гайды</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav class="breadcrumbs">
+            <a href="/">Главная</a> —
+            <a href="/guides/">Гайды</a> —
+            Чек-лист: ты точно готов начать
+        </nav>
+
+        <div class="review-layout">
+            <div class="review-content">
+                <h1>Чек-лист: ты точно готов начать</h1>
+
+                <p class="lead-text">Новичок чаще не готов не потому, что мало знает, а потому что не проверил базовые
+                    вещи. Одной пропущенной детали хватает, чтобы первая операция пошла криво. Этот чек-лист помогает
+                    быстро проверить готовность до первого действия.</p>
+
+                <div class="content-section" id="what-ready-means">
+                    <h2>Что значит «готов начать»</h2>
+                    <p>Готовность — это не про опыт и не про сумму. Это про понимание того, что вы делаете и что будет
+                        после каждого шага. Если вы не можете объяснить себе цель операции и следующий шаг, начинать
+                        рано.</p>
+                    <p>Базовая готовность держится на трёх вещах: цель, техника и дисциплина. Провал по любой из них
+                        легко превращает простую операцию в потерю времени или денег.</p>
+                </div>
+
+                <div class="content-section" id="checklist-table">
+                    <h2>Главная таблица самопроверки</h2>
+                    <p>Пройдитесь по каждому пункту без самообмана. Если в третьей колонке есть действие — сначала
+                        сделайте его, потом переходите к первой операции.</p>
+
+                    <div class="table-scroll">
+                        <table class="standard-table">
+                            <thead>
+                                <tr>
+                                    <th>Что проверить</th>
+                                    <th>Если не готов</th>
+                                    <th>Что сделать до первой операции</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Понимаешь, зачем тебе USDT и какую задачу он решает</td>
+                                    <td>Действуешь «на всякий случай» или по чужому совету</td>
+                                    <td>Сформулировать цель операции одним предложением</td>
+                                </tr>
+                                <tr>
+                                    <td>Знаешь, где будут храниться средства после покупки</td>
+                                    <td>План «куплю — потом разберусь»</td>
+                                    <td>Определить место хранения до первой сделки</td>
+                                </tr>
+                                <tr>
+                                    <td>Понимаешь разницу между покупкой, продажей и выводом</td>
+                                    <td>Считаешь, что это одно и то же</td>
+                                    <td>Сначала закрыть базовые термины и логику маршрута</td>
+                                </tr>
+                                <tr>
+                                    <td>Знаешь, какая сеть нужна для конкретной операции</td>
+                                    <td>Выбираешь сеть наугад или только по комиссии</td>
+                                    <td>Уточнить сеть у получателя или в реквизитах пополнения</td>
+                                </tr>
+                                <tr>
+                                    <td>Понимаешь, нужен ли memo/tag</td>
+                                    <td>Не знаешь, что это и когда используется</td>
+                                    <td>Проверить реквизиты до отправки и не игнорировать обязательные поля</td>
+                                </tr>
+                                <tr>
+                                    <td>Проверил комиссии и итоговую сумму к получению</td>
+                                    <td>Смотришь только на сумму отправки или курс</td>
+                                    <td>Посчитать итог с учётом условий биржи, сети и банка</td>
+                                </tr>
+                                <tr>
+                                    <td>Готов к верификации, если она нужна</td>
+                                    <td>Не знаешь, какие данные может запросить площадка</td>
+                                    <td>Проверить требования выбранного сервиса заранее</td>
+                                </tr>
+                                <tr>
+                                    <td>У тебя есть отдельное время без спешки</td>
+                                    <td>Делаешь операцию между делами или в дороге</td>
+                                    <td>Выделить спокойное время без отвлечений</td>
+                                </tr>
+                                <tr>
+                                    <td>Готов сохранять детали операций</td>
+                                    <td>Не планируешь хранить чеки, номера и скриншоты</td>
+                                    <td>Подготовить папку или понятный способ хранения данных</td>
+                                </tr>
+                                <tr>
+                                    <td>Понимаешь, как выглядит фишинг и поддельные сайты</td>
+                                    <td>Переходишь по ссылкам из чатов и писем</td>
+                                    <td>Заходить на площадки только вручную или через закладки</td>
+                                </tr>
+                                <tr>
+                                    <td>Не начинаешь с крупной суммы</td>
+                                    <td>Хочешь сразу завести заметные деньги «чтобы не возиться»</td>
+                                    <td>Первую операцию провести на небольшой тестовой сумме</td>
+                                </tr>
+                                <tr>
+                                    <td>Знаешь, что делать при задержке или споре</td>
+                                    <td>Ждёшь, что всё всегда проходит мгновенно и без вопросов</td>
+                                    <td>Заранее понять, где смотреть статус и как писать в поддержку</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-section" id="how-read-results">
+                    <h2>Как читать результат чек-листа</h2>
+                    <p>Смотрите не на общее впечатление, а на слабые места. Один провал по технике может стоить дороже,
+                        чем пять просмотренных роликов “для общего развития”.</p>
+                    <ul class="check-list">
+                        <li>Если есть 2–3 провала по технике — сначала закрыть технику, потом начинать</li>
+                        <li>Если провалов 4 и больше — лучше отложить первую операцию</li>
+                        <li>Если не понимаешь цель операции — не начинать вообще, пока цель не станет ясной</li>
+                        <li>Если провалы только по дисциплине — сначала убрать спешку и подготовить способ фиксации
+                            данных</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3>Минимальный набор перед первым действием</h3>
+                    <ul>
+                        <li>Понятная цель операции</li>
+                        <li>Выбранный маршрут: где покупаешь, где хранишь, как выводишь</li>
+                        <li>Понимание сети и реквизитов получателя</li>
+                        <li>Проверка итоговой суммы с учётом условий сервиса</li>
+                        <li>Спокойное время без спешки</li>
+                        <li>Понимание, куда идти при задержке или споре</li>
+                    </ul>
+                </div>
+
+                <div class="content-section" id="faq">
+                    <h2>FAQ</h2>
+                    <div class="faq-grid">
+                        <details>
+                            <summary>Можно ли начать без полного понимания?</summary>
+                            <div class="faq-content">
+                                <p>Полного понимания на старте почти ни у кого нет. Но базовые вещи должны быть закрыты:
+                                    цель, сеть, маршрут, итоговая сумма и правила безопасности.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Что важнее: сеть или комиссия?</summary>
+                            <div class="faq-content">
+                                <p>Сеть важнее. Ошибка в сети может стоить всей суммы, а комиссию можно увидеть и
+                                    оценить заранее.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Нужно ли сразу заводить кошелёк?</summary>
+                            <div class="faq-content">
+                                <p>Не всегда. Для первых простых действий многим хватает биржевого баланса, но для
+                                    длительного хранения логика уже другая.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Можно ли начать с биржи и потом разобраться?</summary>
+                            <div class="faq-content">
+                                <p>Можно, но только если до этого вы закрыли базовую технику и понимаете, что именно
+                                    нажимаете. “Разберусь по ходу” — любимый маршрут к лишним проблемам.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Какой минимальный набор знаний реально нужен?</summary>
+                            <div class="faq-content">
+                                <p>Нужно понимать, что такое сеть, адрес, комиссия, memo/tag, итог к получению и как
+                                    выглядят фишинговые ссылки. Без этого старт получается лотереей.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Что делать, если уже нажал не туда?</summary>
+                            <div class="faq-content">
+                                <p>Сразу сохранить все данные операции и обращаться в поддержку площадки. Результат
+                                    зависит от того, что именно произошло и на каком этапе это заметили.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Нужно ли проходить верификацию сразу?</summary>
+                            <div class="faq-content">
+                                <p>Это зависит от площадки и того, что вы хотите делать. Лучше узнать требования
+                                    заранее, чем упереться в проверку в момент, когда деньги нужны уже сейчас.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="author-meta">
+                    <span>Автор: Команда BIT-MAIN</span>
+                    <span>Обновлено: 2026-03-06</span>
+                </div>
+            </div>
+
+            <aside class="review-sidebar">
+                <div class="sticky-card">
+                    <h3 class="sidebar-title">Краткий вывод</h3>
+                    <ul class="summary-list">
+                        <li>Цель операции должна быть понятна до старта</li>
+                        <li>Сеть и реквизиты проверяются до подтверждения</li>
+                        <li>Итог важнее курса и суммы отправки</li>
+                        <li>Первая операция — только тестовая</li>
+                        <li>Данные операций нужно сохранять</li>
+                        <li>План на случай задержки лучше иметь заранее</li>
+                    </ul>
+                </div>
+
+                <div class="sticky-card">
+                    <h3 class="sidebar-title">Быстрые ссылки</h3>
+                    <p class="sidebar-desc">Площадки для старта и первых операций.</p>
+                    <a class="btn btn-secondary btn-full" href="https://partner.bybit.com/b/BITMAIN" target="_blank"
+                        rel="nofollow sponsored noopener">Регистрация на Bybit</a>
+                    <a class="btn btn-secondary btn-full" href="https://okx.ac/join/83836972" target="_blank"
+                        rel="nofollow sponsored noopener">Регистрация на OKX</a>
+                    <a class="btn btn-secondary btn-full"
+                        href="https://www.coinex.com/register?rc=s2vyu&channel=Referral" target="_blank"
+                        rel="nofollow sponsored noopener">Регистрация на CoinEx</a>
+                </div>
+            </aside>
+        </div>
+
+        <div class="related-section">
+            <div class="related-grid">
+                <div class="related-card">
+                    <a href="/guides/first-usdt-start.html">
+                        <div class="related-title">Первый USDT — с чего вообще начать</div>
+                        <div class="related-desc">Базовая логика первой покупки: цель, маршрут, сеть и хранение.</div>
+                    </a>
+                </div>
+                <div class="related-card">
+                    <a href="/guides/first-sale-no-loss.html">
+                        <div class="related-title">Первая продажа — как не потерять деньги на старте</div>
+                        <div class="related-desc">Как не ошибиться на продаже и не отдать деньги спешке и
+                            невнимательности.</div>
+                    </a>
+                </div>
+                <div class="related-card">
+                    <a href="/guides/first-withdraw-card.html">
+                        <div class="related-title">Первый вывод — на карту без головной боли</div>
+                        <div class="related-desc">Сценарии вывода на карту, проверки до подтверждения и действия при
+                            задержке.</div>
+                    </a>
+                </div>
+                <div class="related-card">
+                    <a href="/guides/newbie-mistakes-10.html">
+                        <div class="related-title">10 типичных ошибок новичков (и как их избежать)</div>
+                        <div class="related-desc">Самые частые ошибки на старте: P2P, сети, фишинг, итог сделки и
+                            хранение.</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-top">
+                <img src="/assets/img/bitmain_logo_vertical.png" width="164" height="159" alt="BIT-MAIN"
+                    class="footer-logo">
+            </div>
+
+            <div class="footer-nav">
+                <a href="/exchanges/">Биржи</a>
+                <a href="/compare.html">Сравнение</a>
+                <a href="/p2p.html">P2P</a>
+                <a href="/arbitrage.html">Арбитраж</a>
+                <a href="/guides/">Гайды</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="note">
+                    Дисклеймер: криптовалюта связана с высокими рисками. Материалы на сайте bit-main.ru носят
+                    исключительно информационный характер.
+                    Мы не даём финансовых советов.
+                </p>
+                <p class="copyright">© 2026 BIT-MAIN. Независимый крипто-портал.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('click', function (e) {
+            const link = e.target.closest('a[href]');
+            if (!link) return;
+            const url = new URL(link.href, location.href);
+            if (url.hostname === location.hostname) return;
+            if (typeof ym !== 'function') return;
+            e.preventDefault();
+            ym(106820779, 'reachGoal', 'exchange_click', {}, function () {
+                window.open(url.href, '_blank');
+            });
+            setTimeout(function () { window.open(url.href, '_blank'); }, 150);
+        });
+    </script>
+</body>
+
+</html>
