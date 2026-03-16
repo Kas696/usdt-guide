@@ -463,6 +463,7 @@ img {
 /* --- FAQ (Common) --- */
 .faq {
     margin: 0 auto;
+    max-width: 1140px;
 }
 
 .faq h2 {
