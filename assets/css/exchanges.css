@@ -3,140 +3,199 @@
     padding-bottom: 80px;
 }
 
+/* ---------------------------------- */
+/* Hero */
+/* ---------------------------------- */
 .catalog-hero {
     text-align: center;
     margin-bottom: 60px;
 }
 
 .catalog-hero h1 {
-    font-size: 38px;
     margin-bottom: 15px;
+    font-size: 38px;
 }
 
-.catalog-hero p {
-    color: var(--text-muted);
+.catalog-hero-subtitle {
+    margin: 0 0 16px;
+    color: #8f98a3;
     font-size: 18px;
-    max-width: 700px;
-    margin: 0 auto 30px;
+    line-height: 1.6;
+    text-align: center;
 }
 
-/* Filter Bar */
-.filter-bar {
+.catalog-hero-text {
+    margin: 0 auto;
+    color: #d3dae2;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* ---------------------------------- */
+/* Entry points */
+/* ---------------------------------- */
+.entry-points-section {
+    margin-top: 34px;
+}
+
+.entry-points-intro {
+    max-width: 980px;
+    margin-bottom: 22px;
+    color: #d0d7df;
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.entry-points-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.entry-point-card {
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    background:
+        linear-gradient(180deg, rgba(255, 177, 26, 0.025) 0%, rgba(255, 177, 26, 0) 22%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.028) 0%, rgba(255, 255, 255, 0.014) 100%);
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.entry-point-card h3 {
+    margin: 0 0 10px;
+    font-size: 22px;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.entry-point-card p {
+    margin: 0 0 14px;
+    color: #cfd6de;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.entry-point-links {
     display: flex;
-    justify-content: center;
-    gap: 10px;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
-.filter-btn {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-    padding: 10px 20px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.2s;
-}
-
-.filter-btn:hover {
-    border-color: var(--primary);
-    color: var(--text-main);
-}
-
-.filter-btn.active {
-    background: var(--primary);
-    color: #000;
-    border-color: var(--primary);
+.entry-point-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 0 14px;
+    border: 1px solid rgba(255, 177, 26, 0.14);
+    border-radius: 999px;
+    background: rgba(255, 177, 26, 0.08);
+    color: #ffb11a;
+    font-size: 13px;
     font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
-/* Catalog Grid */
+.entry-point-links a:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 177, 26, 0.12);
+    border-color: rgba(255, 177, 26, 0.22);
+}
+
+.entry-point-card-compare {
+    border-color: rgba(255, 177, 26, 0.12);
+}
+
+/* ---------------------------------- */
+/* Catalog overviews intro */
+/* ---------------------------------- */
+.catalog-overviews-section {
+    margin-top: 40px;
+}
+
+.catalog-overviews-intro {
+    max-width: 980px;
+    margin-bottom: 22px;
+    color: #d0d7df;
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+/* ---------------------------------- */
+/* Catalog grid */
+/* ---------------------------------- */
 .catalog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
     margin-bottom: 80px;
 }
 
-/* Exchange Card */
+/* ---------------------------------- */
+/* Exchange card */
+/* ---------------------------------- */
 .exch-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
 .exch-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     border-color: #3e4550;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.featured-card {
-    border: 1px solid rgba(255, 177, 26, 0.4);
-    background: linear-gradient(180deg, rgba(255, 177, 26, 0.05) 0%, var(--bg-card) 40%);
-}
-
-.featured-card:hover {
-    border-color: var(--primary);
-}
-
-.exch-badge {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: var(--primary);
-    color: #000;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 4px 8px;
-    border-radius: 4px;
-    text-transform: uppercase;
-}
-
-.exch-badge.simple {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text-muted);
-}
-
-/* старое определение (оставляем, чтобы не сломать, ниже будет override) */
 .exch-card-top {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.exch-card-logo {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    object-fit: cover;
+.exch-wordmark {
+    min-width: 140px;
+    max-width: 210px;
+    display: flex;
+    align-items: center;
 }
 
-.exch-card-title h3 {
-    margin: 0 0 5px 0;
-    font-size: 20px;
+.exch-wordmark-img {
+    display: block;
+    width: 100%;
+    max-width: 160px;
+    min-height: 40px;
+    max-height: 40px;
+    object-fit: contain;
 }
 
-.stars {
-    color: var(--primary);
-    font-size: 14px;
-    letter-spacing: 1px;
-}
-
-.stars span {
-    color: var(--text-muted);
-    margin-left: 5px;
+.exch-focus {
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    min-height: 32px;
+    padding: 0 12px;
+    border: 1px solid rgba(255, 177, 26, 0.14);
+    border-radius: 999px;
+    background: rgba(255, 177, 26, 0.08);
+    color: #ffb11a;
     font-size: 12px;
-    letter-spacing: 0;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
 }
 
 .exch-card-body {
@@ -145,10 +204,10 @@
 }
 
 .exch-desc {
-    font-size: 14px;
-    color: var(--text-muted);
     margin-bottom: 15px;
-    line-height: 1.5;
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.65;
 }
 
 .exch-tags {
@@ -158,11 +217,28 @@
 }
 
 .exch-tags span {
-    background: rgba(255, 255, 255, 0.05);
     padding: 4px 8px;
     border-radius: 4px;
-    font-size: 11px;
+    background: rgba(255, 255, 255, 0.05);
     color: var(--text-muted);
+    font-size: 11px;
+}
+
+.exch-notes {
+    display: grid;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.exch-note {
+    margin: 0;
+    color: #cfd6de;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.exch-note strong {
+    color: #fff;
 }
 
 .exch-card-footer {
@@ -175,145 +251,166 @@
     white-space: nowrap;
 }
 
-/* Selection Guide (SEO Block) */
-.selection-guide {
-    background: linear-gradient(135deg, #161b22 0%, #0e1116 100%);
-    padding: 60px 40px;
-    border-radius: 24px;
-    border: 1px solid var(--border);
+/* ---------------------------------- */
+/* Use section */
+/* ---------------------------------- */
+.use-section {
+    margin-top: 42px;
 }
 
-.selection-guide h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 28px;
+.use-box {
+    overflow: hidden;
+    padding: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    background:
+        linear-gradient(180deg, rgba(255, 177, 26, 0.02) 0%, rgba(255, 177, 26, 0) 18%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.028) 0%, rgba(255, 255, 255, 0.014) 100%);
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
-.guide-steps-row {
+.use-steps {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+    gap: 16px;
 }
 
-.guide-step {
-    display: felx;
-    justify-content: center;
+.use-step {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
 }
 
-.step-img {
-    min-height: 150px;
+.use-step-num {
+    width: 52px;
+    height: 52px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-}
-
-.step-img img {
-    max-height: 150px;
-    width: 70%;
-
-}
-
-.center-link p {
-    margin-bottom: 20px;
-}
-
-.guide-step h3 {
-    color: var(--text-main);
-    margin-bottom: 10px;
+    border: 1px solid rgba(255, 177, 26, 0.14);
+    border-radius: 16px;
+    background: rgba(255, 177, 26, 0.08);
+    color: #ffb11a;
     font-size: 18px;
+    font-weight: 800;
 }
 
-.guide-step p {
-    color: var(--text-muted);
-    font-size: 14px;
-    line-height: 1.6;
+.use-step-text h3 {
+    margin: 0 0 6px;
+    color: #fff;
+    font-size: 22px;
+    line-height: 1.2;
 }
 
-/* Top bar: brand + rating (override, как в исходнике) */
-.exch-card-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px;
-    margin-bottom: 14px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+.use-step-text p {
+    margin: 0;
+    color: #d0d7df;
+    font-size: 15px;
+    line-height: 1.72;
 }
 
-/* Wordmark container */
-.exch-wordmark {
-    min-width: 140px;
-    max-width: 190px;
-    display: flex;
-    align-items: center;
+.use-box-action {
+    margin-top: 20px;
 }
 
-.exch-wordmark-img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-    display: block;
-    min-height: 40px;
-    max-height: 40px;
-}
-
-/* Rating block (right) */
-.exch-rating {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    flex: 0 0 auto;
-}
-
-.exch-rating .stars {
-    color: var(--primary);
-    font-size: 14px;
-    letter-spacing: 1px;
-    line-height: 1;
-}
-
-.exch-rating .score {
-    color: var(--text-muted);
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 1;
-}
-
+/* ---------------------------------- */
 /* Responsive */
+/* ---------------------------------- */
+@media (max-width: 1100px) {
+    .catalog-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 768px) {
     .catalog-hero h1 {
         font-size: 28px;
     }
 
-    .filter-bar {
-        gap: 8px;
+    .catalog-hero-subtitle,
+    .catalog-hero-text,
+    .entry-points-intro,
+    .catalog-overviews-intro {
+        font-size: 15px;
+        line-height: 1.7;
     }
 
-    .filter-btn {
-        padding: 8px 14px;
+    .entry-points-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .entry-point-card {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .entry-point-card h3 {
+        font-size: 20px;
+    }
+
+    .entry-point-card p {
+        font-size: 15px;
+    }
+
+    .exch-card {
+        padding: 18px;
+    }
+
+    .exch-card-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .exch-wordmark {
+        min-width: 120px;
+        max-width: 180px;
+    }
+
+    .exch-focus {
+        min-height: 32px;
+        padding: 0 12px;
         font-size: 12px;
     }
 
-    .catalog-grid {
-        grid-template-columns: 1fr;
+    .exch-note {
+        font-size: 14px;
     }
 
-    .selection-guide {
-        padding: 30px 20px;
+    .exch-card-footer {
+        flex-direction: column;
     }
 
-    .guide-steps-row {
-        gap: 30px;
+    .btn-full {
+        width: 100%;
     }
-}
 
-/* Mobile tweak */
-@media (max-width: 520px) {
-    .exch-wordmark {
-        min-width: 120px;
-        max-width: 160px;
-        height: 38px;
-        padding: 7px 10px;
-        border-radius: 12px;
+    .use-box {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .use-step {
+        grid-template-columns: 44px minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .use-step-num {
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+        font-size: 15px;
+    }
+
+    .use-step-text h3 {
+        font-size: 19px;
+    }
+
+    .use-step-text p {
+        font-size: 14px;
+        line-height: 1.68;
     }
 }
