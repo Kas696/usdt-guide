@@ -1,7 +1,5 @@
 :root {
-    /* Ширина первой колонки */
     --col-width: 125px;
-    /* Цвет фона карточек (темный) */
     --bg-solid: #1e2329;
 }
 
@@ -10,7 +8,9 @@
     padding-bottom: 80px;
 }
 
-/* Оформление заголовков и крошек */
+/* ---------------------------------- */
+/* Базовые блоки страницы */
+/* ---------------------------------- */
 .breadcrumbs {
     margin-bottom: 10px;
     color: #888;
@@ -34,7 +34,7 @@
 }
 
 .content-section {
-    margin-top: 30px;
+    margin-bottom: 60px;
 }
 
 .content-section h2 {
@@ -46,34 +46,25 @@
     padding-left: 14px;
 }
 
-/* ========================================= */
-/* ГЛАВНЫЙ ФИКС — КОНТЕЙНЕР ТАБЛИЦЫ */
-/* ========================================= */
+/* ---------------------------------- */
+/* Таблица сравнения */
+/* ---------------------------------- */
 .table-wrapper {
-    /* 1. Ограничиваем высоту таблицы, чтобы она скроллилась сама */
     max-height: 75vh;
-
-    /* 2. Включаем скролл во все стороны внутри этого блока */
     overflow: auto;
-
-    /* Оформление рамки */
     border: 1px solid #2b3139;
     border-radius: 12px;
     background: var(--bg-solid);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     margin-bottom: 50px;
-
-    /* Для плавной прокрутки на мобилках */
     -webkit-overflow-scrolling: touch;
 }
 
 .compare-table.fixed-header {
     width: 100%;
-    border-collapse: separate;
-    /* Нужно для sticky */
-    border-spacing: 0;
     min-width: 1000px;
-    /* Чтобы не сжималась гармошкой */
+    border-collapse: separate;
+    border-spacing: 0;
 }
 
 .compare-table.fixed-header th,
@@ -86,24 +77,15 @@
     vertical-align: middle;
 }
 
-/* ========================================= */
-/* ЛОГИКА ПРИЛИПАНИЯ (STICKY) */
-/* ========================================= */
-
-/* 1. ШАПКА ТАБЛИЦЫ */
 .compare-table.fixed-header thead th {
     position: sticky;
-    /* Липнем к верху КОНТЕЙНЕРА .table-wrapper, а не к окну браузера */
     top: 0;
     z-index: 20;
     background: var(--bg-solid);
-    /* Непрозрачный фон */
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    /* Яркая линия снизу */
     height: 60px;
 }
 
-/* 2. ПЕРВАЯ КОЛОНКА */
 .compare-table.fixed-header tbody td:first-child {
     position: sticky;
     left: 0;
@@ -115,18 +97,14 @@
     color: #fff;
     min-width: var(--col-width);
     max-width: var(--col-width);
-
-    /* Тень справа, чтобы отделить колонку визуально */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
 }
 
-/* 3. УГЛОВАЯ ЯЧЕЙКА (ЛЕВЫЙ ВЕРХНИЙ УГОЛ) */
 .compare-table.fixed-header thead th.param-col {
     position: sticky;
-    left: 0;
     top: 0;
+    left: 0;
     z-index: 30;
-    /* Поверх всего */
     background: var(--bg-solid);
     border-right: 1px solid rgba(255, 255, 255, 0.15);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -135,9 +113,6 @@
     text-align: left;
 }
 
-/* ========================================= */
-/* ОФОРМЛЕНИЕ КОНТЕНТА */
-/* ========================================= */
 .exch-logo {
     height: 24px;
     width: auto;
@@ -145,7 +120,6 @@
     margin: 0 auto;
 }
 
-/* Зебра для строк (кроме первой колонки) */
 .compare-table.fixed-header tbody tr:nth-child(odd) td:not(:first-child) {
     background: rgba(255, 255, 255, 0.03);
 }
@@ -154,13 +128,12 @@
     background: rgba(255, 177, 26, 0.1);
 }
 
-/* Цвета текста */
 .highlight {
     color: #00c087;
     font-weight: bold;
 }
 
-/* Кнопки */
+/* Старые кнопки таблицы — оставлены на месте, чтобы ничего не ломать */
 .btn-full {
     background: #ffb11a;
     color: #000;
@@ -177,7 +150,245 @@
     padding: 15px 10px;
 }
 
-/* Блоки сценариев внизу */
+/* ---------------------------------- */
+/* Общие compare-блоки */
+/* ---------------------------------- */
+.compare-hero {
+    padding-bottom: 24px;
+}
+
+.compare-hero-text {
+    max-width: 920px;
+    margin: 18px auto 0;
+}
+
+.compare-grid-2,
+.compare-grid-3,
+.compare-links-grid,
+.compare-cta-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.compare-grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.compare-grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.compare-links-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.compare-cta-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.compare-card,
+.compare-link-card,
+.compare-cta-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.compare-card,
+.compare-cta-card {
+    padding: 20px;
+}
+
+.compare-card h3,
+.compare-cta-card h3 {
+    margin-top: 0;
+}
+
+.compare-card p:last-child,
+.compare-cta-card p:last-child {
+    margin-bottom: 0;
+}
+
+.compare-list {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.compare-link-card {
+    display: block;
+    padding: 18px;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.compare-link-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+    background: var(--bg-card-hover);
+}
+
+.compare-link-card strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.compare-link-card span {
+    color: var(--text-muted);
+}
+
+.compare-card-actions,
+.compare-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.compare-card-actions .btn,
+.compare-cta-actions .btn {
+    flex: 1 1 auto;
+    min-width: 140px;
+    text-align: center;
+}
+
+.compare-note {
+    margin-bottom: 24px;
+}
+
+/* ---------------------------------- */
+/* Блок "Как читать это сравнение" */
+/* ---------------------------------- */
+.compare-reading-section {
+    margin-top: 34px;
+}
+
+.compare-reading-intro {
+    max-width: 980px;
+    margin: 0 0 26px;
+    font-size: 17px;
+    line-height: 1.75;
+    color: #d7dde5;
+}
+
+.compare-reading-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.compare-reading-card {
+    overflow: hidden;
+    position: relative;
+    padding: 24px 24px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    background:
+        linear-gradient(180deg, rgba(255, 177, 26, 0.06) 0%, rgba(255, 177, 26, 0) 72%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.015) 100%);
+    box-shadow:
+        0 14px 34px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.compare-reading-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 0 12px;
+    margin-bottom: 14px;
+    border-radius: 999px;
+    background: rgba(255, 177, 26, 0.1);
+    border: 1px solid rgba(255, 177, 26, 0.18);
+    color: #ffb11a;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.compare-reading-card h3 {
+    margin: 0 0 16px;
+    font-size: 26px;
+    line-height: 1.2;
+    font-weight: 900;
+    color: #fff;
+}
+
+.compare-reading-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.compare-reading-list li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #d7dde5;
+}
+
+.compare-reading-list li+li {
+    margin-top: 10px;
+}
+
+.compare-reading-list li::before {
+    content: "";
+    position: absolute;
+    top: 11px;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #00c087;
+    box-shadow: 0 0 0 4px rgba(0, 192, 135, 0.12);
+}
+
+.compare-reading-bottom {
+    position: relative;
+    overflow: hidden;
+    margin-top: 2px;
+    padding: 18px 22px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    background:
+        linear-gradient(135deg, rgba(255, 177, 26, 0.04) 0%, rgba(255, 177, 26, 0.012) 38%, rgba(255, 177, 26, 0) 72%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.015) 100%);
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.compare-reading-bottom-label {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 0 12px;
+    margin-bottom: 14px;
+    border-radius: 999px;
+    background: rgba(255, 177, 26, 0.08);
+    border: 1px solid rgba(255, 177, 26, 0.14);
+    color: #ffb11a;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.compare-reading-bottom p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.85;
+    color: #d0d7df;
+}
+
+/* ---------------------------------- */
+/* Блок сценариев */
+/* ---------------------------------- */
 .scenario-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -186,12 +397,12 @@
 }
 
 .scenario-item {
-    background: #161a1f;
-    border: 1px solid #333;
-    padding: 15px;
-    border-radius: 12px;
     display: flex;
     gap: 15px;
+    padding: 15px;
+    border: 1px solid #333;
+    border-radius: 12px;
+    background: #161a1f;
 }
 
 .scenario-img img {
@@ -200,32 +411,245 @@
 }
 
 .scenario-content h3 {
+    margin: 0 0 5px;
     font-size: 16px;
-    margin: 0 0 5px 0;
     color: #fff;
 }
 
 .scenario-content p {
+    margin: 0 0 10px;
     font-size: 13px;
     color: #aaa;
-    margin: 0 0 10px 0;
 }
 
 .scenario-links a {
+    margin-right: 10px;
     color: #ffb11a;
     font-size: 12px;
-    margin-right: 10px;
     text-decoration: underline;
 }
 
-/* Мобильная версия */
-@media (max-width: 768px) {
-    .scenario-list {
-        grid-template-columns: 1fr;
+/* ---------------------------------- */
+/* Блок "Коротко по каждой бирже" */
+/* ---------------------------------- */
+.compare-exchanges-section {
+    margin-top: 36px;
+}
+
+.compare-exchanges-intro {
+    max-width: 980px;
+    margin-bottom: 24px;
+}
+
+.exchange-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 18px;
+}
+
+.exchange-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 22px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    background:
+        linear-gradient(180deg, rgba(255, 177, 26, 0.035) 0%, rgba(255, 177, 26, 0) 26%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.015) 100%);
+    box-shadow:
+        0 14px 34px rgba(0, 0, 0, 0.24),
+        inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+.exchange-card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.exchange-card-head h3 {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.15;
+    color: #fff;
+}
+
+.exchange-card-pill {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: rgba(255, 177, 26, 0.08);
+    border: 1px solid rgba(255, 177, 26, 0.14);
+    color: #ffb11a;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.exchange-card-lead {
+    margin: 0 0 16px;
+    font-size: 15px;
+    line-height: 1.72;
+    color: #d4dbe3;
+}
+
+.exchange-card-points {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.exchange-card-point {
+    padding: 14px 14px 13px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.022);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.exchange-card-label {
+    display: block;
+    margin-bottom: 6px;
+    color: #ffb11a;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.exchange-card-point p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #d0d8e0;
+}
+
+.exchange-card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.exchange-card-actions .btn {
+    flex: 1 1 0;
+    text-align: center;
+}
+
+/* ---------------------------------- */
+/* Блок "Что проверить перед регистрацией" */
+/* ---------------------------------- */
+.compare-check-section {
+    margin-bottom: 60px;
+}
+
+.compare-check-intro {
+    max-width: 980px;
+    margin-bottom: 22px;
+}
+
+.reg-checklist-vertical {
+    position: relative;
+    overflow: hidden;
+    padding: 4px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    background:
+        linear-gradient(180deg, rgba(255, 177, 26, 0.022) 0%, rgba(255, 177, 26, 0) 20%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.028) 0%, rgba(255, 255, 255, 0.014) 100%);
+    box-shadow:
+        0 14px 34px rgba(0, 0, 0, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.reg-check-row {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr) 48px;
+    gap: 18px;
+    align-items: start;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.reg-check-row:last-child {
+    border-bottom: none;
+}
+
+.reg-check-num {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background: rgba(255, 177, 26, 0.08);
+    border: 1px solid rgba(255, 177, 26, 0.14);
+    color: #ffb11a;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.reg-check-content h3 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    line-height: 1.18;
+    color: #fff;
+}
+
+.reg-check-content p {
+    margin: 0;
+    max-width: 920px;
+    font-size: 17px;
+    line-height: 1.78;
+    color: #d0d7df;
+}
+
+.reg-check-status {
+    width: 48px;
+    height: 48px;
+    margin-top: 4px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 192, 135, 0.2);
+    background: rgba(0, 192, 135, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.reg-check-status span {
+    display: block;
+    width: 16px;
+    height: 9px;
+    border-left: 2px solid #00c087;
+    border-bottom: 2px solid #00c087;
+    transform: rotate(-45deg) translateY(-1px);
+}
+
+/* ---------------------------------- */
+/* Адаптив */
+/* ---------------------------------- */
+@media (max-width: 1024px) {
+    .reg-check-content h3 {
+        font-size: 24px;
     }
 
+    .reg-check-content p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
     .hero h1 {
         font-size: 26px;
+    }
+
+    .scenario-list {
+        grid-template-columns: 1fr;
     }
 
     .scenario-item {
@@ -244,5 +668,133 @@
         height: auto;
     }
 
+    .compare-card-actions,
+    .compare-cta-actions {
+        flex-direction: column;
+    }
 
+    .compare-card-actions .btn,
+    .compare-cta-actions .btn {
+        width: 100%;
+    }
+
+    .compare-reading-intro {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 18px;
+    }
+
+    .compare-reading-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-bottom: 16px;
+    }
+
+    .compare-reading-card {
+        padding: 20px 18px 18px;
+        border-radius: 16px;
+    }
+
+    .compare-reading-card h3 {
+        font-size: 21px;
+        margin-bottom: 14px;
+    }
+
+    .compare-reading-list li {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .compare-reading-bottom {
+        margin-top: 0;
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .compare-reading-bottom-label {
+        min-height: 25px;
+        margin-bottom: 9px;
+        font-size: 11px;
+    }
+
+    .compare-reading-bottom p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .compare-exchanges-intro {
+        margin-bottom: 18px;
+    }
+
+    .exchange-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .exchange-card {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .exchange-card-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .exchange-card-head h3 {
+        font-size: 21px;
+    }
+
+    .exchange-card-lead,
+    .exchange-card-point p {
+        font-size: 15px;
+    }
+
+    .exchange-card-actions {
+        flex-direction: column;
+    }
+
+    .exchange-card-actions .btn {
+        width: 100%;
+    }
+
+    .compare-check-intro {
+        margin-bottom: 18px;
+    }
+
+    .reg-checklist-vertical {
+        padding: 2px 16px;
+        border-radius: 16px;
+    }
+
+    .reg-check-row {
+        grid-template-columns: 48px minmax(0, 1fr);
+        gap: 14px;
+        padding: 18px 0;
+    }
+
+    .reg-check-num {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        font-size: 15px;
+    }
+
+    .reg-check-content h3 {
+        padding-right: 6px;
+        margin-bottom: 8px;
+        font-size: 20px;
+        line-height: 1.25;
+    }
+
+    .reg-check-content p {
+        font-size: 15px;
+        line-height: 1.68;
+    }
+
+    .reg-check-status {
+        display: none;
+    }
 }
