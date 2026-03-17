@@ -893,3 +893,128 @@
     font-weight: 700;
     margin-bottom: 4px;
 }
+
+.aml-prepare-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+    margin-bottom: 18px;
+}
+
+.aml-prepare-card {
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    background:
+        linear-gradient(180deg, rgba(255, 177, 26, 0.03) 0%, rgba(255, 177, 26, 0) 24%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.015) 100%);
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.aml-prepare-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    height: 32px;
+    padding: 0 10px;
+    margin-bottom: 14px;
+    border-radius: 999px;
+    background: rgba(255, 177, 26, 0.1);
+    border: 1px solid rgba(255, 177, 26, 0.16);
+    color: #ffb11a;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+.aml-prepare-card h3 {
+    margin: 0 0 10px;
+    color: #fff;
+    font-size: 22px;
+    line-height: 1.2;
+}
+
+.aml-prepare-card p {
+    margin: 0;
+    color: #cfd6de;
+    font-size: 15px;
+    line-height: 1.72;
+}
+
+.aml-prepare-extra {
+    margin-top: 8px;
+    padding: 22px 24px;
+    border-left: 3px solid #ffb11a;
+    border-radius: 0 18px 18px 0;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.025) 0%, rgba(255, 255, 255, 0.012) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.aml-prepare-extra h3 {
+    margin: 0 0 14px;
+    color: #fff;
+    font-size: 22px;
+    line-height: 1.2;
+}
+
+.quick-links-card .sidebar-desc {
+    margin-bottom: 16px;
+}
+
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.quick-link-btn {
+    width: 100%;
+    min-height: 42px;
+    padding: 0 10px;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .aml-prepare-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .aml-prepare-card {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .aml-prepare-card h3,
+    .aml-prepare-extra h3 {
+        font-size: 20px;
+    }
+
+    .aml-prepare-card p {
+        font-size: 14px;
+        line-height: 1.68;
+    }
+
+    .aml-prepare-extra {
+        padding: 18px;
+        border-radius: 0 16px 16px 0;
+    }
+
+    .quick-links-grid {
+        gap: 8px;
+    }
+
+    .quick-link-btn {
+        min-height: 40px;
+        font-size: 13px;
+    }
+}
