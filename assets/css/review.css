@@ -1068,6 +1068,129 @@
     color: var(--text-main);
 }
 
+.clean-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.clean-list li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 12px;
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.clean-list li:last-child {
+    margin-bottom: 0;
+}
+
+.clean-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.9;
+}
+
+.pc-card.pros .clean-list li::before {
+    color: var(--accent-green);
+}
+
+.pc-card.cons .clean-list li::before {
+    color: var(--primary);
+}
+
+.exchange-hero-compact {
+    position: relative;
+    overflow: hidden;
+    padding: 30px 32px;
+    margin-bottom: 34px;
+}
+
+.exchange-hero-compact::after {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 177, 26, 0.10) 0%, rgba(255, 177, 26, 0.04) 35%, rgba(255, 177, 26, 0) 72%);
+    pointer-events: none;
+}
+
+.exchange-hero-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.exchange-brand-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 28px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.exchange-brand-logo {
+    width: 78px;
+    height: auto;
+    display: block;
+}
+
+.exchange-brand-chip span {
+    color: var(--text-main);
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+}
+
+.exchange-hero-main {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+}
+
+.exchange-hero-compact h1 {
+    margin: 0 0 18px;
+    font-size: 32px;
+    line-height: 1.15;
+    color: var(--text-main);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.exchange-hero-compact .review-hero-sub {
+    margin: 0 0 20px;
+    color: var(--text-muted);
+    font-size: 18px;
+    line-height: 1.65;
+    max-width: 760px;
+}
+
+.exchange-hero-compact .review-badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.exchange-hero-compact .badge {
+    min-height: 36px;
+}
+
 /* =========================
    ADAPTIVE
    ========================= */
@@ -1110,6 +1233,23 @@
 
     .fees-grid {
         grid-template-columns: 1fr;
+    }
+
+    .exchange-hero-compact {
+        padding: 24px 22px;
+    }
+
+    .exchange-hero-compact h1 {
+        font-size: 28px;
+    }
+
+    .exchange-brand-logo {
+        width: 70px;
+    }
+
+    .exchange-hero-compact .review-hero-sub {
+        font-size: 17px;
+        line-height: 1.6;
     }
 }
 
@@ -1213,6 +1353,26 @@
     .rule-list li::after {
         left: 24px;
         width: 14px;
+    }
+
+    .exchange-hero-compact h1 {
+        font-size: 26px;
+    }
+
+    .exchange-brand-chip {
+        padding: 9px 12px;
+    }
+
+    .exchange-brand-logo {
+        width: 64px;
+    }
+
+    .exchange-brand-chip span {
+        font-size: 14px;
+    }
+
+    .exchange-hero-compact .review-hero-sub {
+        font-size: 16px;
     }
 }
 
