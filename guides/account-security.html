@@ -5,20 +5,131 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Безопасность аккаунта 2026: полная защита криптокошелька | BIT-MAIN</title>
+    <title>Безопасность аккаунта на криптобирже в 2026: 2FA, passkeys и whitelist | BIT-MAIN</title>
     <meta name="description"
-        content="Практический чек-лист по защите аккаунта: 2FA без SMS, антифишинг, белые адреса и Passkeys. Узнайте, как не оставить хакерам ни одного шанса." />
+        content="Практический чек-лист по защите аккаунта на криптобирже: 2FA без SMS, passkeys, белые адреса, антифишинг-код, резервные коды и защита от фишинга." />
+    <link rel="canonical" href="https://bit-main.ru/guides/account-security.html" />
+
+    <meta property="og:title"
+        content="Безопасность аккаунта на криптобирже в 2026: 2FA, passkeys и whitelist | BIT-MAIN">
+    <meta property="og:description"
+        content="Что включить в первую очередь, где чаще всего ошибаются и как не отдать доступ к аккаунту из-за банальной невнимательности.">
+    <meta property="og:url" content="https://bit-main.ru/guides/account-security.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="BIT-MAIN">
+    <meta property="og:locale" content="ru_RU">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title"
+        content="Безопасность аккаунта на криптобирже в 2026: 2FA, passkeys и whitelist | BIT-MAIN">
+    <meta name="twitter:description"
+        content="Короткий и практичный чек-лист: как защитить аккаунт на бирже без пафоса и без типовых ошибок.">
 
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/review.css">
-
-    <link rel="canonical" href="https://bit-main.ru/guides/account-security.html" />
 
     <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "Как защитить аккаунт на криптобирже в 2026 году",
+          "description": "Практический чек-лист по защите аккаунта на криптобирже: 2FA без SMS, passkeys, белые адреса, антифишинг-код, резервные коды и защита от фишинга.",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://bit-main.ru/guides/account-security.html"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Команда BIT-MAIN"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "BIT-MAIN",
+            "url": "https://bit-main.ru/"
+          },
+          "datePublished": "2026-03-19",
+          "dateModified": "2026-03-19",
+          "inLanguage": "ru-RU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Главная",
+              "item": "https://bit-main.ru/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Гайды",
+              "item": "https://bit-main.ru/guides/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Безопасность аккаунта",
+              "item": "https://bit-main.ru/guides/account-security.html"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Что лучше для 2FA: SMS или приложение-аутентификатор?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Для биржи приложение-аутентификатор обычно безопаснее SMS. Оно не зависит от номера телефона и лучше защищает вход, если кто-то пытается перехватить контроль над SIM-картой."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Нужно ли включать passkeys, если биржа их поддерживает?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Да, это сильный вариант входа. Если биржа поддерживает passkeys, их стоит рассмотреть как дополнительный или основной метод авторизации, особенно для аккаунтов с крупным балансом."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Где хранить резервные коды 2FA?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Резервные коды лучше хранить офлайн: в менеджере паролей, на зашифрованном носителе или в бумажной копии в безопасном месте. Не стоит держать их в обычных заметках или в переписках."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Что даёт белый список адресов?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Белый список адресов ограничивает вывод средств только заранее подтверждёнными кошельками. Это добавляет дополнительный барьер, если кто-то получит доступ к аккаунту."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Достаточно ли одного сложного пароля?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Нет. Сильный пароль важен, но без 2FA, резервных кодов, защиты почты и проверки сессий он не закрывает все основные риски."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
@@ -52,7 +163,7 @@
     <!-- HEADER -->
     <header class="header">
         <div class="container header-flex">
-            <a class="logo" href="/">
+            <a class="logo" href="/" aria-label="BIT-MAIN">
                 <img src="/assets/img/bitmain_logo.png" width="90" height="70" alt="BIT-MAIN">
                 <span class="logo-text_1">BIT</span><span class="logo-text_2">-MAIN</span>
             </a>
@@ -74,103 +185,287 @@
 
     <main class="container">
 
-        <div class="breadcrumbs">
-            <a href="/">Главная</a> → <a href="/guides/">Гайды</a> → <span>Безопасность</span>
-        </div>
+        <nav class="breadcrumbs">
+            <a href="/">Главная</a> — <a href="/guides/">Гайды</a> — Безопасность аккаунта
+        </nav>
 
         <div class="review-layout">
 
-            <!-- ОСНОВНОЙ КОНТЕНТ -->
-            <div class="review-content">
+            <article class="review-content">
 
                 <section class="content-section">
-                    <span class="security-status">Актуально: Февраль 2026</span>
-                    <h1>Гигиена аккаунта: как не подарить свои деньги хакерам</h1>
+                    <span class="security-status">Чек-лист безопасности</span>
+                    <h1>Как защитить аккаунт на криптобирже в 2026 году</h1>
                     <p class="lead-text">
-                        В 2026 году взломы стали технологичнее, но 90% потерь всё ещё случаются из-за человеческой
-                        невнимательности. Этот чек-лист — ваш санитарный минимум перед тем, как завести на биржу
-                        серьезный капитал.
+                        Большинство потерь на биржах начинаются не с “суперхакеров”, а с простых дыр: один и тот же
+                        пароль, слабая защита почты, вход по SMS и невнимательность к фишингу. Ниже — практический
+                        минимум, который стоит включить до того, как на аккаунте появится заметная сумма.
                     </p>
+                </section>
 
-                    <h2>1. Прощайте, СМС-пароли</h2>
-                    <p>СМС-аутентификация (SMS 2FA) в 2026 году — это дыра в безопасности. Угон SIM-карты через
-                        поддержку оператора делается за 15 минут. </p>
-                    <div class="info-box" style="margin-bottom: 20px;">
-                        <strong>Решение:</strong> Используйте Google Authenticator или аппаратные ключи (Yubikey). Для
-                        топовых аккаунтов переходите на <strong>Passkeys</strong> — биометрический вход, который
-                        невозможно украсть фишингом.
+                <section class="content-section toc-section" id="contents">
+                    <div class="toc-box">
+                        <div class="toc-head">
+                            <h2>Что внутри</h2>
+                        </div>
+
+                        <div class="toc-grid">
+                            <a class="toc-link" href="#first-priority">
+                                <span class="toc-num">01</span>
+                                <span class="toc-text">Что включить в первую очередь</span>
+                            </a>
+
+                            <a class="toc-link" href="#extra-protection">
+                                <span class="toc-num">02</span>
+                                <span class="toc-text">Что защитить кроме входа</span>
+                            </a>
+
+                            <a class="toc-link" href="#common-mistakes">
+                                <span class="toc-num">03</span>
+                                <span class="toc-text">Где чаще всего ошибаются</span>
+                            </a>
+
+                            <a class="toc-link" href="#ten-minutes">
+                                <span class="toc-num">04</span>
+                                <span class="toc-text">Что включить за 10 минут</span>
+                            </a>
+
+                            <a class="toc-link" href="#choose-exchange">
+                                <span class="toc-num">05</span>
+                                <span class="toc-text">Если выбираете новую биржу</span>
+                            </a>
+
+                            <a class="toc-link" href="#faq">
+                                <span class="toc-num">06</span>
+                                <span class="toc-text">FAQ</span>
+                            </a>
+                        </div>
                     </div>
                 </section>
 
-                <section class="content-section" id="base">
-                    <h2>2. Белые списки адресов (Whitelisting)</h2>
-                    <p>Это самая недооцененная функция. Вы заранее вносите в список адреса своих кошельков, на которые
-                        можно выводить средства. </p>
+                <section class="content-section" id="first-priority">
+                    <h2>Что включить в первую очередь</h2>
+                    <ol class="rule-list">
+                        <li>
+                            <strong>Заведите отдельный email для бирж и финансовых сервисов.</strong>
+                            Чем меньше он светится в рассылках, соцсетях и обычной переписке, тем ниже шанс, что его
+                            используют в фишинге, подборе или попытках восстановления доступа.
+                        </li>
+                        <li>
+                            <strong>Используйте уникальный длинный пароль.</strong>
+                            Не повторяйте один и тот же пароль между биржей, почтой и другими сервисами. Нормальный
+                            вариант — длинный случайный пароль, сохранённый в менеджере паролей.
+                        </li>
+                        <li>
+                            <strong>Включите 2FA через приложение-аутентификатор или аппаратный ключ.</strong>
+                            SMS-коды для биржи — слабый вариант. Если площадка поддерживает passkeys, их тоже стоит
+                            рассмотреть как сильный способ входа.
+                        </li>
+                        <li>
+                            <strong>Сохраните резервные коды и recovery-данные.</strong>
+                            Если потеряете телефон или сбросите приложение-аутентификатор, именно они помогут вернуть
+                            доступ без паники и без лишних писем в поддержку.
+                        </li>
+                    </ol>
+
+                    <div class="info-box">
+                        <p><strong>Практичный минимум:</strong> отдельная почта, уникальный пароль, 2FA не по SMS и
+                            резервные коды в безопасном месте. Уже этот набор закрывает большую часть бытовых ошибок.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="content-section" id="extra-protection">
+                    <h2>Что защитить кроме входа</h2>
+                    <ol class="rule-list" start="5">
+                        <li>
+                            <strong>Включите белый список адресов на вывод.</strong>
+                            Тогда средства можно будет отправлять только на заранее подтверждённые кошельки. Это не
+                            абсолютная защита, но хороший дополнительный барьер, если кто-то всё же получит доступ к
+                            аккаунту.
+                        </li>
+                        <li>
+                            <strong>Установите антифишинг-код для писем от биржи.</strong>
+                            Это короткая фраза или слово, которое биржа добавляет в свои письма. Если пришло “срочное”
+                            письмо без вашего кода — повод не спешить и перепроверить всё вручную.
+                        </li>
+                        <li>
+                            <strong>Проверьте подтверждения на вывод и смену настроек.</strong>
+                            На бирже должны быть включены подтверждения для критичных действий: вывод средств, смена
+                            пароля, отключение 2FA, добавление адресов и других чувствительных настроек.
+                        </li>
+                        <li>
+                            <strong>Раз в месяц просматривайте активные сессии и устройства.</strong>
+                            Если видите старый браузер, чужое устройство или вход, который не можете объяснить, лучше
+                            завершить все сессии и заново пройти авторизацию.
+                        </li>
+                    </ol>
+                </section>
+
+                <section class="content-section" id="common-mistakes">
+                    <h2>Где чаще всего ошибаются</h2>
                     <ul class="check-list">
-                        <li>Если хакер получит доступ к аккаунту, он не сможет сразу вывести деньги на свой адрес.</li>
-                        <li>Добавление нового адреса в «белый список» обычно требует 24-48 часов ожидания.</li>
-                        <li>Этого времени вам хватит, чтобы заметить письмо о взломе и заморозить аккаунт.</li>
+                        <li>Открывают биржу по ссылке из письма, рекламы или чужого сообщения, вместо закладки или
+                            ручного ввода адреса.</li>
+                        <li>Хранят резервные коды 2FA, пароли или seed-фразы в обычных заметках, облаке или
+                            переписках.</li>
+                        <li>Используют один и тот же email и пароль для всего подряд, а потом удивляются цепочке
+                            компрометации.</li>
+                        <li>Игнорируют безопасность почты, хотя именно почта часто становится точкой восстановления
+                            доступа к аккаунту.</li>
+                        <li>Ставят сомнительные расширения, “полезные” трейдинг-утилиты и софт, который видит содержимое
+                            вкладок и буфера обмена.</li>
+                        <li>Оставляют активные сессии на старом ноутбуке, чужом устройстве или в браузере без пароля.
+                        </li>
                     </ul>
                 </section>
 
-                <section class="content-section" id="mistakes">
-                    <h2>3. Антифишинг-код: метка для писем</h2>
-                    <p>Установите в настройках биржи уникальный «Антифишинг-код» (например, слово <em>BITMAIN2026</em>).
-                        Теперь это слово будет во всех настоящих письмах от биржи.</p>
-                    <p>Пришло письмо о «блокировке аккаунта» без вашего кода? Это фишинг. Удаляйте не открывая.</p>
+                <section class="content-section" id="ten-minutes">
+                    <h2>Что можно включить за 10 минут</h2>
+                    <div class="info-box">
+                        <ol>
+                            <li>Сменить пароль на уникальный и сохранить его в менеджере паролей.</li>
+                            <li>Отключить SMS как основной способ 2FA и включить приложение-аутентификатор.</li>
+                            <li>Сохранить резервные коды 2FA вне телефона.</li>
+                            <li>Включить антифишинг-код для писем от биржи.</li>
+                            <li>Проверить активные устройства и завершить старые сессии.</li>
+                            <li>Посмотреть, доступен ли whitelist адресов и защита вывода.</li>
+                        </ol>
+                    </div>
+                    <p>
+                        Это не делает аккаунт “непробиваемым”, но резко снижает шанс потерять доступ из-за базовой
+                        невнимательности или фишинга.
+                    </p>
                 </section>
 
-                <div class="tools-banner" style="margin: 40px 0;">
-                    <div class="tools-info">
-                        <h3>Чувствуете себя в безопасности?</h3>
-                        <p>Начните с бирж, которые занимают топ-места в рейтинге безопасности CER.live и имеют страховые
-                            фонды (SAFU).</p>
-                    </div>
-                    <div class="tools-links">
-                        <a class="btn btn-primary" href="https://partner.bybit.com/b/BITMAIN" target="_blank"
+                <section class="content-section" id="choose-exchange">
+                    <h2>Если выбираете новую биржу</h2>
+                    <p>
+                        При выборе площадки смотрите не только на комиссии и P2P, но и на настройки безопасности:
+                        поддерживаются ли passkeys, есть ли whitelist адресов, антифишинг-код, подтверждения на вывод и
+                        нормальная работа сессий. Сравнить площадки удобно отдельно, а не по памяти.
+                    </p>
+
+                    <div class="cta-row">
+                        <a class="btn btn-secondary" href="https://partner.bybit.com/b/BITMAIN" target="_blank"
                             rel="nofollow sponsored noopener">Bybit</a>
-                        <a class="btn btn-primary" href="https://okx.ac/join/83836972" target="_blank"
+
+                        <a class="btn btn-secondary" href="https://okx.ac/join/83836972" target="_blank"
                             rel="nofollow sponsored noopener">OKX</a>
+
+                        <a class="btn btn-secondary" href="https://promote.mexc.com/r/5mShIa9n" target="_blank"
+                            rel="nofollow sponsored noopener">MEXC</a>
+
+                        <a class="btn btn-secondary" href="https://www.coinex.com/register?rc=s2vyu&channel=Referral"
+                            target="_blank" rel="nofollow sponsored noopener">CoinEx</a>
+
+                        <a class="btn btn-secondary" href="https://bingxdao.com/invite/TJLXNJ/" target="_blank"
+                            rel="nofollow sponsored noopener">BingX</a>
+
+                        <a class="btn btn-secondary" href="https://www.kucoin.com/r/rf/CXEJVM76" target="_blank"
+                            rel="nofollow sponsored noopener">KuCoin</a>
+
+                        <a class="btn btn-primary" href="/compare.html">Сравнить биржи</a>
                     </div>
-                </div>
+                </section>
+
+                <section class="content-section" id="faq">
+                    <h2>FAQ</h2>
+                    <div class="faq-grid">
+                        <details>
+                            <summary>Что лучше для 2FA: SMS или приложение-аутентификатор?</summary>
+                            <div class="faq-content">
+                                Для биржи приложение-аутентификатор обычно безопаснее SMS. Оно не зависит от номера
+                                телефона и лучше защищает вход, если кто-то пытается перехватить контроль над
+                                SIM-картой.
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Нужно ли включать passkeys, если биржа их поддерживает?</summary>
+                            <div class="faq-content">
+                                Да, это сильный вариант входа. Если биржа поддерживает passkeys, их стоит рассмотреть
+                                как дополнительный или основной метод авторизации, особенно для аккаунтов с заметным
+                                балансом.
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Где хранить резервные коды 2FA?</summary>
+                            <div class="faq-content">
+                                Лучше офлайн: в менеджере паролей, на зашифрованном носителе или в бумажной копии в
+                                безопасном месте. Не стоит держать их в обычных заметках или в переписках.
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Что даёт белый список адресов?</summary>
+                            <div class="faq-content">
+                                Он ограничивает вывод средств только заранее подтверждёнными кошельками. Это добавляет
+                                ещё один барьер, если кто-то получит доступ к аккаунту.
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Достаточно ли одного сложного пароля?</summary>
+                            <div class="faq-content">
+                                Нет. Сильный пароль важен, но без 2FA, резервных кодов, защиты почты и проверки сессий
+                                он не закрывает все основные риски.
+                            </div>
+                        </details>
+                    </div>
+                </section>
 
                 <div class="author-meta">
                     <span>Автор: Команда BIT-MAIN</span>
-                    <span>Обновлено: 12.02.2026</span>
+                    <span>Обновлено: 19.03.2026</span>
                 </div>
-            </div>
+            </article>
 
-            <!-- SIDEBAR -->
             <aside class="review-sidebar">
                 <div class="sticky-card">
-                    <span class="sidebar-title">Краткий чек-лист</span>
-                    <div class="sidebar-stats">
-                        <div class="stat-row">
-                            <span>2FA Приложение</span>
-                            <span class="green-text">ВКЛ</span>
-                        </div>
-                        <div class="stat-row">
-                            <span>Passkeys</span>
-                            <span class="green-text">РЕКОМЕНДОВАНО</span>
-                        </div>
-                        <div class="stat-row">
-                            <span>Белый список</span>
-                            <span class="green-text">ВКЛ</span>
-                        </div>
-                        <div class="stat-row">
-                            <span>Антифишинг</span>
-                            <span class="green-text">ВКЛ</span>
-                        </div>
-                    </div>
-                    <p class="sidebar-desc">Настройка этих 4 пунктов снижает риск взлома на 99.9%.</p>
-                    <a href="/guides/p2p-safety-checklist.html" class="btn btn-primary btn-full">Чек-лист по P2P</a>
-                    <div class="disclaimer-mini">
-                        Безопасность — это процесс, а не результат. Проверяйте настройки раз в месяц.
-                    </div>
+                    <span class="sidebar-title">Коротко по делу</span>
+
+                    <ul class="summary-list">
+                        <li>Для биржи лучше отдельный email, а не почта, которая светится везде подряд.</li>
+                        <li>2FA через приложение или аппаратный ключ безопаснее SMS-кодов.</li>
+                        <li>Whitelist адресов, антифишинг-код и защита вывода дают второй уровень обороны.</li>
+                        <li>Безопасность аккаунта держится не на одной функции, а на цепочке мелких настроек.</li>
+                    </ul>
                 </div>
             </aside>
 
         </div>
+
+        <section class="content-section related-section" id="related">
+            <h2>Полезные материалы по теме</h2>
+
+            <div class="related-grid">
+                <a class="related-card" href="/guides/p2p-safety-checklist.html">
+                    <span class="related-title">Чек-лист безопасности P2P</span>
+                    <span class="related-desc">Что проверять до оплаты, когда не верить скринам и в каких случаях
+                        лучше сразу открывать апелляцию.</span>
+                </a>
+
+                <a class="related-card" href="/guides/buy-usdt-p2p.html">
+                    <span class="related-title">Как купить USDT через P2P</span>
+                    <span class="related-desc">Пошаговый маршрут для первой покупки: выбор объявления, оплата и
+                        зачисление USDT.</span>
+                </a>
+
+                <a class="related-card" href="/guides/sell-usdt-p2p.html">
+                    <span class="related-title">Продажа USDT и вывод на карту</span>
+                    <span class="related-desc">Что проверять при продаже, как не попасть на фейковые чеки и когда
+                        открывать спор.</span>
+                </a>
+
+                <a class="related-card" href="/guides/p2p-banks-115fz.html">
+                    <span class="related-title">P2P и банки: 115-ФЗ и блокировки</span>
+                    <span class="related-desc">Как банки смотрят на частые переводы и что снижает риск неприятных
+                        вопросов.</span>
+                </a>
+            </div>
+        </section>
     </main>
 
     <!-- FOOTER -->
@@ -211,16 +506,30 @@
 
             if (typeof ym !== 'function') return;
 
+            const target = link.target === '_blank' ? '_blank' : '_self';
+            let opened = false;
+
+            const openLink = function () {
+                if (opened) return;
+                opened = true;
+
+                if (target === '_blank') {
+                    window.open(url.href, '_blank', 'noopener');
+                } else {
+                    window.location.href = url.href;
+                }
+            };
+
             e.preventDefault();
 
-            ym(106820779, 'reachGoal', 'exchange_click', {}, function () {
-                window.open(url.href, '_blank');
-            });
+            try {
+                ym(106820779, 'reachGoal', 'exchange_click', {}, openLink);
+            } catch (err) {
+                openLink();
+                return;
+            }
 
-            // fallback если callback не сработает
-            setTimeout(function () {
-                window.open(url.href, '_blank');
-            }, 150);
+            setTimeout(openLink, 150);
         });
     </script>
 
