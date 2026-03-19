@@ -41,9 +41,7 @@
 
 .content-section h2 {
     font-size: 26px;
-    border-left: 4px solid var(--primary);
-    padding-left: 15px;
-    margin: 40px 0 24px 0;
+    margin: 60px 0 30px 0;
     color: var(--text-main);
     font-weight: 700;
 }
@@ -1016,5 +1014,125 @@
     .quick-link-btn {
         min-height: 40px;
         font-size: 13px;
+    }
+}
+
+.review-sidebar .sticky-card {
+    padding: 28px 26px;
+}
+
+.review-sidebar .summary-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.review-sidebar .summary-list li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 14px;
+    line-height: 1.55;
+}
+
+.review-sidebar .summary-list li:last-child {
+    margin-bottom: 0;
+}
+
+.review-sidebar .summary-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-green);
+}
+
+@media (max-width: 980px) {
+    .review-sidebar {
+        display: none;
+    }
+}
+
+.toc-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+}
+
+.toc-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.toc-head h2 {
+    margin: 0;
+}
+
+.toc-head p {
+    margin: 0;
+    max-width: 560px;
+    color: var(--text-muted);
+    line-height: 1.55;
+}
+
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.toc-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.toc-link:hover {
+    border-color: var(--primary);
+    background: rgba(255, 177, 26, 0.06);
+    transform: translateY(-1px);
+}
+
+.toc-num {
+    flex: 0 0 auto;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--primary);
+}
+
+.toc-text {
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .toc-box {
+        padding: 20px;
+    }
+
+    .toc-head {
+        display: block;
+        margin-bottom: 16px;
+    }
+
+    .toc-head p {
+        margin-top: 8px;
+    }
+
+    .toc-grid {
+        grid-template-columns: 1fr;
     }
 }
