@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Как распределять капитал между биржами и кошельками: общая логика | BIT-MAIN</title>
+    <meta name="description"
+        content="Как распределять капитал между биржами и кошельками в 2026 году: рабочий контур, резерв, хранение и вывод. Логика схемы без универсальных пропорций.">
+    <link rel="canonical" href="https://bit-main.ru/guides/capital-allocation-exchanges-wallets.html">
+
+    <meta property="og:title" content="Как распределять капитал между биржами и кошельками: общая логика | BIT-MAIN">
+    <meta property="og:description"
+        content="Как распределять капитал между биржами и кошельками в 2026 году: рабочий контур, резерв, хранение и вывод. Логика схемы без универсальных пропорций.">
+    <meta property="og:url" content="https://bit-main.ru/guides/capital-allocation-exchanges-wallets.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="BIT-MAIN">
+    <meta property="og:locale" content="ru_RU">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Как распределять капитал между биржами и кошельками: общая логика | BIT-MAIN">
+    <meta name="twitter:description"
+        content="Как распределять капитал между биржами и кошельками в 2026 году: рабочий контур, резерв, хранение и вывод. Логика схемы без универсальных пропорций.">
+
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/review.css">
+
+    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "Как распределять капитал между биржами и кошельками: общая логика",
+          "description": "Как распределять капитал между биржами и кошельками в 2026 году: рабочий контур, резерв, хранение и вывод. Логика схемы без универсальных пропорций.",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://bit-main.ru/guides/capital-allocation-exchanges-wallets.html"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Команда BIT-MAIN"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "BIT-MAIN",
+            "url": "https://bit-main.ru/"
+          },
+          "datePublished": "2026-03-20",
+          "dateModified": "2026-03-20",
+          "inLanguage": "ru-RU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Главная",
+              "item": "https://bit-main.ru/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Гайды",
+              "item": "https://bit-main.ru/guides/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Как распределять капитал между биржами и кошельками",
+              "item": "https://bit-main.ru/guides/capital-allocation-exchanges-wallets.html"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Сколько держать на бирже для операций?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Столько, сколько действительно нужно для ближайшего рабочего периода. Если сумма месяцами лежит без действия, это уже не рабочий баланс, а часть капитала, которой стоит дать отдельную роль."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Нужен ли отдельный кошелёк, если операций мало?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Если активность низкая, отдельный кошелёк чаще нужен не для скорости, а для разделения задач. Это особенно заметно, когда часть средств не планируется использовать длительное время."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Когда стоит делить капитал на несколько контуров?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Обычно тогда, когда у денег появляются разные роли: работа, резерв, хранение или вывод. Пока все средства живут одной задачей, схема может быть проще. Когда задач становится несколько, единый контур начинает мешать."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Нужно ли держать резерв отдельно от рабочего баланса?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Да, иначе резерв быстро перестаёт быть резервом. Его смысл в том, чтобы не участвовать в текущей активности автоматически и не расходоваться по инерции."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Как часто пересматривать распределение?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Не по календарю ради галочки, а при заметных изменениях: вырос объём капитала, изменилась частота операций, появился новый режим использования средств. При стабильной модели достаточно периодической проверки раз в несколько месяцев."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=106820779', 'ym');
+
+        ym(106820779, 'init', {
+            ssr: true,
+            webvisor: true,
+            clickmap: true,
+            ecommerce: "dataLayer",
+            referrer: document.referrer,
+            url: location.href,
+            accurateTrackBounce: true,
+            trackLinks: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/106820779" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W0N5LBDMX0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-W0N5LBDMX0');
+    </script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-flex">
+            <a class="logo" href="/" aria-label="BIT-MAIN">
+                <img src="/assets/img/bitmain_logo.png" width="90" height="70" alt="BM">
+                <span class="logo-text_1">BIT</span><span class="logo-text_2">-MAIN</span>
+            </a>
+
+            <input type="checkbox" id="menu-toggle" hidden />
+            <label class="burger" for="menu-toggle">
+                <span></span><span></span><span></span>
+            </label>
+
+            <nav class="nav">
+                <a href="/exchanges/">Биржи</a>
+                <a href="/compare.html">Сравнение</a>
+                <a href="/p2p.html">P2P</a>
+                <a href="/arbitrage.html">Арбитраж</a>
+                <a href="/guides/">Гайды</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <nav class="breadcrumbs">
+            <a href="/">Главная</a> —
+            <a href="/guides/">Гайды</a> —
+            Как распределять капитал между биржами и кошельками
+        </nav>
+
+        <div class="review-layout">
+            <article class="review-content">
+
+                <h1>Как распределять капитал между биржами и кошельками: общая логика</h1>
+
+                <p class="lead-text">Капитал обычно теряют не потому, что выбрали «не то место», а потому что держат
+                    разные по задаче деньги в одном контуре. Рабочая сумма, резерв и долгосрочное хранение требуют
+                    разной логики доступа и разного уровня изоляции.</p>
+
+                <section class="content-section toc-section" id="contents">
+                    <div class="toc-box">
+                        <div class="toc-head">
+                            <h2>Что внутри</h2>
+                        </div>
+
+                        <div class="toc-grid">
+                            <a class="toc-link" href="#why-split">
+                                <span class="toc-num">01</span>
+                                <span class="toc-text">Почему капитал нельзя считать одной суммой</span>
+                            </a>
+
+                            <a class="toc-link" href="#capital-functions">
+                                <span class="toc-num">02</span>
+                                <span class="toc-text">Какие задачи у капитала бывают</span>
+                            </a>
+
+                            <a class="toc-link" href="#storage-zones">
+                                <span class="toc-num">03</span>
+                                <span class="toc-text">Зоны хранения</span>
+                            </a>
+
+                            <a class="toc-link" href="#proportions-algo">
+                                <span class="toc-num">04</span>
+                                <span class="toc-text">Как выбирать пропорции</span>
+                            </a>
+
+                            <a class="toc-link" href="#rebalance">
+                                <span class="toc-num">05</span>
+                                <span class="toc-text">Когда пересматривать схему</span>
+                            </a>
+
+                            <a class="toc-link" href="#faq">
+                                <span class="toc-num">06</span>
+                                <span class="toc-text">FAQ</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section" id="why-split">
+                    <h2>Почему капитал нельзя оценивать как одну сумму</h2>
+                    <p>Средства для ежедневных операций и средства, которые не планируется трогать месяцами, решают
+                        разные задачи. Когда они лежат как одно целое, становится сложнее контролировать риск и проще
+                        задеть резерв ради текущей активности.</p>
+                    <p>Рабочий баланс требует быстрого доступа. Резерв нужен как буфер, а не как продолжение торгового
+                        счёта. Долгосрочная часть капитала обычно требует не скорости, а более спокойного режима
+                        хранения.</p>
+                    <p>Разделение по функциям упрощает решения. Можно менять рабочий объём, не трогая резерв, и
+                        пересобирать схему хранения без постоянного движения всех средств сразу.</p>
+                </section>
+
+                <section class="content-section" id="capital-functions">
+                    <h2>Какие задачи у капитала бывают на практике</h2>
+                    <p>Оперативная часть нужна для торговли, переводов и других действий, где важна скорость. Такой
+                        капитал обычно держат там, где он действительно используется, а не там, где «просто удобно всё
+                        вместе».</p>
+                    <p>Резервная часть нужна для просадок, пауз в работе или появления новых возможностей. Её смысл —
+                        оставаться доступной, но не смешиваться с рабочим контуром без необходимости.</p>
+                    <p>Долгосрочная часть — это активы, которые не планируется быстро двигать. Здесь обычно важнее
+                        отделение от постоянной операционной среды, чем мгновенный доступ.</p>
+                    <p>Отдельно можно выделять выводной контур — сумму, которую планируется переводить в фиат или
+                        использовать вне криптоинфраструктуры. Это не отдельная философия хранения, а прикладная задача
+                        внутри общей схемы.</p>
+                </section>
+
+                <section class="content-section" id="storage-zones">
+                    <h2>Как смотреть на зоны хранения</h2>
+                    <div class="table-scroll">
+                        <table class="standard-table">
+                            <thead>
+                                <tr>
+                                    <th>Зона капитала</th>
+                                    <th>Для какой задачи подходит</th>
+                                    <th>Что там держат</th>
+                                    <th>Что туда лучше не складывать</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Биржа</td>
+                                    <td>Операции, быстрый доступ, рабочая активность</td>
+                                    <td>Сумму для текущих сделок и ближайших действий</td>
+                                    <td>Резерв и долгосрочное хранение без рабочей необходимости</td>
+                                </tr>
+                                <tr>
+                                    <td>Горячий кошелёк</td>
+                                    <td>Промежуточное хранение и переводы вне биржи</td>
+                                    <td>Средства для регулярного движения между сервисами</td>
+                                    <td>Крупную долгосрочную сумму без отдельной причины</td>
+                                </tr>
+                                <tr>
+                                    <td>Холодный кошелёк</td>
+                                    <td>Долгосрочное хранение</td>
+                                    <td>Часть капитала, которую не нужно постоянно перемещать</td>
+                                    <td>Средства для ежедневной работы</td>
+                                </tr>
+                                <tr>
+                                    <td>Фиатный контур</td>
+                                    <td>Вывод части прибыли, расходы, внешний резерв</td>
+                                    <td>Сумму под ближайшие расчёты или отдельный денежный буфер</td>
+                                    <td>Рабочий криптокапитал без плана конвертации</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="content-section" id="proportions-algo">
+                    <h2>Как выбирать пропорции без универсального рецепта</h2>
+                    <p>Готовой нормы вида «40% на бирже, 40% в кошельке, 20% в фиате» не существует. Рабочая пропорция
+                        зависит от того, как часто вы проводите операции, как быстро вам нужен доступ к деньгам и какую
+                        долю вы готовы держать в активной среде.</p>
+                    <p>Сначала стоит определить объём, который реально нужен в ближайшие недели. Это основа рабочего
+                        контура. После этого становится проще понять, какая часть должна лежать отдельно как резерв, а
+                        какая может быть вынесена в более спокойное хранение.</p>
+                    <p>Чем чаще операции, тем больше обычно доля рабочего баланса. Чем реже вы двигаете средства, тем
+                        меньше причин держать крупную сумму в одном активном контуре. Логика здесь строится не от
+                        красивой цифры, а от режима использования.</p>
+                    <p>Полезно заранее зафиксировать правила движения денег между частями схемы. Например: не пополнять
+                        рабочий баланс за счёт резерва без отдельного решения, выводить часть прибыли по графику, не
+                        держать лишнее на бирже после завершения активного периода.</p>
+                </section>
+
+                <section class="content-section" id="rebalance">
+                    <h2>Когда схему распределения нужно пересматривать</h2>
+                    <p>Схема не должна оставаться неизменной только потому, что когда-то была удобной. При росте
+                        капитала, смене стратегии или изменении частоты операций прежняя модель может стать слишком
+                        рискованной или, наоборот, слишком громоздкой.</p>
+                    <p>Пересмотр обычно нужен, если объём заметно вырос, появились новые регулярные маршруты перевода,
+                        изменилась роль биржи в вашей работе или часть капитала перестала использоваться так, как
+                        планировалось раньше.</p>
+                    <p>Периодическая проверка помогает держать баланс между удобством и изоляцией средств. Смысл не в
+                        том, чтобы постоянно всё переставлять, а в том, чтобы схема оставалась актуальной под текущую
+                        задачу.</p>
+                </section>
+
+                <div class="info-box">
+                    <p>Сначала определяют функцию денег, потом место хранения. Когда порядок обратный, капитал начинает
+                        жить по привычке, а не по задаче.</p>
+                </div>
+
+                <ul class="check-list">
+                    <li>Определите сумму, которая реально нужна для ближайших операций</li>
+                    <li>Отделите резерв от рабочего баланса до начала активных действий</li>
+                    <li>Вынесите долгосрочную часть в отдельный контур хранения</li>
+                    <li>Зафиксируйте правила перевода средств между частями схемы</li>
+                    <li>Пересматривайте модель при изменении объёма и режима работы</li>
+                </ul>
+
+                <div class="cta-row">
+                    <a class="btn btn-secondary" href="https://partner.bybit.com/b/BITMAIN" target="_blank"
+                        rel="nofollow sponsored noopener">Bybit</a>
+
+                    <a class="btn btn-secondary" href="https://okx.ac/join/83836972" target="_blank"
+                        rel="nofollow sponsored noopener">OKX</a>
+
+                    <a class="btn btn-secondary" href="https://promote.mexc.com/r/5mShIa9n" target="_blank"
+                        rel="nofollow sponsored noopener">MEXC</a>
+
+                    <a class="btn btn-secondary" href="https://www.coinex.com/register?rc=s2vyu&channel=Referral"
+                        target="_blank" rel="nofollow sponsored noopener">CoinEx</a>
+
+                    <a class="btn btn-secondary" href="https://bingxdao.com/invite/TJLXNJ/" target="_blank"
+                        rel="nofollow sponsored noopener">BingX</a>
+
+                    <a class="btn btn-secondary" href="https://www.kucoin.com/r/rf/CXEJVM76" target="_blank"
+                        rel="nofollow sponsored noopener">KuCoin</a>
+
+                    <a class="btn btn-primary" href="/compare.html">Сравнить биржи</a>
+                </div>
+
+                <section class="content-section" id="faq">
+                    <h2>FAQ</h2>
+                    <div class="faq-grid">
+                        <details>
+                            <summary>Сколько держать на бирже для операций?</summary>
+                            <div class="faq-content">
+                                <p>Столько, сколько действительно нужно для ближайшего рабочего периода. Если сумма
+                                    месяцами
+                                    лежит без действия, это уже не рабочий баланс, а часть капитала, которой стоит
+                                    дать отдельную роль.</p>
+                            </div>
+                        </details>
+                        <details>
+                            <summary>Нужен ли отдельный кошелёк, если операций мало?</summary>
+                            <div class="faq-content">
+                                <p>Если активность низкая, отдельный кошелёк чаще нужен не для скорости, а для
+                                    разделения задач. Это особенно заметно, когда часть средств не планируется
+                                    использовать длительное время.</p>
+                            </div>
+                        </details>
+                        <details>
+                            <summary>Когда стоит делить капитал на несколько контуров?</summary>
+                            <div class="faq-content">
+                                <p>Обычно тогда, когда у денег появляются разные роли: работа, резерв, хранение или
+                                    вывод.
+                                    Пока все средства живут одной задачей, схема может быть проще. Когда задач
+                                    становится
+                                    несколько, единый контур начинает мешать.</p>
+                            </div>
+                        </details>
+                        <details>
+                            <summary>Нужно ли держать резерв отдельно от рабочего баланса?</summary>
+                            <div class="faq-content">
+                                <p>Да, иначе резерв быстро перестаёт быть резервом. Его смысл в том, чтобы не
+                                    участвовать в
+                                    текущей активности автоматически и не расходоваться по инерции.</p>
+                            </div>
+                        </details>
+                        <details>
+                            <summary>Как часто пересматривать распределение?</summary>
+                            <div class="faq-content">
+                                <p>Не по календарю ради галочки, а при заметных изменениях: вырос объём капитала,
+                                    изменилась частота операций, появился новый режим использования средств. При
+                                    стабильной
+                                    модели достаточно периодической проверки раз в несколько месяцев.</p>
+                            </div>
+                        </details>
+                    </div>
+                </section>
+
+                <div class="author-meta">
+                    <span>Автор: Команда BIT-MAIN</span>
+                    <span>Обновлено: 20.03.2026</span>
+                </div>
+
+            </article>
+
+            <aside class="review-sidebar">
+                <div class="sticky-card">
+                    <h3 class="sidebar-title">Краткий вывод</h3>
+                    <ul class="summary-list">
+                        <li>Капитал делят по функциям, а не ради самого деления</li>
+                        <li>Рабочая сумма и резерв не должны жить как одно целое</li>
+                        <li>Доля на бирже зависит от частоты операций</li>
+                        <li>Кошелёк нужен не всем одинаково, а по задаче</li>
+                        <li>Схему нужно пересматривать при смене объёма и режима работы</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <section class="content-section related-section" id="related">
+            <h2>Смотрите также в этом кластере</h2>
+            <div class="related-grid">
+                <a class="related-card" href="/guides/one-exchange-risk.html">
+                    <span class="related-title">100% на одной бирже — риск</span>
+                    <span class="related-desc">Что именно ломается, когда весь капитал сосредоточен в одной точке
+                        доступа.</span>
+                </a>
+
+                <a class="related-card" href="/guides/exchange-plus-wallet.html">
+                    <span class="related-title">Биржа + кошелёк</span>
+                    <span class="related-desc">Когда связка из биржи и личного кошелька оказывается рабочей и как её
+                        использовать по задаче.</span>
+                </a>
+
+                <a class="related-card" href="/guides/exchange-plus-bank.html">
+                    <span class="related-title">Биржа + банк</span>
+                    <span class="related-desc">Как отделять выводной контур от торгового и где проходит граница между
+                        криптой и фиатом.</span>
+                </a>
+
+                <a class="related-card" href="/guides/anti-crisis-capital-model.html">
+                    <span class="related-title">Антикризисная модель</span>
+                    <span class="related-desc">Что меняется в распределении капитала, когда важна не удобная схема, а
+                        устойчивость к сбоям.</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-top">
+                <img src="/assets/img/bitmain_logo_vertical.png" width="164" height="159" alt="BIT-MAIN"
+                    class="footer-logo">
+            </div>
+
+            <div class="footer-nav">
+                <a href="/exchanges/">Биржи</a>
+                <a href="/compare.html">Сравнение</a>
+                <a href="/p2p.html">P2P</a>
+                <a href="/arbitrage.html">Арбитраж</a>
+                <a href="/guides/">Гайды</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="note">
+                    Дисклеймер: криптовалюта связана с высокими рисками. Материалы на сайте bit-main.ru носят
+                    исключительно информационный характер.
+                    Мы не даём финансовых советов.
+                </p>
+                <p class="copyright">© 2026 BIT-MAIN. Независимый крипто-портал.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('click', function (e) {
+            const link = e.target.closest('a[href]');
+            if (!link) return;
+
+            const url = new URL(link.href, location.href);
+            const isExternal = url.hostname !== location.hostname;
+            if (!isExternal) return;
+
+            if (typeof ym !== 'function') return;
+
+            const target = link.target === '_blank' ? '_blank' : '_self';
+            let opened = false;
+
+            const openLink = function () {
+                if (opened) return;
+                opened = true;
+
+                if (target === '_blank') {
+                    window.open(url.href, '_blank', 'noopener');
+                } else {
+                    window.location.href = url.href;
+                }
+            };
+
+            e.preventDefault();
+
+            try {
+                ym(106820779, 'reachGoal', 'exchange_click', {}, openLink);
+            } catch (err) {
+                openLink();
+                return;
+            }
+
+            setTimeout(openLink, 150);
+        });
+    </script>
+
+</body>
+
+</html>
