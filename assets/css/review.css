@@ -659,7 +659,7 @@
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    font-size: 15px;
+    font-size: 12px;
     background: var(--bg-card);
     border-radius: 12px;
     overflow: hidden;
@@ -667,7 +667,7 @@
 
 .standard-table th,
 .standard-table td {
-    padding: 14px;
+    padding: 10px;
     text-align: left;
     border-bottom: 1px solid var(--border);
 }
@@ -705,13 +705,10 @@
     border-collapse: collapse;
 }
 
-.table-scroll .standard-table th,
-.table-scroll .standard-table td {
-    white-space: nowrap;
-}
 
 .table-scroll .standard-table th:first-child,
 .table-scroll .standard-table td:first-child {
+    max-width: 160px;
     position: sticky;
     left: 0;
     z-index: 2;
@@ -1191,6 +1188,41 @@
     min-height: 36px;
 }
 
+.scenario-grid {
+    display: grid;
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.scenario-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+}
+
+.scenario-card h3 {
+    margin: 0 0 16px;
+    font-size: 26px;
+    line-height: 1.3;
+    color: var(--text-main);
+}
+
+.scenario-points {
+    display: grid;
+    gap: 12px;
+}
+
+.scenario-points p {
+    margin: 0;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+.scenario-points strong {
+    color: var(--text-main);
+}
+
 /* =========================
    ADAPTIVE
    ========================= */
@@ -1254,6 +1286,7 @@
 }
 
 @media (max-width: 768px) {
+
     .aml-prepare-grid {
         grid-template-columns: 1fr;
         gap: 14px;
@@ -1303,6 +1336,14 @@
 
     .toc-grid {
         grid-template-columns: 1fr;
+    }
+
+    .scenario-card {
+        padding: 18px;
+    }
+
+    .scenario-card h3 {
+        font-size: 22px;
     }
 }
 
